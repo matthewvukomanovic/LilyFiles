@@ -25,9 +25,9 @@ globalStart = {
   \key g \major
   \time 3/4
   \set Score.skipBars = ##t
-  \override Score.BarNumber.break-visibility = #end-of-line-invisible
+  \override Score.BarNumber.break-visibility = #all-visible % #end-of-line-invisible
   \bar ""
-  \set Score.barNumberVisibility = #(every-nth-bar-number-visible 1)
+  \override Score.BarNumber.self-alignment-X = #CENTER
 }
 
 middleKeyChange = { \key ees \major }
@@ -35,10 +35,16 @@ middleKeyChange = { \key ees \major }
 sopranoStartOosNotes = \relative c'' {
   \globalStart
   \easyHeads
+\set Score.barNumberVisibility = #all-bar-numbers-visible
+    \override Score.BarNumber.stencil
+    = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
   R2.*8 |
   R2.*16 |
   % 25
   g2 g4 |
+  \override Score.BarNumber.stencil = #ly:text-interface::print
+  \override Score.BarNumber.break-visibility = #begin-of-line-visible
+
   % 26
   g2 a4 |
   % 27
@@ -67,16 +73,27 @@ sopranoStartOosNotes = \relative c'' {
   g2 a4 |
   % 39
   g2.~ |
-  % 41
+  % 40 - 56
+
+  \set Score.currentBarNumber = #56
   g2 r4 |
-  % 56
-  R2.*15 |
+  \set Score.barNumberVisibility = #all-bar-numbers-visible
+  \override Score.BarNumber.stencil = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
+  \override Score.BarNumber.break-visibility = #all-visible
+
   %57
-  g2 r4 |
   a2. \< |
+
+  \override Score.BarNumber.stencil = #ly:text-interface::print
+  \override Score.BarNumber.break-visibility = #begin-of-line-visible
+
   f |
   aes |
   bes \! |
+  \set Score.barNumberVisibility = #all-bar-numbers-visible
+  \override Score.BarNumber.stencil = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
+  \override Score.BarNumber.break-visibility = #all-visible
+
 }
 
 altoStartOosNotes = \relative c' {
@@ -114,12 +131,10 @@ altoStartOosNotes = \relative c' {
   e2 c4 |
   % 39
   c2.( |
-  % 41
+  % 41-56
+  \set Score.currentBarNumber = #56
   b2) r4 |
-  % 56
-  R2.*15 |
   %57
-  b2 r4 |
   cis2. \< |
   cis |
   ees |
@@ -160,11 +175,10 @@ tenorStartOosNotes = \relative c' {
   % 38
   c2 fis,4 |
   % 39
-  a2.( g2) r4 |
-  % 41
-  R2.*15 |
-  % 56
-  g2 r4 |
+  a2.( |
+  % 40-56
+  \set Score.currentBarNumber = #56
+  g2) r4 |
   % 57
   a2.\< | a | aes | aes\! |
 }
@@ -203,11 +217,9 @@ bassStartOosNotes = \relative c' {
   % 38
   d2 d4 |
   % 39
-  g,2.( g2) r4 |
-  % 41
-  R2.*15 |
-  % 56
-  g2 r4 |
+  g,2.( |
+  % 40-56
+  g2) r4 |
   % 57
   a2\< gis8 fis |
   f2.| aes | bes\!
@@ -219,9 +231,18 @@ sopAltTenBasSharedStartNotes = \relative c' {
 
   R2.*15 |
   % 76
+  \override Score.BarNumber.stencil = #ly:text-interface::print
+  \override Score.BarNumber.break-visibility = #begin-of-line-visible
   r4 r bes8( ees) | % My
+
+  \set Score.barNumberVisibility = #all-bar-numbers-visible
+  \override Score.BarNumber.stencil = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
+  \override Score.BarNumber.break-visibility = #all-visible
   % 77
-  ees2 g8( ees) | % Lord has
+  ees2 g8( ees)
+  \override Score.BarNumber.stencil = #ly:text-interface::print
+  \override Score.BarNumber.break-visibility = #begin-of-line-visible
+  | % Lord has
   % 78
   g2 f4 | % Pro - mised
   % 79
@@ -249,8 +270,13 @@ sopranoNotes = \relative c' {
   \sopranoStartOosNotes
   \sopAltTenBasSharedStartNotes
 
+  \set Score.barNumberVisibility = #all-bar-numbers-visible
+  \override Score.BarNumber.stencil = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
+  \override Score.BarNumber.break-visibility = #all-visible
   bes8( ees) | % _ a-
   bes'2 bes4 | %maz - ing
+  \override Score.BarNumber.stencil = #ly:text-interface::print
+  \override Score.BarNumber.break-visibility = #begin-of-line-visible
   c2 d4 | % grace, how
   c2 aes4 | % sweet the
   aes4 g2 | % sound that
@@ -378,28 +404,28 @@ sharedWordsPartTwo = \lyricmode {
 }
 
 sopranoWords = \lyricmode {
-  Ooh \repeat unfold 29 { \skip 4 }
+  Ooh \repeat unfold 28 { \skip 4 }
   \sharedWordsPartOne
    I_ __
   \sharedWordsPartTwo
 }
 
 altoWords = \lyricmode {
-  Ooh \repeat unfold 32 { \skip 4 }
+  Ooh \repeat unfold 31 { \skip 4 }
   \sharedWordsPartOne
    I_ __
   \sharedWordsPartTwo
 }
 
 tenorWords = \lyricmode {
-  Ooh \repeat unfold 35 { \skip 4 }
+  Ooh \repeat unfold 34 { \skip 4 }
   \sharedWordsPartOne
   % No I
   \sharedWordsPartTwo
 }
 
 bassWords = \lyricmode {
-  Ooh \repeat unfold 34 { \skip 4 }
+  Ooh \repeat unfold 33 { \skip 4 }
   \sharedWordsPartOne
   % No I
   \sharedWordsPartTwo
