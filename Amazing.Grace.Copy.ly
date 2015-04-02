@@ -169,6 +169,51 @@ tenorStartOosNotes = \relative c' {
   a2.\< | a | aes | aes\! |
 }
 
+bassStartOosNotes = \relative c' {
+  \globalStart
+  \easyHeads
+  R2.*8 |
+  R2.*16 |
+  % 25
+  g2 g8 fis |
+  % 26
+  e2 d4 |
+  % 27
+  c2 c4 |
+  % 28
+  g2 fis'4 |
+  % 29
+  e2 e4 |
+  % 30
+  a,2 a4 |
+  % 31
+  d2.~ |
+  % 32
+  d |
+  % 33
+  g,2 g8 a |
+  % 34
+  b2 b4 |
+  % 35
+  c2 c4 |
+  % 36
+  g2 fis'4 |
+  % 37
+  e2 e4 |
+  % 38
+  d2 d4 |
+  % 39
+  g,2.( g2) r4 |
+  % 41
+  R2.*15 |
+  % 56
+  g2 r4 |
+  % 57
+  a2\< gis8 fis |
+  f2.| aes | bes\!
+}
+
+
 sopAltTenBasSharedStartNotes = \relative c' {
   \bar "||"
   \middleKeyChange
@@ -267,6 +312,28 @@ tenorNotes = \relative c' {
   f2.( | ees2) r4 \bar "|." % see
 }
 
+bassNotes = \relative c' {
+  \bassStartOosNotes
+  \transpose bes bes, { \sopAltTenBasSharedStartNotes }
+  
+  bes,8( ees) | % _ a-
+  ees2 ees8( d) | %maz - ing
+  c2 bes4 | % grace, how
+  aes2 aes4 | % sweet the
+  ees2 d'4 | % sound that
+  c2  c4 | % saved a
+  f,2 f4 | % wretch like
+  bes2.~ | % me
+  bes | % I
+  ees,2 ees8( f) | % once was
+  g2 g4 | % lost but
+  aes2 aes4 | % now am
+  ees2 d'4 | % found was
+  c2 c4 | % blind but
+  bes2 bes4 | % now i
+  ees,2.~ | ees2 r4 \bar "|." % see
+}
+
 sharedWordsPartOne = \lyricmode {
   My __
   % 77
@@ -332,6 +399,13 @@ tenorWords = \lyricmode {
   \sharedWordsPartTwo
 }
 
+bassWords = \lyricmode {
+  Ooh \repeat unfold 34 { \skip 4 }
+  \sharedWordsPartOne
+  % No I
+  \sharedWordsPartTwo
+}
+
 soprano = {
   \sopranoNotes
   % Music follows here.
@@ -351,7 +425,7 @@ tenor = \relative c' {
 }
 
 bass = \relative c {
-  \tenorNotes
+  \bassNotes
   % Music follows here.
 
 }
@@ -369,7 +443,7 @@ tenorVerse = {
 }
 
 bassVerse = {
-  \tenorWords
+  \bassWords
 }
 
 pianoReduction = \new PianoStaff \with {
@@ -427,7 +501,6 @@ rehearsalMidi = #
     \new ChoirStaff <<
       %{
 
-      %}
       \new Staff \with {
         midiInstrument = "choir aahs"
         instrumentName = \markup \center-column { "Soprano" "Alto" }
@@ -441,6 +514,7 @@ rehearsalMidi = #
      \new Lyrics \with {
        \override VerticalAxisGroup #'staff-affinity = #CENTER
      } \lyricsto "soprano" \sopranoVerse
+      %}
 
       %{
       \new Staff \with {
@@ -450,19 +524,22 @@ rehearsalMidi = #
       } { \alto }
       \addlyrics { \altoVerse }
       %}
+      %{
       \new Staff \with {
         midiInstrument = "choir aahs"
         instrumentName = "Tenor"
         \consists "Ambitus_engraver"
       }  { \clef "treble_8" \tenor }
       \addlyrics { \tenorVerse }
-      %{
+      %}
       \new Staff \with {
         midiInstrument = "choir aahs"
         instrumentName = "Bass"
         \consists "Ambitus_engraver"
-      } % { \clef bass \bass }
+      }
+      { \clef bass \bass }
       \addlyrics { \bassVerse }
+      %{
       %}
     >>
     %\pianoReduction
