@@ -27,6 +27,53 @@ globalStart = {
 
 middleKeyChange = { \key ees \major }
 
+sopranoStartOosNotes = \relative c'' {
+  \globalStart
+  \easyHeadsOn
+  R2.*8 |
+  R2.*16 |
+  % 25
+  g2 g4 |
+  % 26
+  g2 a4 |
+  % 27
+  g2 e4 |
+  % 28
+  d2 d4  |
+  % 29
+  g2 g4 |
+  % 30
+  g2 a4 |
+  % 31
+  a2.~ |
+  % 32
+  a2 d,4 |
+  % 33
+  g2. |
+  % 34
+  g2 d4 |
+  % 35
+  e2. |
+  % 36
+  d2 d4 |
+  % 37
+  g2 g4 |
+  % 38
+  g2 a4 |
+  % 39
+  g2.~ |
+  % 41
+  g2 r4 |
+  % 56
+  R2.*15 |
+  %57
+  g2 r4 |
+  a2. \< |
+  f |
+  aes |
+  bes \! |
+}
+
 tenorStartOosNotes = \relative c' {
   \globalStart
   \easyHeadsOn
@@ -117,8 +164,6 @@ altoStartOosNotes = \relative c' {
   f \! |
 }
 
-
-
 sopAltTenSharedStartNotes = \relative c' {
   \middleKeyChange
 
@@ -150,6 +195,28 @@ sopAltTenSharedStartNotes = \relative c' {
   ees2
 }
 
+sopranoNotes = \relative c' {
+  \sopranoStartOosNotes
+  \sopAltTenSharedStartNotes
+
+  bes8( ees) | % _ a-
+  bes'2 bes4 | %maz - ing
+  c2 d4 | % grace, how
+  c2 aes4 | % sweet the
+  aes4 g2 | % sound that
+  g2 g4 | % saved a
+  c2 a4 | % wretch like
+  bes( f g  | % me
+  aes! g) g8( bes) | % I
+  bes2 bes4 | % once was
+  bes2 bes4 | % lost but
+  aes2 aes4 | % now am
+  aes4 g2 | % found was
+  g2 bes4 | % blind but
+  c2 aes4 | % now i
+  aes2.( | g2) r4 \bar "|." % see
+}
+
 altoNotes = \relative c' {
   \altoStartOosNotes
   \sopAltTenSharedStartNotes
@@ -177,28 +244,6 @@ tenorNotes = \relative c' {
   \sopAltTenSharedStartNotes
 
   bes,8( ees) | % _ a-
-  g2 ees'8( d) | %maz - ing
-  ees2 f4 | % grace, how
-  ees2 ees4 | % sweet the
-  ees2 d4 | % sound that
-  ees2  ees4 | % saved a
-  ees2 ees4 | % wretch like
-  d4( d ees | % me
-  f ees2) | % I
-  g2 g4 | % once was
-  ees2 ees4 | % lost but
-  ees2 c8( ees) | % now am
-  ees2 d4 | % found was
-  ees2 g,4 | % blind but
-  aes2 d4 | % now i
-  f2.( | ees2) r4 \bar "|." % see
-}
-
-sopranoNotes = \relative c' {
-  \tenorStartOosNotes
-  \sopAltTenSharedStartNotes
-  
-  bes8( ees) | % _ a-
   g2 ees'8( d) | %maz - ing
   ees2 f4 | % grace, how
   ees2 ees4 | % sweet the
@@ -260,6 +305,13 @@ sharedWordsPartTwo = \lyricmode {
   | see __
 }
 
+sopranoWords = \lyricmode {
+  Ooh \repeat unfold 29 { \skip 4 }
+  \sharedWordsPartOne
+   I_ __
+  \sharedWordsPartTwo
+}
+
 altoWords = \lyricmode {
   Ooh \repeat unfold 32 { \skip 4 }
   \sharedWordsPartOne
@@ -299,7 +351,7 @@ bass = \relative c {
 }
 
 sopranoVerse =  {
-  \tenorWords
+  \sopranoWords
 }
 
 altoVerse = {
