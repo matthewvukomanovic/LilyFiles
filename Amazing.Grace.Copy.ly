@@ -19,6 +19,8 @@
   }
 }
 
+easyHeads = { \easyHeadsOff }
+
 globalStart = {
   \key g \major
   \time 3/4
@@ -29,7 +31,7 @@ middleKeyChange = { \key ees \major }
 
 sopranoStartOosNotes = \relative c'' {
   \globalStart
-  \easyHeadsOn
+  \easyHeads
   R2.*8 |
   R2.*16 |
   % 25
@@ -76,7 +78,7 @@ sopranoStartOosNotes = \relative c'' {
 
 tenorStartOosNotes = \relative c' {
   \globalStart
-  \easyHeadsOn
+  \easyHeads
   R2.*8 |
   R2.*16 |
   % 25
@@ -119,7 +121,7 @@ tenorStartOosNotes = \relative c' {
 
 altoStartOosNotes = \relative c' {
   \globalStart
-  \easyHeadsOn
+  \easyHeads
   R2.*8 |
   R2.*16 |
   % 25
@@ -436,7 +438,6 @@ rehearsalMidi = #
        \override VerticalAxisGroup #'staff-affinity = #CENTER
      } \lyricsto "soprano" \sopranoVerse
 
-      % \addlyrics { \sopranoVerse }
       %{
       \new Staff \with {
         midiInstrument = "choir aahs"
@@ -444,12 +445,14 @@ rehearsalMidi = #
         \consists "Ambitus_engraver"
       } { \alto }
       \addlyrics { \altoVerse }
+      %}
       \new Staff \with {
         midiInstrument = "choir aahs"
         instrumentName = "Tenor"
         \consists "Ambitus_engraver"
       }  { \clef "treble_8" \tenor }
-      %\addlyrics { \tenorVerse }
+      \addlyrics { \tenorVerse }
+      %{
       \new Staff \with {
         midiInstrument = "choir aahs"
         instrumentName = "Bass"
