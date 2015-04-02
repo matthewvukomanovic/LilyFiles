@@ -213,7 +213,6 @@ bassStartOosNotes = \relative c' {
   f2.| aes | bes\!
 }
 
-
 sopAltTenBasSharedStartNotes = \relative c' {
   \bar "||"
   \middleKeyChange
@@ -315,7 +314,7 @@ tenorNotes = \relative c' {
 bassNotes = \relative c' {
   \bassStartOosNotes
   \transpose bes bes, { \sopAltTenBasSharedStartNotes }
-  
+
   bes,8( ees) | % _ a-
   ees2 ees8( d) | %maz - ing
   c2 bes4 | % grace, how
@@ -500,6 +499,7 @@ rehearsalMidi = #
   <<
     \new ChoirStaff <<
       %{
+      %}
 
       \new Staff \with {
         midiInstrument = "choir aahs"
@@ -514,7 +514,6 @@ rehearsalMidi = #
      \new Lyrics \with {
        \override VerticalAxisGroup #'staff-affinity = #CENTER
      } \lyricsto "soprano" \sopranoVerse
-      %}
 
       %{
       \new Staff \with {
@@ -525,13 +524,14 @@ rehearsalMidi = #
       \addlyrics { \altoVerse }
       %}
       %{
+      %}
       \new Staff \with {
         midiInstrument = "choir aahs"
         instrumentName = "Tenor"
         \consists "Ambitus_engraver"
       }  { \clef "treble_8" \tenor }
       \addlyrics { \tenorVerse }
-      %}
+
       \new Staff \with {
         midiInstrument = "choir aahs"
         instrumentName = "Bass"
