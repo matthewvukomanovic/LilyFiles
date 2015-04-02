@@ -169,7 +169,8 @@ tenorStartOosNotes = \relative c' {
   a2.\< | a | aes | aes\! |
 }
 
-sopAltTenSharedStartNotes = \relative c' {
+sopAltTenBasSharedStartNotes = \relative c' {
+  \bar "||"
   \middleKeyChange
 
   R2.*15 |
@@ -202,7 +203,7 @@ sopAltTenSharedStartNotes = \relative c' {
 
 sopranoNotes = \relative c' {
   \sopranoStartOosNotes
-  \sopAltTenSharedStartNotes
+  \sopAltTenBasSharedStartNotes
 
   bes8( ees) | % _ a-
   bes'2 bes4 | %maz - ing
@@ -224,7 +225,7 @@ sopranoNotes = \relative c' {
 
 altoNotes = \relative c' {
   \altoStartOosNotes
-  \sopAltTenSharedStartNotes
+  \sopAltTenBasSharedStartNotes
 
   bes8( ees) | % _ a-
   ees2 ees4 | %maz - ing
@@ -246,7 +247,7 @@ altoNotes = \relative c' {
 
 tenorNotes = \relative c' {
   \tenorStartOosNotes
-  \sopAltTenSharedStartNotes
+  \sopAltTenBasSharedStartNotes
 
   bes,8( ees) | % _ a-
   g2 ees'8( d) | %maz - ing
