@@ -542,7 +542,7 @@ rehearsalMidi = #
       %{
       %}
     >>
-    %\pianoReduction
+    \pianoReduction
   >>
   \layout { }
   % \midi { }
