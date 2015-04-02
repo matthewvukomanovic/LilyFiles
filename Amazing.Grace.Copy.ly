@@ -67,7 +67,7 @@ tenorStartOosNotes = \relative c' {
   % 56
   g2 r4 |
   % 57
-  a2.\< | a | aes | aes\! |  
+  a2.\< | a | aes | aes\! |
 }
 
 altoStartOosNotes = \relative c' {
@@ -121,14 +121,14 @@ altoStartOosNotes = \relative c' {
 
 sopAltTenSharedStartNotes = \relative c' {
   \middleKeyChange
-  
+
   R2.*15 |
   % 76
   r4 r bes8( ees) | % My
   % 77
   ees2 g8( ees) | % Lord has
   % 78
-  g2 f4 | % Pro - mised 
+  g2 f4 | % Pro - mised
   % 79
   ees2 c4 | % good to
   % 80
@@ -153,7 +153,7 @@ sopAltTenSharedStartNotes = \relative c' {
 altoNotes = \relative c' {
   \altoStartOosNotes
   \sopAltTenSharedStartNotes
-  
+
   bes8( ees) | % _ a-
   ees2 ees4 | %maz - ing
   ees2 f4 | % grace, how
@@ -169,13 +169,13 @@ altoNotes = \relative c' {
   bes2 bes4 | % found was
   ees2 ees4 | % blind but
   ees2 f4 | % now i
-  ees2.~ | ees2 r4 \bar "|." % see  
+  ees2.~ | ees2 r4 \bar "|." % see
 }
 
 tenorNotes = \relative c' {
   \tenorStartOosNotes
   \sopAltTenSharedStartNotes
-  
+
   bes,8( ees) | % _ a-
   g2 ees'8( d) | %maz - ing
   ees2 f4 | % grace, how
@@ -221,7 +221,7 @@ sharedWordsPartOne = \lyricmode {
   % 77
   | Lord has __
   % 78
-  | Pro- mised 
+  | Pro- mised
   % 79
   | good to
   % 80
@@ -239,7 +239,6 @@ sharedWordsPartOne = \lyricmode {
   | long as
   | life  en --
   | dures __
-  
 
   A --
   | maz -- ing __
@@ -257,7 +256,7 @@ sharedWordsPartTwo = \lyricmode {
   | now am __
   | found was
   | blind but
-  | now i
+  | now I
   | see __
 }
 
@@ -278,25 +277,25 @@ tenorWords = \lyricmode {
 soprano = {
   \sopranoNotes
   % Music follows here.
-  
+
 }
 
 alto = \relative c' {
   \altoNotes
   % Music follows here.
-  
+
 }
 
 tenor = \relative c' {
   \tenorNotes
   % Music follows here.
-  
+
 }
 
 bass = \relative c {
   \tenorNotes
   % Music follows here.
-  
+
 }
 
 sopranoVerse =  {
