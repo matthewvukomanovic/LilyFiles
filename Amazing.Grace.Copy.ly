@@ -76,6 +76,53 @@ sopranoStartOosNotes = \relative c'' {
   bes \! |
 }
 
+altoStartOosNotes = \relative c' {
+  \globalStart
+  \easyHeads
+  s2.*8 |
+  s2.*16 |
+  % 25
+  d2 d4 |
+  % 26
+  e2 fis4 |
+  % 27
+  e2 c4 |
+  % 28
+  c b2  |
+  % 29
+  b b4 |
+  % 30
+  e2 cis4 |
+  % 31
+  d4 a b |
+  % 32
+  c! b2 |
+  % 33
+  d2. |
+  % 34
+  d2 d4 |
+  % 35
+  c2. |
+  % 36
+  c4 b2 |
+  % 37
+  b d4 |
+  % 38
+  e2 c4 |
+  % 39
+  c2.( |
+  % 41
+  b2) r4 |
+  % 56
+  R2.*15 |
+  %57
+  b2 r4 |
+  cis2. \< |
+  cis |
+  ees |
+  f \! |
+}
+
 tenorStartOosNotes = \relative c' {
   \globalStart
   \easyHeads
@@ -117,53 +164,6 @@ tenorStartOosNotes = \relative c' {
   g2 r4 |
   % 57
   a2.\< | a | aes | aes\! |
-}
-
-altoStartOosNotes = \relative c' {
-  \globalStart
-  \easyHeads
-  R2.*8 |
-  R2.*16 |
-  % 25
-  d2 d4 |
-  % 26
-  e2 fis4 |
-  % 27
-  e2 c4 |
-  % 28
-  c b2  |
-  % 29
-  b b4 |
-  % 30
-  e2 cis4 |
-  % 31
-  d4 a b |
-  % 32
-  c! b2 |
-  % 33
-  d2. |
-  % 34
-  d2 d4 |
-  % 35
-  c2. |
-  % 36
-  c4 b2 |
-  % 37
-  b d4 |
-  % 38
-  e2 c4 |
-  % 39
-  c2.( |
-  % 41
-  b2) r4 |
-  % 56
-  R2.*15 |
-  %57
-  b2 r4 |
-  cis2. \< |
-  cis |
-  ees |
-  f \! |
 }
 
 sopAltTenSharedStartNotes = \relative c' {
