@@ -420,27 +420,35 @@ rehearsalMidi = #
   <<
     \new ChoirStaff <<
       %{
+
+      %}
       \new Staff \with {
         midiInstrument = "choir aahs"
         instrumentName = \markup \center-column { "Soprano" "Alto" }
         \consists "Ambitus_engraver"
-      } 
-      {} % { \soprano \\ \alto }
+      }
+     <<
+       \new Voice = "soprano" { \voiceOne \soprano  }
+       \new Voice = "alto" { \voiceTwo \alto  }
+     >>
 
-      \addlyrics { \sopranoVerse }
-      %}
+     \new Lyrics \with {
+       \override VerticalAxisGroup #'staff-affinity = #CENTER
+     } \lyricsto "soprano" \sopranoVerse
+
+      % \addlyrics { \sopranoVerse }
+      %{
       \new Staff \with {
         midiInstrument = "choir aahs"
         instrumentName = "Alto"
         \consists "Ambitus_engraver"
       } { \alto }
       \addlyrics { \altoVerse }
-      %{
       \new Staff \with {
         midiInstrument = "choir aahs"
         instrumentName = "Tenor"
         \consists "Ambitus_engraver"
-      } {} % { \clef "treble_8" \tenor }
+      }  { \clef "treble_8" \tenor }
       %\addlyrics { \tenorVerse }
       \new Staff \with {
         midiInstrument = "choir aahs"
