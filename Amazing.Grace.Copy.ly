@@ -25,6 +25,9 @@ globalStart = {
   \key g \major
   \time 3/4
   \set Score.skipBars = ##t
+  \override Score.BarNumber.break-visibility = #end-of-line-invisible
+  \bar ""
+  \set Score.barNumberVisibility = #(every-nth-bar-number-visible 1)
 }
 
 middleKeyChange = { \key ees \major }
