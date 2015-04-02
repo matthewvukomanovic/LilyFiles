@@ -467,9 +467,10 @@ rehearsalMidi = #
     %\pianoReduction
   >>
   \layout { }
-  \midi { }
+  % \midi { }
 }
 
+%{
 % Rehearsal MIDI files:
 \book {
   \bookOutputSuffix "soprano"
@@ -503,3 +504,4 @@ rehearsalMidi = #
   }
 }
 
+%}
