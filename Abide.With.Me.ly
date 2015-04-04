@@ -593,7 +593,7 @@ AbideWithMe_RehearsalMidi = #
 \score {
   <<
     \new ChoirStaff <<
-      \new Staff \with {
+      \new Staff = "Sopranos and Altos" \with {
         midiInstrument = "choir aahs"
         instrumentName = \markup \center-column { "Soprano" "Alto" }
         \consists "Ambitus_engraver"
@@ -623,14 +623,14 @@ AbideWithMe_RehearsalMidi = #
      \addlyrics { \AbideWithMe_Verse }
 %}
 
-     \new Staff \with {
+     \new Staff = "Tenors" \with {
        midiInstrument = "choir aahs"
        instrumentName = "Tenor"
        \consists "Ambitus_engraver"
      } { \AbideWithMe_Tenor }
      \addlyrics { \AbideWithMe_Verse }
 
-     \new Staff \with {
+     \new Staff = "Basses" \with {
        midiInstrument = "choir aahs"
        instrumentName = "Bass"
        \consists "Ambitus_engraver"
