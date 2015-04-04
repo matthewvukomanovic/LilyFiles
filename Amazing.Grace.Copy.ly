@@ -27,6 +27,8 @@ globalStart = {
   \set Score.skipBars = ##t
   \override Score.BarNumber.break-visibility = #all-visible % #end-of-line-invisible
   \bar ""
+  \set Score.tempoHideNote = ##t
+  \tempo 4 = 60
   \override Score.BarNumber.self-alignment-X = #CENTER
 }
 
@@ -571,10 +573,9 @@ rehearsalMidi = #
     \pianoReduction
   >>
   \layout { }
-  % \midi { }
+  \midi { }
 }
 
-%{
 % Rehearsal MIDI files:
 \book {
   \bookOutputSuffix "soprano"
@@ -608,4 +609,5 @@ rehearsalMidi = #
   }
 }
 
+%{
 %}
