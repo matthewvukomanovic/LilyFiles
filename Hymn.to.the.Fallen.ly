@@ -191,20 +191,188 @@ MvmntIVoiceI =  {
          \bar "|."
 }
 
+MvmntIVoiceII =  {
+         R1*6*4/4 %{r1%} %|
+         <<
+           {
+             b2. a4%|
+             g2 fis%|
+             e fis%|
+             %10
+             e4 fis g2%|
+             g fis%|
+             e fis%|
+             e fis%|
+             fis4 g2 fis4%|
+           }
+           \\
+           {
+             g2 fis%|
+             e d%|
+             c d%|
+             %10
+             c4 d g2%|
+             g4 g,2.~%|
+             g,4 g,2.~%|
+             g,4 g,2.~%|
+             g,4 c2 d4%|
+           }
+         >>
+%15
+         fis2 g%|
+         g4 fis a g%|
+         c'2 a4 g%|
+         <<
+           {
+             g fis fis2%|
+             e2. fis4%|
+             %20
+             g2. fis4%|
+             a2 a4 g%|
+             g fis fis g,%|
+             e2 g4 fis%|
+           }
+           \\
+           {
+             a,2 g,%|
+             c2. d4%|
+             %20
+             c2. d4%|
+             fis,2 b,%|
+             a, g,%|
+             c c4 d%|
+           }
+         >>
+         g1~%|
+%25
+         g~%|
+         g2~ g8 r r4%|
+         R1*4/4 %{r1%} %|
+
+         R1*3*4/4 %{r1%} %|
+%30
+         \time 6/4
+         R1*6/4 %{r1.%} %|
+         \time 4/4 R1*6*4/4 %|
+         R1*2*4/4 %{r1%} %|
+%40
+         \time 2/4 R1*2/4 %{r2%} %|
+         \time 4/4 R1*2*4/4 %{r1%} %|
+
+         g2 fis%|
+         e d%|
+%45
+         g,1%|
+         c4 d g2%|
+         g fis%|
+         e d%|
+         c d%|
+%50
+         g,4 c2 d4%|
+         fis2 g%|
+         g4 fis a g%|
+         c'2 a4 g%|
+         <<
+           {
+             g fis fis g,%|
+             %55
+             e2. fis4%|
+             g2. fis4%|
+             a2 a4 g%|
+             g fis fis g,%|
+             e2 g4 fis%|
+           }
+           \\
+           {
+             a,2 g,%|
+             %55
+             c2. d4%|
+             c2. d4%|
+             fis,2 b,%|
+             a, g,%|
+             c c4 d%|
+           }
+         >>
+%60
+         g1~%|
+         g2.. r8%|
+         g4 g fis fis%|
+         e2
+         <<
+           {
+             fis%|
+             e fis%|
+             %65
+             e~ e8 r fis4%|
+             fis fis fis fis%|
+             g fis a g%|
+           }
+           \\
+           {
+             d2%|
+             c d%|
+             %65
+             c( c8) r d4%|
+             b, b, b, b,%|
+             a,2 g,4 g%|
+           }
+         >>
+         c' a a g%|
+         g g fis g,%|
+%70
+         << {e4.} \\ {c4.} >> e16 d c4 d%|
+         c2~ c8 r d4%|
+         fis4. fis8 a4 g%|
+         c' e fis g,%|
+         <<
+           {
+             a4 g g e%|
+             %75
+             g g2 g4%|
+
+           }
+           \\
+           {
+             c4 b, a, g,%|
+             %75
+             e g2 d4%|
+           }
+         >>
+         c2 g4 d%|
+         g,1~%|
+         g,2.. r8%|
+         R1*3*4/4 %{r1%} %|
+%80
+         R1*4/4 %{r1%}
+ }
+
         MvmntIVoiceITimeSig = \time 4/4
 MvmntIVoiceIKeySig = \key c \major
  MvmntIVoiceIClef = \clef "treble_8"
 MvmntIVoiceIProlog = { \MvmntIVoiceITimeSig \MvmntIVoiceIKeySig \MvmntIVoiceIClef}
 MvmntIVoiceIMusic =  {\MvmntIVoiceIProlog \MvmntIVoiceI}
 MvmntIVoiceIContext = \context Voice = VoiceIMvmntI  {\MvmntIVoiceIMusic}
+        MvmntIVoiceIITimeSig = \time 4/4
+MvmntIVoiceIIKeySig = \key c \major
+ MvmntIVoiceIIClef = \clef bass
+MvmntIVoiceIIProlog = { \MvmntIVoiceIITimeSig \MvmntIVoiceIIKeySig \MvmntIVoiceIIClef}
+MvmntIVoiceIIMusic =  {\MvmntIVoiceIIProlog \MvmntIVoiceII}
+MvmntIVoiceIIContext = \context Voice = VoiceIIMvmntI  {\MvmntIVoiceIIMusic}
+
+        MvmntIVoiceIIITimeSig = \time 4/4
 MvmntIStaffI = \new Staff  << {
                 \MvmntIVoiceIContext
+                }
+                >>
+MvmntIStaffII = \new Staff  << {
+                \MvmntIVoiceIIContext
                 }
                 >>
 
 \score {
 << <<
 \MvmntIStaffI
+\MvmntIStaffII
 >>
 >>
   \midi { }
