@@ -567,10 +567,32 @@ AbideWithMe_PianoReduction = \new PianoStaff \with {
   }
 >>
 
+AbideWithMe_RehearsalMidi = #
+(define-music-function
+ (parser location name midiInstrument lyrics) (string? string? ly:music?)
+ #{
+   \unfoldRepeats <<
+     \new Staff = "soprano" \new Voice = "soprano" { \AbideWithMe_Soprano }
+     \new Staff = "alto" \new Voice = "alto" { \AbideWithMe_Alto }
+     \new Staff = "tenor" \new Voice = "tenor" { \AbideWithMe_Tenor }
+     \new Staff = "bass" \new Voice = "bass" { \AbideWithMe_Bass }
+     \context Staff = $name {
+       \set Score.midiMinimumVolume = #0.5
+       \set Score.midiMaximumVolume = #0.5
+       \set Score.tempoWholesPerMinute = #(ly:make-moment 100 4)
+       \set Staff.midiMinimumVolume = #0.8
+       \set Staff.midiMaximumVolume = #1.0
+       \set Staff.midiInstrument = $midiInstrument
+     }
+%     \new Lyrics \with {
+%       alignBelowContext = $name
+%     } \lyricsto $name $lyrics
+   >>
+ #})
+
 \score {
   <<
     \new ChoirStaff <<
-
       \new Staff \with {
         midiInstrument = "choir aahs"
         instrumentName = \markup \center-column { "Soprano" "Alto" }
@@ -584,6 +606,22 @@ AbideWithMe_PianoReduction = \new PianoStaff \with {
      \new Lyrics \with {
        \override VerticalAxisGroup #'staff-affinity = #CENTER
      } \lyricsto "AbideWithMe_Soprano" \AbideWithMe_Verse
+
+%{
+     \new Staff \with {
+       midiInstrument = "choir aahs"
+       instrumentName = "Soprano"
+       \consists "Ambitus_engraver"
+     } { \AbideWithMe_Soprano }
+     \addlyrics { \AbideWithMe_Verse }
+
+     \new Staff \with {
+       midiInstrument = "choir aahs"
+       instrumentName = "Alto"
+       \consists "Ambitus_engraver"
+     } { \AbideWithMe_Alto }
+     \addlyrics { \AbideWithMe_Verse }
+%}
 
      \new Staff \with {
        midiInstrument = "choir aahs"
@@ -605,3 +643,35 @@ AbideWithMe_PianoReduction = \new PianoStaff \with {
   \midi { }
 }
 
+% Rehearsal MIDI files:
+\book {
+  \bookOutputSuffix "soprano"
+  \score {
+    \AbideWithMe_RehearsalMidi "soprano" "soprano sax" \AbideWithMe_Verse
+    \midi { }
+  }
+}
+
+\book {
+  \bookOutputSuffix "alto"
+  \score {
+    \AbideWithMe_RehearsalMidi "alto" "soprano sax" \AbideWithMe_Verse
+    \midi { }
+  }
+}
+
+\book {
+  \bookOutputSuffix "tenor"
+  \score {
+    \AbideWithMe_RehearsalMidi "tenor" "tenor sax" \AbideWithMe_Verse
+    \midi { }
+  }
+}
+
+\book {
+  \bookOutputSuffix "bass"
+  \score {
+    \AbideWithMe_RehearsalMidi "bass" "tenor sax" \AbideWithMe_Verse
+    \midi { }
+  }
+}
