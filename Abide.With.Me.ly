@@ -1,4 +1,5 @@
 \version "2.18.2"
+\include "anzac-common.ily"
 
 \header {
   title = "Abide With Me"
@@ -6,30 +7,22 @@
   tagline = ""
 }
 
-\layout {
-  \context {
-    \Voice
-    \consists "Melody_engraver"
-    \override Stem #'neutral-direction = #'()
-  }
-}
-
 easyHeads = { \easyHeadsOff }
 
 globalStart = {
 \time 4/4
 \key ees \major
-\set Score.skipBars = ##t
-\override Score.BarNumber.break-visibility = #all-visible
 \bar ""
 %\set Score.tempoHideNote = ##t
 \tempo 4 = 88
-\override Score.BarNumber.self-alignment-X = #CENTER
 \easyHeads
 }
 
-AbideWithMe_NotesSoprano = {
-         R1*4
+AbideWithMe_InitialRests {
+           R1*4
+}
+
+AbideWithMe_NotesOnlySoprano = {
          g'2 g'4 f'%|
          ees'2 bes'%|
          c''4 bes' bes' aes'%|
@@ -128,8 +121,7 @@ AbideWithMe_NotesSoprano = {
          \bar "|."
 }
 
-AbideWithMe_NotesAlto = {
-         R1*4
+AbideWithMe_NotesOnlyAlto = {
 %5
          ees'2 d'4 d'%|
          c'2 ees'%|
@@ -229,8 +221,7 @@ AbideWithMe_NotesAlto = {
          \bar"|."
 }
 
-AbideWithMe_NotesTenor = {
-         R1*4
+AbideWithMe_NotesOnlyTenor = {
 %5
          bes2 bes4 aes%|
          g2 ees%|
@@ -330,8 +321,7 @@ AbideWithMe_NotesTenor = {
          \bar"|."
 }
 
-AbideWithMe_NotesBass = {
-         R1*4
+AbideWithMe_NotesOnlyBass = {
 %5
          ees2 bes,4 bes,%|
          c2 g,%|
@@ -516,6 +506,26 @@ AbideWithMe_Verse = \lyricmode {
   | bide with me.
 }
 
+AbideWithMe_NotesSoprano = {
+  \AbideWithMe_InitialRests
+  \AbideWithMe_NotesOnlySoprano
+}
+
+AbideWithMe_NotesAlto = {
+  \AbideWithMe_InitialRests
+  \AbideWithMe_NotesOnlyAlto
+}
+
+AbideWithMe_NotesTenor = {
+  \AbideWithMe_InitialRests
+  \AbideWithMe_NotesOnlyTenor
+}
+
+AbideWithMe_NotesBass = {
+  \AbideWithMe_InitialRests
+  \AbideWithMe_NotesOnlyBass
+}
+
 AbideWithMe_Soprano = {
   \globalStart
   \clef treble
@@ -538,6 +548,30 @@ AbideWithMe_Bass = {
   \globalStart
   \clef bass
   \AbideWithMe_NotesBass
+}
+
+AbideWithMe_SopranoCompressed = {
+  \globalStart
+  \clef treble
+  \AbideWithMe_NotesOnlySoprano
+}
+
+AbideWithMe_AltoCompressed = {
+  \globalStart
+  \clef treble
+  \AbideWithMe_NotesOnlyAlto
+}
+
+AbideWithMe_TenorCompressed = {
+  \globalStart
+  \clef "G_8"
+  \AbideWithMe_NotesOnlyTenor
+}
+
+AbideWithMe_BassCompressed = {
+  \globalStart
+  \clef bass
+  \AbideWithMe_NotesOnlyBass
 }
 
 AbideWithMe_PianoReduction = \new PianoStaff \with {
@@ -567,34 +601,10 @@ AbideWithMe_PianoReduction = \new PianoStaff \with {
   }
 >>
 
-AbideWithMe_RehearsalMidi = #
-(define-music-function
- (parser location name midiInstrument lyrics) (string? string? ly:music?)
- #{
-   \unfoldRepeats <<
-     \new Staff = "soprano" \new Voice = "soprano" { \AbideWithMe_Soprano }
-     \new Staff = "alto" \new Voice = "alto" { \AbideWithMe_Alto }
-     \new Staff = "tenor" \new Voice = "tenor" { \AbideWithMe_Tenor }
-     \new Staff = "bass" \new Voice = "bass" { \AbideWithMe_Bass }
-     \context Staff = $name {
-       \set Score.midiMinimumVolume = #0.5
-       \set Score.midiMaximumVolume = #0.5
-       \set Score.tempoWholesPerMinute = #(ly:make-moment 100 4)
-       \set Staff.midiMinimumVolume = #0.8
-       \set Staff.midiMaximumVolume = #1.0
-       \set Staff.midiInstrument = $midiInstrument
-     }
-%     \new Lyrics \with {
-%       alignBelowContext = $name
-%     } \lyricsto $name $lyrics
-   >>
- #})
-
 \score {
   <<
     \new ChoirStaff <<
       \new Staff = "Sopranos and Altos" \with {
-        midiInstrument = "choir aahs"
         instrumentName = \markup \center-column { "Soprano" "Alto" }
         \consists "Ambitus_engraver"
       }
@@ -609,14 +619,12 @@ AbideWithMe_RehearsalMidi = #
 
 %{
      \new Staff \with {
-       midiInstrument = "choir aahs"
        instrumentName = "Soprano"
        \consists "Ambitus_engraver"
      } { \AbideWithMe_Soprano }
      \addlyrics { \AbideWithMe_Verse }
 
      \new Staff \with {
-       midiInstrument = "choir aahs"
        instrumentName = "Alto"
        \consists "Ambitus_engraver"
      } { \AbideWithMe_Alto }
@@ -624,14 +632,12 @@ AbideWithMe_RehearsalMidi = #
 %}
 
      \new Staff = "Tenors" \with {
-       midiInstrument = "choir aahs"
        instrumentName = "Tenor"
        \consists "Ambitus_engraver"
      } { \AbideWithMe_Tenor }
      \addlyrics { \AbideWithMe_Verse }
 
      \new Staff = "Basses" \with {
-       midiInstrument = "choir aahs"
        instrumentName = "Bass"
        \consists "Ambitus_engraver"
      } { \AbideWithMe_Bass }
@@ -639,11 +645,25 @@ AbideWithMe_RehearsalMidi = #
     >>
     \AbideWithMe_PianoReduction
   >>
-  \layout { }
-  \midi { }
+  \layout {}
+  \header {}
 }
 
 % Rehearsal MIDI files:
+AbideWithMe_RehearsalMidi = #
+(define-music-function
+ (parser location name midiInstrument lyrics) (string? string? ly:music? )
+ #{
+   \rehearsalMidi $name $midiInstrument \AbideWithMe_SopranoCompressed \AbideWithMe_AltoCompressed \AbideWithMe_TenorCompressed \AbideWithMe_BassCompressed$lyrics
+ #})
+
+\book {
+  \score {
+    \rehearsalMidiCombined \AbideWithMe_SopranoCompressed \AbideWithMe_AltoCompressed \AbideWithMe_TenorCompressed \AbideWithMe_BassCompressed
+    \midi { }
+  }
+}
+
 \book {
   \bookOutputSuffix "soprano"
   \score {
@@ -655,7 +675,7 @@ AbideWithMe_RehearsalMidi = #
 \book {
   \bookOutputSuffix "alto"
   \score {
-    \AbideWithMe_RehearsalMidi "alto" "soprano sax" \AbideWithMe_Verse
+    \AbideWithMe_RehearsalMidi "alto" "alto sax" \AbideWithMe_Verse
     \midi { }
   }
 }
@@ -671,7 +691,7 @@ AbideWithMe_RehearsalMidi = #
 \book {
   \bookOutputSuffix "bass"
   \score {
-    \AbideWithMe_RehearsalMidi "bass" "tenor sax" \AbideWithMe_Verse
+    \AbideWithMe_RehearsalMidi "bass" "baritone sax" \AbideWithMe_Verse
     \midi { }
   }
 }

@@ -1,6 +1,5 @@
 \version "2.18.2"
-
-% Amazing Grace
+\include "anzac-common.ily"
 
 \header {
   title = "Amazing Grace"
@@ -11,51 +10,28 @@
   tagline = ""
 }
 
-\layout {
-  \context {
-    \Voice
-    \consists "Melody_engraver"
-    \override Stem #'neutral-direction = #'()
-  }
-}
-
-\layout {
-  \context { \ChoirStaff
-    \override StaffGrouper #'staff-staff-spacing
-      #'basic-distance = #13.5
-    \override StaffGrouper #'staff-staff-spacing
-      #'stretchability = #4
-    \override StaffGrouper #'staffgroup-staff-spacing
-      #'basic-distance = #12.5
-    \override StaffGrouper #'staffgroup-staff-spacing
-      #'stretchability = #4
-  }
-}
-
 easyHeads = { \easyHeadsOff }
 
 AmazingGrace_GlobalStart = {
   \key g \major
   \time 3/4
-  \set Score.skipBars = ##t
-  \override MultiMeasureRest.expand-limit = #1
-  \override Score.BarNumber.break-visibility = #all-visible % #end-of-line-invisible
   \bar ""
   \set Score.tempoHideNote = ##t
   \tempo 4 = 60
-  \override Score.BarNumber.self-alignment-X = #CENTER
   \easyHeads
 }
 
 AmazingGrace_MiddleKeyChange = { \key ees \major }
 
-AmazingGrace_SopranoStartOosNotes = \relative c'' {
-  \AmazingGrace_GlobalStart
-\set Score.barNumberVisibility = #all-bar-numbers-visible
-    \override Score.BarNumber.stencil
+AmazingGrace_InitialRests = {
+  \set Score.barNumberVisibility = #all-bar-numbers-visible
+  \override Score.BarNumber.stencil
     = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
   R2.*8 |
   R2.*16 |
+}
+
+AmazingGrace_SopranoStartOosNotesOnly = \relative c'' {
   % 25
   g2 g4 |
   \override Score.BarNumber.stencil = #ly:text-interface::print
@@ -109,13 +85,9 @@ AmazingGrace_SopranoStartOosNotes = \relative c'' {
   \set Score.barNumberVisibility = #all-bar-numbers-visible
   \override Score.BarNumber.stencil = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
   \override Score.BarNumber.break-visibility = #all-visible
-
 }
 
-AmazingGrace_AltoStartOosNotes = \relative c' {
-  \AmazingGrace_GlobalStart
-  s2.*8 |
-  s2.*16 |
+AmazingGrace_AltoStartOosNotesOnly = \relative c' {
   % 25
   d2 d4 |
   % 26
@@ -156,10 +128,7 @@ AmazingGrace_AltoStartOosNotes = \relative c' {
   f \! |
 }
 
-AmazingGrace_TenorStartOosNotes = \relative c' {
-  \AmazingGrace_GlobalStart
-  R2.*8 |
-  R2.*16 |
+AmazingGrace_TenorStartOosNotesOnly = \relative c' {
   % 25
   b2 g8 fis |
   % 26
@@ -197,10 +166,7 @@ AmazingGrace_TenorStartOosNotes = \relative c' {
   a2.\< | a | aes | aes\! |
 }
 
-AmazingGrace_BassStartOosNotes = \relative c' {
-  \AmazingGrace_GlobalStart
-  R2.*8 |
-  R2.*16 |
+AmazingGrace_BassStartOosNotesOnly = \relative c' {
   % 25
   g2 g8 fis |
   % 26
@@ -238,11 +204,7 @@ AmazingGrace_BassStartOosNotes = \relative c' {
   f2.| aes | bes\!
 }
 
-AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotes = \relative c' {
-  \bar "||"
-  \AmazingGrace_MiddleKeyChange
-
-  R2.*15 |
+AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotesOnly = \relative c' {
   % 76
   \override Score.BarNumber.stencil = #ly:text-interface::print
   \override Score.BarNumber.break-visibility = #begin-of-line-visible
@@ -279,10 +241,7 @@ AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotes = \relative c' {
   ees2
 }
 
-AmazingGrace_SopranoNotes = \relative c' {
-  \AmazingGrace_SopranoStartOosNotes
-  \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotes
-
+AmazingGrace_SopranoFinishNotesOnly = \relative c' {
   \set Score.barNumberVisibility = #all-bar-numbers-visible
   \override Score.BarNumber.stencil = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
   \override Score.BarNumber.break-visibility = #all-visible
@@ -306,10 +265,7 @@ AmazingGrace_SopranoNotes = \relative c' {
   aes2.( | g2) r4 \bar "|." % see
 }
 
-AmazingGrace_AltoNotes = \relative c' {
-  \AmazingGrace_AltoStartOosNotes
-  \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotes
-
+AmazingGrace_AltoFinishNotesOnly = \relative c' {
   bes8( ees) | % _ a-
   ees2 ees4 | %maz - ing
   ees2 f4 | % grace, how
@@ -328,11 +284,8 @@ AmazingGrace_AltoNotes = \relative c' {
   ees2.~ | ees2 r4 \bar "|." % see
 }
 
-AmazingGrace_TenorNotes = \relative c' {
-  \AmazingGrace_TenorStartOosNotes
-  \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotes
-
-  bes,8( ees) | % _ a-
+AmazingGrace_TenorFinishNotesOnly = \relative c {
+  bes8( ees) | % _ a-
   g2 ees'8( d) | %maz - ing
   ees2 f4 | % grace, how
   ees2 ees4 | % sweet the
@@ -350,11 +303,8 @@ AmazingGrace_TenorNotes = \relative c' {
   f2.( | ees2) r4 \bar "|." % see
 }
 
-AmazingGrace_BassNotes = \relative c' {
-  \AmazingGrace_BassStartOosNotes
-  \transpose bes bes, { \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotes }
-
-  bes,8( ees) | % _ a-
+AmazingGrace_BassFinishNotesOnly = \relative c {
+  bes8( ees) | % _ a-
   ees2 ees8( d) | %maz - ing
   c2 bes4 | % grace, how
   aes2 aes4 | % sweet the
@@ -372,12 +322,121 @@ AmazingGrace_BassNotes = \relative c' {
   ees,2.~ | ees2 r4 \bar "|." % see
 }
 
+AmazingGrace_SopranoStartOosNotes = {
+  \AmazingGrace_GlobalStart
+  \AmazingGrace_InitialRests
+  \AmazingGrace_SopranoStartOosNotesOnly
+}
+
+AmazingGrace_AltoStartOosNotes = {
+  \AmazingGrace_GlobalStart
+  \AmazingGrace_InitialRests
+  \AmazingGrace_AltoStartOosNotesOnly
+}
+
+AmazingGrace_TenorStartOosNotes = {
+  \AmazingGrace_GlobalStart
+  \AmazingGrace_InitialRests
+  \AmazingGrace_TenorStartOosNotesOnly
+}
+
+AmazingGrace_BassStartOosNotes = {
+  \AmazingGrace_GlobalStart
+  \AmazingGrace_InitialRests
+  \AmazingGrace_BassStartOosNotesOnly
+}
+
+AmazingGrace_SopranoStartOosNotesNoRests = {
+  \AmazingGrace_GlobalStart
+  \AmazingGrace_SopranoStartOosNotesOnly
+}
+
+AmazingGrace_AltoStartOosNotesNoRests = {
+  \AmazingGrace_GlobalStart
+  \AmazingGrace_AltoStartOosNotesOnly
+}
+
+AmazingGrace_TenorStartOosNotesNoRests = {
+  \AmazingGrace_GlobalStart
+  \AmazingGrace_TenorStartOosNotesOnly
+}
+
+AmazingGrace_BassStartOosNotesNoRests = {
+  \AmazingGrace_GlobalStart
+  \AmazingGrace_BassStartOosNotesOnly
+}
+
+AmazingGrace_MiddleSharedRests = {
+    R2.*15 |
+}
+
+AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotes = {
+  \bar "||"
+  \AmazingGrace_MiddleKeyChange
+  \AmazingGrace_MiddleSharedRests
+  \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotesOnly
+}
+
+AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotesCompressed = {
+  \bar "||"
+  \AmazingGrace_MiddleKeyChange
+  \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotesOnly
+}
+
+AmazingGrace_SopranoNotes = {
+  \AmazingGrace_SopranoStartOosNotes
+  \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotes
+  \AmazingGrace_SopranoFinishNotesOnly
+}
+
+AmazingGrace_AltoNotes = {
+  \AmazingGrace_AltoStartOosNotes
+  \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotes
+  \AmazingGrace_AltoFinishNotesOnly
+}
+
+AmazingGrace_TenorNotes = {
+  \AmazingGrace_TenorStartOosNotes
+  \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotes
+  \AmazingGrace_TenorFinishNotesOnly
+}
+
+AmazingGrace_BassNotes = \relative c' {
+  \AmazingGrace_BassStartOosNotes
+  \transpose bes bes, { \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotes }
+  \AmazingGrace_BassFinishNotesOnly
+}
+
+AmazingGrace_SopranoNotesCompressed = {
+  \AmazingGrace_SopranoStartOosNotesNoRests
+  \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotesCompressed
+  \AmazingGrace_SopranoFinishNotesOnly
+}
+
+AmazingGrace_AltoNotesCompressed = {
+  \AmazingGrace_AltoStartOosNotesNoRests
+  \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotesCompressed
+  \AmazingGrace_AltoFinishNotesOnly
+}
+
+AmazingGrace_TenorNotesCompressed = {
+  \AmazingGrace_TenorStartOosNotesNoRests
+  \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotesCompressed
+  \AmazingGrace_TenorFinishNotesOnly
+}
+
+AmazingGrace_BassNotesCompressed = {
+  \AmazingGrace_BassStartOosNotesNoRests
+  \transpose bes bes, { \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotesCompressed }
+  \AmazingGrace_BassFinishNotesOnly
+}
+
 AmazingGrace_SharedWordsPartOne = \lyricmode {
   My __
   % 77
   | Lord has __
   % 78
-  | Pro- mised
+  | Pro -- mised
   % 79
   | good to
   % 80
@@ -403,7 +462,7 @@ AmazingGrace_SharedWordsPartOne = \lyricmode {
   | sound that
   | saved a __
   | wretch like
-  | me __ __ __ __
+  | me __
 }
 
 AmazingGrace_SharedWordsPartTwo = \lyricmode {
@@ -419,14 +478,14 @@ AmazingGrace_SharedWordsPartTwo = \lyricmode {
 AmazingGrace_SopranoWords = \lyricmode {
   Ooh \repeat unfold 28 { \skip 4 }
   \AmazingGrace_SharedWordsPartOne
-   I_ __
+   I __
   \AmazingGrace_SharedWordsPartTwo
 }
 
 AmazingGrace_AltoWords = \lyricmode {
   Ooh \repeat unfold 31 { \skip 4 }
   \AmazingGrace_SharedWordsPartOne
-   I_ __
+   I __
   \AmazingGrace_SharedWordsPartTwo
 }
 
@@ -516,29 +575,6 @@ AmazingGrace_PianoReduction = \new PianoStaff \with {
   }
 >>
 
-rehearsalMidi = #
-(define-music-function
- (parser location name midiInstrument lyrics) (string? string? ly:music?)
- #{
-   \unfoldRepeats <<
-     \new Staff = "soprano" \new Voice = "soprano" { \AmazingGrace_Soprano }
-     \new Staff = "alto" \new Voice = "alto" { \AmazingGrace_Alto }
-     \new Staff = "tenor" \new Voice = "tenor" { \AmazingGrace_Tenor }
-     \new Staff = "bass" \new Voice = "bass" { \AmazingGrace_Bass }
-     \context Staff = $name {
-       \set Score.midiMinimumVolume = #0.5
-       \set Score.midiMaximumVolume = #0.5
-       \set Score.tempoWholesPerMinute = #(ly:make-moment 100 4)
-       \set Staff.midiMinimumVolume = #0.8
-       \set Staff.midiMaximumVolume = #1.0
-       \set Staff.midiInstrument = $midiInstrument
-     }
-     \new Lyrics \with {
-       alignBelowContext = $name
-     } \lyricsto $name $lyrics
-   >>
- #})
-
 %\score { << \new Staff << \new Voice { \compressFullBarRests R1*8 \bar "||" \break } >> >> }
 
 \score {
@@ -548,7 +584,6 @@ rehearsalMidi = #
       %}
 
       \new Staff = "Sops and Alto" \with {
-        midiInstrument = "choir aahs"
         instrumentName = \markup \center-column { "Soprano" "Alto" }
         \consists "Ambitus_engraver"
       }
@@ -558,7 +593,7 @@ rehearsalMidi = #
      >>
 
      \new Lyrics \with {
-       \override VerticalAxisGroup #'staff-affinity = #CENTER
+       %\override VerticalAxisGroup #'staff-affinity = #CENTER
      } \lyricsto "AmazingGrace_Soprano" \AmazingGrace_SopranoVerse
 
       %{
@@ -566,38 +601,48 @@ rehearsalMidi = #
         midiInstrument = "choir aahs"
         instrumentName = "Alto"
         \consists "Ambitus_engraver"
-      } { \AmazingGrace_Alto }
-      \addlyrics { \AmazingGrace_AltoVerse }
-      %}
-      %{
+      }
+      <<
+        \new Voice = "AmazingGrace_Alto" { \AmazingGrace_Alto }
+      >>
+      \new Lyrics { \lyricsto "AmazingGrace_Alto" \AmazingGrace_SopranoVerse }
       %}
       \new Staff = "Tenor" \with {
-        midiInstrument = "choir aahs"
         instrumentName = "Tenor"
         \consists "Ambitus_engraver"
-      }  { \clef "treble_8" \AmazingGrace_Tenor }
-      \addlyrics { \AmazingGrace_TenorVerse }
+      } \new Voice = "AmazingGrace_Tenor" { \clef "treble_8" \AmazingGrace_Tenor }
+      \new Lyrics { \lyricsto "AmazingGrace_Tenor" { \AmazingGrace_TenorVerse } }
 
       \new Staff = "Bass" \with {
-        midiInstrument = "choir aahs"
         instrumentName = "Bass"
         \consists "Ambitus_engraver"
-      } { \clef bass \AmazingGrace_Bass }
-      \addlyrics { \AmazingGrace_BassVerse }
-      %{
-      %}
+      } \new Voice = "AmazingGrace_Bass" { \clef bass \AmazingGrace_Bass }
+      \new Lyrics { \lyricsto "AmazingGrace_Bass" { \AmazingGrace_BassVerse } }
     >>
     \AmazingGrace_PianoReduction
   >>
   \layout { }
-  \midi { }
 }
+
+AmazingGrace_RehersalMidi = #
+(define-music-function
+ (parser location name midiInstrument lyrics) (string? string? ly:music? )
+ #{
+   \rehearsalMidi $name $midiInstrument \AmazingGrace_SopranoNotesCompressed \AmazingGrace_AltoNotesCompressed \AmazingGrace_TenorNotesCompressed \AmazingGrace_BassNotesCompressed $lyrics
+ #})
 
 % Rehearsal MIDI files:
 \book {
+  \score {
+    \rehearsalMidiCombined \AmazingGrace_SopranoNotesCompressed \AmazingGrace_AltoNotesCompressed \AmazingGrace_TenorNotesCompressed \AmazingGrace_BassNotesCompressed
+    \midi { }
+  }
+}
+
+\book {
   \bookOutputSuffix "soprano"
   \score {
-    \rehearsalMidi "soprano" "soprano sax" \AmazingGrace_SopranoVerse
+    \AmazingGrace_RehersalMidi "soprano" "soprano sax" \AmazingGrace_SopranoVerse
     \midi { }
   }
 }
@@ -605,7 +650,7 @@ rehearsalMidi = #
 \book {
   \bookOutputSuffix "alto"
   \score {
-    \rehearsalMidi "alto" "soprano sax" \AmazingGrace_AltoVerse
+    \AmazingGrace_RehersalMidi "alto" "alto sax" \AmazingGrace_AltoVerse
     \midi { }
   }
 }
@@ -613,7 +658,7 @@ rehearsalMidi = #
 \book {
   \bookOutputSuffix "tenor"
   \score {
-    \rehearsalMidi "tenor" "tenor sax" \AmazingGrace_TenorVerse
+    \AmazingGrace_RehersalMidi "tenor" "tenor sax" \AmazingGrace_TenorVerse
     \midi { }
   }
 }
@@ -621,10 +666,9 @@ rehearsalMidi = #
 \book {
   \bookOutputSuffix "bass"
   \score {
-    \rehearsalMidi "bass" "tenor sax" \AmazingGrace_BassVerse
+    \AmazingGrace_RehersalMidi "bass" "baritone sax" \AmazingGrace_BassVerse
     \midi { }
   }
 }
-
 %{
 %}

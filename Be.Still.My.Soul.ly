@@ -1,77 +1,5 @@
 \version "2.18.2"
-\include "merge-rests.ily"
-
-\paper {}
-#(set-default-paper-size "a4")
-#(set-global-staff-size 16)
-
-\layout {
-  \context {
-    \Voice
-    \consists "Melody_engraver"
-    \override Stem #'neutral-direction = #'()
-  }
-
-%  \set Score.tempoHideNote = ##t
-  \context {
-    \Score
-    \override BarNumber.break-visibility = #all-visible % #end-of-line-invisible
-    \override BarNumber.font-size = #-2
-    \override BarNumber.self-alignment-X = #CENTER
-
-    \override InstrumentName.font-size = #-1.5
-
-    \override MultiMeasureRest.expand-limit = #1
-
-    \override MetronomeMark #'padding = #2
-    %\override MetronomeMark #'font-size = #1.5
-
-    \override BarLine #'hair-thickness = 1.5
-    \override BarLine #'thick-thickness = 4.4
-    \override BarLine #'kern = 1.75
-
-    %NOT APPLICABLE TO THIS SCORE
-    \override BarLine #'space-alist #'time-signature =
-      #'(extra-space . 0.4)
-    %NOT APPLICABLE TO THIS SCORE
-    \override Beam #'beam-thickness = #0.56
-
-    %\override SystemStartBracket #'padding = #0.55
-    \override Hairpin.minimum-length = #4
-    \compressFullBarRests
-%    \override DynamicText #'font-size = #-1.25
-    \override DynamicText #'font-size = #1.25
-  }
-  \context
-  { \Lyrics
-    \override LyricText #'font-size = #1
-    \override LyricHyphen #'minimum-distance = #1
-  }
-
-  \context
-  {
-    \Staff
-    \numericTimeSignature
-    \override StaffSymbol #'thickness = #0.6
-%    \override StaffSymbol #'ledger-line-thickness = #'(1 . 0.1)
-%    \override StaffSymbol #'ledger-line-thickness = #'(0.8 . 0.08)
-    \consists #merge-rests-engraver % merges non-whole rests
-    \consists #merge-mmrests-engraver % merges whole rests
-    \dynamicUp
-  }
-
-  \context {
-    \ChoirStaff
-    \override StaffGrouper #'staff-staff-spacing
-      #'basic-distance = #13.5
-    \override StaffGrouper #'staff-staff-spacing
-      #'stretchability = #4
-    \override StaffGrouper #'staffgroup-staff-spacing
-      #'basic-distance = #12.5
-    \override StaffGrouper #'staffgroup-staff-spacing
-      #'stretchability = #4
-  }
-}
+\include "anzac-common.ily"
 
 \header {
   title = "Evening Hymn and Last Post"
@@ -575,37 +503,13 @@ BeStillMySoul_PianoReduction = \new PianoStaff \with {
   }
 >>
 
-BeStillMySoul_RehearsalMidi = #
-(define-music-function
- (parser location name midiInstrument lyrics) (string? string? ly:music?)
- #{
-   \unfoldRepeats <<
-     \new Staff = "soprano" \new Voice = "soprano" { \BeStillMySoul_Soprano }
-     \new Staff = "alto" \new Voice = "alto" { \BeStillMySoul_Alto }
-     \new Staff = "tenor" \new Voice = "tenor" { \BeStillMySoul_Tenor }
-     \new Staff = "bass" \new Voice = "bass" { \BeStillMySoul_Bass }
-     \context Staff = $name {
-       \set Score.midiMinimumVolume = #0.5
-       \set Score.midiMaximumVolume = #0.5
-       \set Score.tempoWholesPerMinute = #(ly:make-moment 100 4)
-       \set Staff.midiMinimumVolume = #0.8
-       \set Staff.midiMaximumVolume = #1.0
-       \set Staff.midiInstrument = $midiInstrument
-     }
-     \new Lyrics \with {
-       alignBelowContext = $name
-     } \lyricsto $name $lyrics
-   >>
- #})
-
 \score {
-<<
-      \new ChoirStaff <<
+  <<
+    \new ChoirStaff <<
       %{
       %}
 
       \new Staff = "Sops and Alto" \with {
-        midiInstrument = "choir aahs"
         instrumentName = \markup \center-column { "Soprano" "Alto" }
         \consists "Ambitus_engraver"
       }
@@ -621,7 +525,6 @@ BeStillMySoul_RehearsalMidi = #
 
       %{
       \new Staff \with {
-        midiInstrument = "choir aahs"
         instrumentName = "Alto"
         \consists "Ambitus_engraver"
       }
@@ -632,7 +535,6 @@ BeStillMySoul_RehearsalMidi = #
       \new Lyrics { \lyricsto "BeStillMySoul_Alto" \BeStillMySoul_SharedWords }
       %}
       \new Staff = "Tenor" \with {
-        midiInstrument = "choir aahs"
         instrumentName = "Tenor"
         \consists "Ambitus_engraver"
       }
@@ -645,7 +547,6 @@ BeStillMySoul_RehearsalMidi = #
       }
 
       \new Staff = "Bass" \with {
-        midiInstrument = "choir aahs"
         instrumentName = "Bass"
         \consists "Ambitus_engraver"
       }
@@ -663,8 +564,21 @@ BeStillMySoul_RehearsalMidi = #
         }
 \header{
         }
-\midi { }
+}
 
+% Rehearsal MIDI files:
+BeStillMySoul_RehearsalMidi = #
+(define-music-function
+ (parser location name midiInstrument lyrics) (string? string? ly:music? )
+ #{
+   \rehearsalMidi $name $midiInstrument \BeStillMySoul_Soprano \BeStillMySoul_Alto \BeStillMySoul_Tenor \BeStillMySoul_Bass $lyrics
+ #})
+
+\book {
+  \score {
+    \rehearsalMidiCombined \BeStillMySoul_Soprano \BeStillMySoul_Alto \BeStillMySoul_Tenor \BeStillMySoul_Bass
+    \midi { }
+  }
 }
 
 \book {
@@ -678,7 +592,7 @@ BeStillMySoul_RehearsalMidi = #
 \book {
   \bookOutputSuffix "alto"
   \score {
-    \BeStillMySoul_RehearsalMidi "alto" "soprano sax" \BeStillMySoul_SharedWords
+    \BeStillMySoul_RehearsalMidi "alto" "alto sax" \BeStillMySoul_SharedWords
     \midi { }
   }
 }
@@ -694,7 +608,7 @@ BeStillMySoul_RehearsalMidi = #
 \book {
   \bookOutputSuffix "bass"
   \score {
-    \BeStillMySoul_RehearsalMidi "bass" "tenor sax" \BeStillMySoul_SharedWords
+    \BeStillMySoul_RehearsalMidi "bass" "baritone sax" \BeStillMySoul_SharedWords
     \midi { }
   }
 }
