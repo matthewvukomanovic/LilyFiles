@@ -658,6 +658,7 @@ MvmntIStaffV = \new Staff  << {
 \MvmntIStaffI
 \MvmntIStaffII
 >>
+%\pianoReduction \MvmntIVoiceIContext \MvmntIVoiceIIContext \MvmntIVoiceIIIContext \MvmntIVoiceVContext
 >>
   \midi { }
 \layout{

@@ -574,33 +574,6 @@ AbideWithMe_BassCompressed = {
   \AbideWithMe_NotesOnlyBass
 }
 
-AbideWithMe_PianoReduction = \new PianoStaff \with {
-  fontSize = #-1
-  \override StaffSymbol #'staff-space = #(magstep -1)
-} <<
-  \new Staff \with {
-    \consists "Mark_engraver"
-    \consists "Metronome_mark_engraver"
-    \remove "Staff_performer"
-  } {
-    #(set-accidental-style 'piano)
-    <<
-      \AbideWithMe_Soprano \\
-      \AbideWithMe_Alto
-    >>
-  }
-  \new Staff \with {
-    \remove "Staff_performer"
-  } {
-    \clef bass
-    #(set-accidental-style 'piano)
-    <<
-      \AbideWithMe_Tenor \\
-      \AbideWithMe_Bass
-    >>
-  }
->>
-
 \score {
   <<
     \new ChoirStaff <<
@@ -643,7 +616,7 @@ AbideWithMe_PianoReduction = \new PianoStaff \with {
      } { \AbideWithMe_Bass }
      \addlyrics { \AbideWithMe_Verse }
     >>
-    \AbideWithMe_PianoReduction
+    \pianoReduction \AbideWithMe_Soprano \AbideWithMe_Alto \AbideWithMe_Tenor \AbideWithMe_Bass
   >>
   \layout {}
   \header {}

@@ -543,38 +543,6 @@ AmazingGrace_BassVerse = {
   \AmazingGrace_BassWords
 }
 
-AmazingGrace_PianoReduction = \new PianoStaff \with {
-  fontSize = #-1
-  \override StaffSymbol #'staff-space = #(magstep -1)
-%  \override StaffSymbol #'thickness = #(magstep -1.5)
-
-%  \override StaffGrouper #'staff-staff-spacing #'basic-distance = #0
-%  \override StaffGrouper #'staff-staff-spacing #'padding = #1.2
-%  \override StaffGrouper #'staff-staff-spacing #'stretchability = #9
-} <<
-  \new Staff \with {
-    \consists "Mark_engraver"
-    \consists "Metronome_mark_engraver"
-    \remove "Staff_performer"
-  } {
-    #(set-accidental-style 'piano)
-    <<
-      \AmazingGrace_Soprano \\
-      \AmazingGrace_Alto
-    >>
-  }
-  \new Staff \with {
-    \remove "Staff_performer"
-  } {
-    \clef bass
-    #(set-accidental-style 'piano)
-    <<
-      \AmazingGrace_Tenor \\
-      \AmazingGrace_Bass
-    >>
-  }
->>
-
 %\score { << \new Staff << \new Voice { \compressFullBarRests R1*8 \bar "||" \break } >> >> }
 
 \score {
@@ -619,7 +587,7 @@ AmazingGrace_PianoReduction = \new PianoStaff \with {
       } \new Voice = "AmazingGrace_Bass" { \clef bass \AmazingGrace_Bass }
       \new Lyrics { \lyricsto "AmazingGrace_Bass" { \AmazingGrace_BassVerse } }
     >>
-    \AmazingGrace_PianoReduction
+    \pianoReduction \AmazingGrace_Soprano \AmazingGrace_Alto \AmazingGrace_Tenor \AmazingGrace_Bass
   >>
   \layout { }
 }

@@ -475,34 +475,6 @@ BeStillMySoul_Staff_Bass = \new Staff  << {
                 \BeStillMySoul_BassContext
                 }
                 >>
-
-BeStillMySoul_PianoReduction = \new PianoStaff \with {
-  fontSize = #-1
-  \override StaffSymbol #'staff-space = #(magstep -1)
-} <<
-  \new Staff \with {
-    \consists "Mark_engraver"
-    \consists "Metronome_mark_engraver"
-    \remove "Staff_performer"
-  } {
-    #(set-accidental-style 'piano)
-    <<
-      \BeStillMySoul_Soprano \\
-      \BeStillMySoul_Alto
-    >>
-  }
-  \new Staff \with {
-    \remove "Staff_performer"
-  } {
-    \clef bass
-    #(set-accidental-style 'piano)
-    <<
-      \BeStillMySoul_Tenor \\
-      \BeStillMySoul_BassContext
-    >>
-  }
->>
-
 \score {
   <<
     \new ChoirStaff <<
@@ -558,7 +530,7 @@ BeStillMySoul_PianoReduction = \new PianoStaff \with {
       \lyricsto "BeStillMySoul_Bass" { \BeStillMySoul_SharedWords }
       }
     >>
-    %\BeStillMySoul_PianoReduction
+    %\pianoReduction \BeStillMySoul_Soprano \BeStillMySoul_Alto \BeStillMySoul_Tenor \BeStillMySoul_BassContext
 >>
 \layout{
         }
