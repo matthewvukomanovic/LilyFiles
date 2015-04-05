@@ -19,12 +19,26 @@
   }
 }
 
+\layout {
+  \context { \ChoirStaff
+    \override StaffGrouper #'staff-staff-spacing
+      #'basic-distance = #13.5
+    \override StaffGrouper #'staff-staff-spacing
+      #'stretchability = #4
+    \override StaffGrouper #'staffgroup-staff-spacing
+      #'basic-distance = #12.5
+    \override StaffGrouper #'staffgroup-staff-spacing
+      #'stretchability = #4
+  }
+}
+
 easyHeads = { \easyHeadsOff }
 
 AmazingGrace_GlobalStart = {
   \key g \major
   \time 3/4
   \set Score.skipBars = ##t
+  \override MultiMeasureRest.expand-limit = #1
   \override Score.BarNumber.break-visibility = #all-visible % #end-of-line-invisible
   \bar ""
   \set Score.tempoHideNote = ##t
@@ -473,6 +487,11 @@ AmazingGrace_BassVerse = {
 AmazingGrace_PianoReduction = \new PianoStaff \with {
   fontSize = #-1
   \override StaffSymbol #'staff-space = #(magstep -1)
+%  \override StaffSymbol #'thickness = #(magstep -1.5)
+
+%  \override StaffGrouper #'staff-staff-spacing #'basic-distance = #0
+%  \override StaffGrouper #'staff-staff-spacing #'padding = #1.2
+%  \override StaffGrouper #'staff-staff-spacing #'stretchability = #9
 } <<
   \new Staff \with {
     \consists "Mark_engraver"
@@ -519,6 +538,8 @@ rehearsalMidi = #
      } \lyricsto $name $lyrics
    >>
  #})
+
+%\score { << \new Staff << \new Voice { \compressFullBarRests R1*8 \bar "||" \break } >> >> }
 
 \score {
   <<
