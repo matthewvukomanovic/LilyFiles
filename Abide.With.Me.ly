@@ -18,7 +18,7 @@ globalStart = {
 \easyHeads
 }
 
-AbideWithMe_InitialRests {
+AbideWithMe_InitialRests = {
            R1*4
 }
 
