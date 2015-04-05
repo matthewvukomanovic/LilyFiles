@@ -172,7 +172,7 @@ MvmntIVoiceI =  {
            }
            \\
            {
-             f4 %|
+             fis4 %|
              e2~ e8
              r d'4%|
              c'4. c'8 b4. b8%|
