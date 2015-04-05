@@ -1,6 +1,15 @@
 \version "2.18.2"
 \include "anzac-common.ily"
 
+\layout {
+  \context{
+  \Score
+  {
+    \set markFormatter = #format-mark-box-numbers
+  }
+}
+}
+
 \header {
   title = "Amazing Grace"
   subsubtitle = \markup { "G-  E"\flat "version" } % \eyeglasses \sharp
@@ -24,19 +33,13 @@ AmazingGrace_GlobalStart = {
 AmazingGrace_MiddleKeyChange = { \key ees \major }
 
 AmazingGrace_InitialRests = {
-  \set Score.barNumberVisibility = #all-bar-numbers-visible
-  \override Score.BarNumber.stencil
-    = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
-  R2.*8 |
-  R2.*16 |
+  \tag #'longRests { R2.*8 | R2.*16 | }
 }
 
 AmazingGrace_SopranoStartOosNotesOnly = \relative c'' {
   % 25
+  \tag #'rehersals \mark #25
   g2 g4 |
-  \override Score.BarNumber.stencil = #ly:text-interface::print
-  \override Score.BarNumber.break-visibility = #begin-of-line-visible
-
   % 26
   g2 a4 |
   % 27
@@ -69,22 +72,13 @@ AmazingGrace_SopranoStartOosNotesOnly = \relative c'' {
 
   \set Score.currentBarNumber = #56
   g2 r4 |
-  \set Score.barNumberVisibility = #all-bar-numbers-visible
-  \override Score.BarNumber.stencil = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
-  \override Score.BarNumber.break-visibility = #all-visible
-
+  \tag #'rehersals \mark #57
   %57
   a2. \< |
-
-  \override Score.BarNumber.stencil = #ly:text-interface::print
-  \override Score.BarNumber.break-visibility = #begin-of-line-visible
-
   f |
   aes |
   bes \! |
-  \set Score.barNumberVisibility = #all-bar-numbers-visible
-  \override Score.BarNumber.stencil = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
-  \override Score.BarNumber.break-visibility = #all-visible
+  \tag #'rehersals \mark #61
 }
 
 AmazingGrace_AltoStartOosNotesOnly = \relative c' {
@@ -206,17 +200,10 @@ AmazingGrace_BassStartOosNotesOnly = \relative c' {
 
 AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotesOnly = \relative c' {
   % 76
-  \override Score.BarNumber.stencil = #ly:text-interface::print
-  \override Score.BarNumber.break-visibility = #begin-of-line-visible
   r4 r bes8( ees) | % My
-
-  \set Score.barNumberVisibility = #all-bar-numbers-visible
-  \override Score.BarNumber.stencil = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
-  \override Score.BarNumber.break-visibility = #all-visible
+  \tag #'rehersals \mark #77
   % 77
   ees2 g8( ees)
-  \override Score.BarNumber.stencil = #ly:text-interface::print
-  \override Score.BarNumber.break-visibility = #begin-of-line-visible
   | % Lord has
   % 78
   g2 f4 | % Pro - mised
@@ -242,13 +229,9 @@ AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotesOnly = \relative c' {
 }
 
 AmazingGrace_SopranoFinishNotesOnly = \relative c' {
-  \set Score.barNumberVisibility = #all-bar-numbers-visible
-  \override Score.BarNumber.stencil = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
-  \override Score.BarNumber.break-visibility = #all-visible
   bes8( ees) | % _ a-
+  \tag #'rehersals \mark #93
   bes'2 bes4 | %maz - ing
-  \override Score.BarNumber.stencil = #ly:text-interface::print
-  \override Score.BarNumber.break-visibility = #begin-of-line-visible
   c2 d4 | % grace, how
   c2 aes4 | % sweet the
   aes4 g2 | % sound that
@@ -346,40 +329,14 @@ AmazingGrace_BassStartOosNotes = {
   \AmazingGrace_BassStartOosNotesOnly
 }
 
-AmazingGrace_SopranoStartOosNotesNoRests = {
-  \AmazingGrace_GlobalStart
-  \AmazingGrace_SopranoStartOosNotesOnly
-}
-
-AmazingGrace_AltoStartOosNotesNoRests = {
-  \AmazingGrace_GlobalStart
-  \AmazingGrace_AltoStartOosNotesOnly
-}
-
-AmazingGrace_TenorStartOosNotesNoRests = {
-  \AmazingGrace_GlobalStart
-  \AmazingGrace_TenorStartOosNotesOnly
-}
-
-AmazingGrace_BassStartOosNotesNoRests = {
-  \AmazingGrace_GlobalStart
-  \AmazingGrace_BassStartOosNotesOnly
-}
-
 AmazingGrace_MiddleSharedRests = {
-    R2.*15 |
+    \tag #'longRests R2.*15 |
 }
 
 AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotes = {
   \bar "||"
   \AmazingGrace_MiddleKeyChange
   \AmazingGrace_MiddleSharedRests
-  \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotesOnly
-}
-
-AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotesCompressed = {
-  \bar "||"
-  \AmazingGrace_MiddleKeyChange
   \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotesOnly
 }
 
@@ -404,30 +361,6 @@ AmazingGrace_TenorNotes = {
 AmazingGrace_BassNotes = \relative c' {
   \AmazingGrace_BassStartOosNotes
   \transpose bes bes, { \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotes }
-  \AmazingGrace_BassFinishNotesOnly
-}
-
-AmazingGrace_SopranoNotesCompressed = {
-  \AmazingGrace_SopranoStartOosNotesNoRests
-  \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotesCompressed
-  \AmazingGrace_SopranoFinishNotesOnly
-}
-
-AmazingGrace_AltoNotesCompressed = {
-  \AmazingGrace_AltoStartOosNotesNoRests
-  \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotesCompressed
-  \AmazingGrace_AltoFinishNotesOnly
-}
-
-AmazingGrace_TenorNotesCompressed = {
-  \AmazingGrace_TenorStartOosNotesNoRests
-  \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotesCompressed
-  \AmazingGrace_TenorFinishNotesOnly
-}
-
-AmazingGrace_BassNotesCompressed = {
-  \AmazingGrace_BassStartOosNotesNoRests
-  \transpose bes bes, { \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotesCompressed }
   \AmazingGrace_BassFinishNotesOnly
 }
 
@@ -587,7 +520,7 @@ AmazingGrace_BassVerse = {
       } \new Voice = "AmazingGrace_Bass" { \clef bass \AmazingGrace_Bass }
       \new Lyrics { \lyricsto "AmazingGrace_Bass" { \AmazingGrace_BassVerse } }
     >>
-    \pianoReduction \AmazingGrace_Soprano \AmazingGrace_Alto \AmazingGrace_Tenor \AmazingGrace_Bass
+    \removeWithTag #'rehersals { \pianoReduction \AmazingGrace_Soprano \AmazingGrace_Alto \AmazingGrace_Tenor \AmazingGrace_Bass }
   >>
   \layout { }
 }
@@ -596,13 +529,13 @@ AmazingGrace_RehersalMidi = #
 (define-music-function
  (parser location name midiInstrument lyrics) (string? string? ly:music? )
  #{
-   \rehearsalMidi $name $midiInstrument \AmazingGrace_SopranoNotesCompressed \AmazingGrace_AltoNotesCompressed \AmazingGrace_TenorNotesCompressed \AmazingGrace_BassNotesCompressed $lyrics
+   \removeWithTag #'longRests { \rehearsalMidi $name $midiInstrument \AmazingGrace_Soprano \AmazingGrace_Alto \AmazingGrace_Tenor \AmazingGrace_Bass $lyrics }
  #})
 
 % Rehearsal MIDI files:
 \book {
   \score {
-    \rehearsalMidiCombined \AmazingGrace_SopranoNotesCompressed \AmazingGrace_AltoNotesCompressed \AmazingGrace_TenorNotesCompressed \AmazingGrace_BassNotesCompressed
+    \removeWithTag #'longRests {\rehearsalMidiCombined \AmazingGrace_Soprano \AmazingGrace_Alto \AmazingGrace_Tenor \AmazingGrace_Bass}
     \midi { }
   }
 }

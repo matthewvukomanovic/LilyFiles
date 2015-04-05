@@ -5,6 +5,9 @@
 #(set-default-paper-size "a4")
 #(set-global-staff-size 16)
 
+%showLastLength = R1*5*3/4 % Used to show the last secion of the score that is being worked on
+% \displayLilyMusic
+
 \layout {
   \context {
     \Voice
