@@ -67,8 +67,18 @@
     \override StaffGrouper #'staffgroup-staff-spacing
       #'stretchability = #4
   }
-}
 
+  \context {
+    \PianoStaff
+    fontSize = #-1
+    \override StaffSymbol #'staff-space = #(magstep -1)
+%  \override StaffSymbol #'thickness = #(magstep -1.5)
+
+%  \override StaffGrouper #'staff-staff-spacing #'basic-distance = #0
+%  \override StaffGrouper #'staff-staff-spacing #'padding = #1.2
+%  \override StaffGrouper #'staff-staff-spacing #'stretchability = #9
+  }
+}
 
 rehearsalMidi = #
 (define-music-function
@@ -152,4 +162,31 @@ allPartsRehearsalMidi = #
     \midi { }
   }
 }
+ #})
+
+pianoReduction = #
+(define-music-function
+ (parser location soprano alto tenor bass) (ly:music? ly:music? ly:music? ly:music?)
+ #{
+   \new PianoStaff <<
+     \new Staff \with {
+       \consists "Mark_engraver"
+       \consists "Metronome_mark_engraver"
+       \remove "Staff_performer"
+     } {
+       #(set-accidental-style 'piano)
+       <<
+         $soprano \\ $alto
+       >>
+     }
+     \new Staff \with {
+       \remove "Staff_performer"
+     } {
+       \clef bass
+       #(set-accidental-style 'piano)
+       <<
+         $tenor \\ $bass
+       >>
+     }
+   >>
  #})
