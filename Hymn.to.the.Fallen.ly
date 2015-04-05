@@ -603,6 +603,8 @@ MvmntIVoiceIKeySig = \key c \major
  MvmntIVoiceIClef = \clef "treble_8"
 MvmntIVoiceIProlog = { \MvmntIVoiceITimeSig \MvmntIVoiceIKeySig \MvmntIVoiceIClef
     \override Score.BarNumber.break-visibility = #all-visible
+    \override DynamicTextSpanner.style = #'none
+    \set Score.skipBars = ##t
 }
 MvmntIVoiceIMusic =  {\MvmntIVoiceIProlog \MvmntIVoiceI}
 MvmntIVoiceIContext = \context Voice = VoiceIMvmntI  {\MvmntIVoiceIMusic}
@@ -611,6 +613,7 @@ MvmntIVoiceIIKeySig = \key c \major
  MvmntIVoiceIIClef = \clef bass
 MvmntIVoiceIIProlog = { \MvmntIVoiceIITimeSig \MvmntIVoiceIIKeySig \MvmntIVoiceIIClef
     \override Score.BarNumber.break-visibility = #all-visible
+    \set Score.skipBars = ##t
 }
 MvmntIVoiceIIMusic =  {\MvmntIVoiceIIProlog \MvmntIVoiceII}
 MvmntIVoiceIIContext = \context Voice = VoiceIIMvmntI  {\MvmntIVoiceIIMusic}
@@ -620,6 +623,7 @@ MvmntIVoiceIIIKeySig = \key c \major
  MvmntIVoiceIIIClef = \clef treble
 MvmntIVoiceIIIProlog = { \MvmntIVoiceIIITimeSig \MvmntIVoiceIIIKeySig \MvmntIVoiceIIIClef
     \override Score.BarNumber.break-visibility = #all-visible
+    \set Score.skipBars = ##t
 }
 MvmntIVoiceIIIMusic =  {\MvmntIVoiceIIIProlog \MvmntIVoiceIII}
 MvmntIVoiceIIIContext = \context Voice = VoiceIIIMvmntI  {\MvmntIVoiceIIIMusic}
@@ -629,6 +633,7 @@ MvmntIVoiceVKeySig = \key c \major
  MvmntIVoiceVClef = \clef treble
 MvmntIVoiceVProlog = { \MvmntIVoiceVTimeSig \MvmntIVoiceVKeySig \MvmntIVoiceVClef
     \override Score.BarNumber.break-visibility = #all-visible
+    \set Score.skipBars = ##t
 }
 MvmntIVoiceVMusic =  {\MvmntIVoiceVProlog \MvmntIVoiceV}
 MvmntIVoiceVContext = \context Voice = VoiceVMvmntI  {\MvmntIVoiceVMusic}
