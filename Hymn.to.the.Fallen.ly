@@ -30,8 +30,14 @@
 MvmntIVoiceI =  {
   \tempo 4=100
   \override Score.BarNumber.break-visibility = #all-visible
-         R1*6*4/4 %{r1%} %|
-         d'1%|
+  \override DynamicTextSpanner.style = #'none
+
+         R1*6*4/4
+         ^\markup {\bold Reverently}
+         %{r1%} %|
+
+         d'1 ^\pp ^\markup { \small \italic {tenderly - semre legatissimo}}
+         %|
          b2 a%|
          g a%|
 %10
@@ -39,6 +45,7 @@ MvmntIVoiceI =  {
          <<
            {
              d'1%|
+             ^\markup { \small {div.}}
              e'2 d'%|
              g a%|
              d'4 e'2 d'4%|
@@ -52,13 +59,14 @@ MvmntIVoiceI =  {
             }
          >>
 %15
-         b1%|
+  % Requires a cres on the last note
+         b1 ^\markup { \small {unis.}} %|
          c'2 b%|
          e'4. fis'8 d'4. d'8%|
          d'( c'4) c'8 c'( b4) b8%|
          b4 a g a%|
 %20
-         << { e'2. d'4%|
+         << { e'2. ^\markup { \small {div.}} d'4%|
          e'4. fis'8
             }
             \\
@@ -67,13 +75,15 @@ MvmntIVoiceI =  {
               e2%|
             }
          >>
-         d'4. d'8%|
-         d'( c'4) c'8 c'( b4) b8%|
+         d'4. ^\markup { \small { unis.}} d'8%|
+         d'( c'4) c'8 c'( ^\dim b4) \! b8%|
          b4 a
 
          <<
-           { e'4 d'%|
-             d'1~ d'1~ d'2~ d'8}
+           { e'4 ^\markup { \small {div.}} d'%|
+             d'1~ d'1~
+             ^\dim d'2~ d'8 \!
+           }
            \\
            { c'4 a
              b1( c'1)( b2~) b8}
@@ -99,7 +109,7 @@ MvmntIVoiceI =  {
          b1%|
          <<
            {
-             b2 a%|
+             b2 ^\markup { \small {div.}} a%|
              g a%|
              a4 g2
            }
@@ -111,7 +121,7 @@ MvmntIVoiceI =  {
            }
          >>
 %50
-         fis4%|
+         fis4 ^\markup { \small {unis.}}%|
          b2 d'4 e'%|
          c'2 b%|
          e'4. fis'8 d'4. d'8%|
@@ -120,20 +130,22 @@ MvmntIVoiceI =  {
          b4 a g a%|
          <<
            {
-             e'2. d'4
+             e'2. ^\markup { \small {div.}} ^\< d'4 \!
            }
            \\
            {
              c'2. a4%|
            }
          >> %|
-         e'4. fis'8 d'4. d'8%|
+         e'4. ^\markup { \small {unis.}} fis'8 d'4. d'8%|
          d'( c'4) c'8 c'( b4) b8%|
          b4 a <<
            {
-             e'4 d'
-             d'1~ %|
+             e'4 ^\markup { \small {div.}} d' ^\<
+             d'1~ \! %|
              d'2..
+%             ^\< \!
+%TODO Requires a Cres Hairpin
            }
            \\
            {
@@ -144,13 +156,13 @@ MvmntIVoiceI =  {
          >>
           r8%|
 %62
-         b4 b b a%|
+         b4^\f ^\markup { \small {unis.}} b b a%|
          b2 a%|
          g a%|
 %65
          g~ g8 r a4%|
          d' d' d' e'%|
-         e'2 << { d'4. g8
+         e'2 << { d'4. ^\markup { \small {div.}} g8
                   %|
                 }
                 \\
@@ -158,14 +170,14 @@ MvmntIVoiceI =  {
                   b2
                 }
              >>
-         e'4. fis'8 d'4. d'8%|
+         e'4. ^\markup { \small {unis.}} fis'8 d'4. d'8%|
          d'( c'4) c'8 c'( b4) b8%|
 %70
          b8. a16 a b g fis e4
          <<
            {
-             a4 %|
-             g2~ g8
+             a4^\> ^\markup { \small {div.}}%|
+             g2~^\< g8 \!
              r d'4%|
              e'4. fis'8 d'4. d'8%|
              g'2 fis'%|
@@ -179,15 +191,16 @@ MvmntIVoiceI =  {
              e'2 d'%|
            }
          >>
-         e'4 d' c' b%|
+         e'4 ^\markup { \small {unis.}} d'^\> c' b\!%|
 %75
          b c'2 b4%|
-         g2. a4%|
-         b1~%|
-         b2.. r8%|
+         g2.^\dim a4%| ^\>
+         b1~\! %|
+         b2..^\> r8 \! ^\markup {\small \italic niente}%|
          R1*3*4/4 %{r1%} %|
 %80
-         R1*4/4 %{r1%}
+         %|
+         R1*4/4 ^\markup {\small \italic {poco rit.}} %{r1%}
          \bar "|."
 }
 
@@ -195,7 +208,7 @@ MvmntIVoiceII =  {
          R1*6*4/4 %{r1%} %|
          <<
            {
-             b2. a4%|
+             b2.^\pp ^\markup { \small {div.}} a4%|
              g2 fis%|
              e fis%|
              %10
@@ -219,12 +232,12 @@ MvmntIVoiceII =  {
            }
          >>
 %15
-         fis2 g%|
+         fis2 ^\markup { \small {unis.}} g%|
          g4 fis a g%|
          c'2 a4 g%|
          <<
            {
-             g fis fis2%|
+             g ^\markup { \small {div.}} fis fis2%|
              e2. fis4%|
              %20
              g2. fis4%|
@@ -243,7 +256,7 @@ MvmntIVoiceII =  {
              c c4 d%|
            }
          >>
-         g1~%|
+         g1~ ^\markup { \small {unis.}}%|
 %25
          g~%|
          g2~ g8 r r4%|
@@ -274,7 +287,7 @@ MvmntIVoiceII =  {
          c'2 a4 g%|
          <<
            {
-             g fis fis g,%|
+             g ^\markup { \small {div.}} fis fis g,%|
              %55
              e2. fis4%|
              g2. fis4%|
@@ -294,13 +307,13 @@ MvmntIVoiceII =  {
            }
          >>
 %60
-         g1~%|
+         g1~ ^\markup { \small {unis.}}%|
          g2.. r8%|
          g4 g fis fis%|
          e2
          <<
            {
-             fis%|
+             fis ^\markup { \small {div.}}%|
              e fis%|
              %65
              e~ e8 r fis4%|
@@ -317,16 +330,16 @@ MvmntIVoiceII =  {
              a,2 g,4 g%|
            }
          >>
-         c' a a g%|
+         c' ^\markup { \small {unis.}} a a g%|
          g g fis g,%|
 %70
-         << {e4.} \\ {c4.} >> e16 d c4 d%|
+         << {e4. ^\markup { \small {div.}} } \\ {c4.} >> e16 ^\markup { \small {unis.}} d c4 d%|
          c2~ c8 r d4%|
          fis4. fis8 a4 g%|
          c' e fis g,%|
          <<
            {
-             a4 g g e%|
+             a4 ^\markup { \small {div.}} g g e%|
              %75
              g g2 g4%|
 
@@ -338,7 +351,7 @@ MvmntIVoiceII =  {
              e g2 d4%|
            }
          >>
-         c2 g4 d%|
+         c2 ^\markup { \small {unis.}} g4 d%|
          g,1~%|
          g,2.. r8%|
          R1*3*4/4 %{r1%} %|
@@ -351,7 +364,7 @@ MvmntIVoiceIII = {
          R1*6*4/4 %{r1%} %|
          <<
            {
-             g'2 fis'%|
+             g'2 ^\pp ^\markup { \small {div.}} fis'%|
              g' fis'%|
              c' fis'%|
              %10
@@ -375,7 +388,7 @@ MvmntIVoiceIII = {
            }
          >>
 %15
-         d'2. e'4%|
+         d'2. ^\markup { \small {unis.}} e'4%|
          e'2 d'%|
          e'4. fis'8 d'4. d'8%|
          d'( c'4) c'8 c'( b4) b8%|
@@ -386,14 +399,14 @@ MvmntIVoiceIII = {
          g' fis' fis' d'%|
          <<
            {
-             e'2
+             e'2 ^\markup { \small {div.}}
            }
            \\
            {
              c'2
            }
          >>
-         c'4 d'%|
+         c'4 ^\markup { \small {unis.}} d'%|
          d'1~%|
 %25
          d'~%|
@@ -411,7 +424,7 @@ MvmntIVoiceIII = {
          \time 4/4 R1*2*4/4 %{r1%} %|
          <<
            {
-             g'2 fis'%|
+             g'2 ^\markup { \small {div.}} fis'%|
              e' fis'%|
              %45
              e' fis'%|
@@ -437,7 +450,7 @@ MvmntIVoiceIII = {
            }
          >>
 
-         d'2 d'4 e'%|
+         d'2 ^\markup { \small {unis.}} d'4 e'%|
          e'2 d'%|
          e'4. fis'8 d'4. d'8%|
          d'( c'4.) c'8( b4.)%|
@@ -448,14 +461,14 @@ MvmntIVoiceIII = {
          d'( c'4) c'8 c'( b4) b8%|
          <<
            {
-             e'2
+             e'2 ^\markup { \small {div.}}
            }
            \\
            {
              c'2
            }
          >>
-         c'4 d'%|
+         c'4 ^\markup { \small {unis.}} d'%|
 %60
          d'1~%|
          d'2.. r8%|
@@ -474,7 +487,7 @@ MvmntIVoiceIII = {
          a'4. a'8 a'4 g'%|
          <<
            {
-             e''2 d''%|
+             e''2 ^\markup { \small {div.}} d''%|
              c''4 b' a' g'%|
            }
            \\
@@ -484,18 +497,18 @@ MvmntIVoiceIII = {
            }
          >>
 %75
-         e' e'2 d'4%|
+         e' ^\markup { \small {unis.}} e'2 d'4%|
          c' e'2
          <<
            {
-             fis'4%|
+             fis'4 ^\markup { \small {div.}}%|
            }
            \\
            {
              d'4
            }
          >>
-         d'1~%|
+         d'1~ ^\markup { \small {unis.}}%|
          d'2.. r8%|
          R1*3*4/4 %{r1%} %|
 %80
@@ -505,7 +518,7 @@ MvmntIVoiceIII = {
 
 MvmntIVoiceV =  {
          R1*6*4/4 %{r1%} %|
-         b'2. a'4%|
+         b'2. ^\pp a'4%|
          b'2 a'%|
          e' a'%|
 %10
@@ -559,7 +572,7 @@ MvmntIVoiceV =  {
          e'2. d'4%|
          <<
            {
-             c''2 d''%|
+             c''2 ^\markup { \small {div.}} d''%|
            }
            \\
            {
@@ -567,7 +580,7 @@ MvmntIVoiceV =  {
            }
          >>
 
-         b'4 a' a' d'%|
+         b'4 ^\markup { \small {unis.}} a' a' d'%|
          b' a' e' fis'%|
 %60
          g'1(%|
