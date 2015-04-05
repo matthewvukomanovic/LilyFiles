@@ -147,7 +147,9 @@ MvmntIVoiceI =  {
         MvmntIVoiceITimeSig = \time 3/4 
 MvmntIVoiceIKeySig = \key f \major
  MvmntIVoiceIClef = \clef treble 
-MvmntIVoiceIProlog = { \MvmntIVoiceITimeSig \MvmntIVoiceIKeySig \MvmntIVoiceIClef}
+MvmntIVoiceIProlog = { \MvmntIVoiceITimeSig \MvmntIVoiceIKeySig \MvmntIVoiceIClef
+\set Score.markFormatter = #format-mark-box-alphabet
+}
 MvmntIVoiceIMusic =  {\MvmntIVoiceIProlog \MvmntIVoiceI}
 MvmntIVoiceIContext = \context Voice = VoiceIMvmntI  {\MvmntIVoiceIMusic}
 MvmntIStaffI = \new Staff  << {
