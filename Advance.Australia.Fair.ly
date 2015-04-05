@@ -157,8 +157,6 @@ MvmntIStaffI = \new Staff  << {
                 }
                 >>
 
-
-
 \score {
 << <<
 \MvmntIStaffI
@@ -168,7 +166,6 @@ MvmntIStaffI = \new Staff  << {
         }
 \header{
         }
-
 }
 
 
