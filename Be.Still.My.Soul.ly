@@ -557,6 +557,7 @@ BeStillMySoul_RehearsalMidi = #
 
 BeStillMySoul_RehersalMidiCombined = \book {
   \bookOutputName "Be.Still.My.Soul"
+  \bookOutputSuffix "all"
   \score {
     \removeWithTag #'longRests { \rehearsalMidiCombined \BeStillMySoul_Soprano \BeStillMySoul_Alto \BeStillMySoul_Tenor \BeStillMySoul_Bass }
     \midi { }
@@ -599,7 +600,7 @@ BeStillMySoul_RehersalMidiBass = \book {
   }
 }
 
-\BeStillMySoul_BookPart
+\book { \bookOutputName "Be.Still.My.Soul" \bookpart {\BeStillMySoul_BookPart }}
 \BeStillMySoul_RehersalMidiCombined
 \BeStillMySoul_RehersalMidiSoprano
 \BeStillMySoul_RehersalMidiAlto
