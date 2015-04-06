@@ -40,6 +40,7 @@
     \override Hairpin.minimum-length = #4
     \compressFullBarRests   %\ set Score.skipBars = ##t
     \override DynamicText #'font-size = #-1.25
+    \override DynamicTextSpanner #'font-size = #-1.75
   }
   \context
   { \Lyrics
