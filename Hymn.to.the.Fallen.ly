@@ -263,7 +263,7 @@ HymnToTheFallen_Tenor = {
 }
 
 HymnToTheFallen_Bass =  {
-         R1*6*4/4 %{r1%} %|
+  \HymnToTheFallen_InitialRests
          <<
            {
              \voiceOne
@@ -324,18 +324,7 @@ HymnToTheFallen_Bass =  {
 %25
          g~%|
          g2~ g8 r r4%|
-         R1*4/4 %{r1%} %|
-
-         R1*3*4/4 %{r1%} %|
-%30
-         \time 6/4
-         R1*6/4 %{r1.%} %|
-         \time 4/4 R1*6*4/4 %|
-         R1*2*4/4 %{r1%} %|
-%40
-         \time 2/4 R1*2/4 %{r2%} %|
-         \time 4/4 R1*2*4/4 %{r1%} %|
-
+         \HymnToTheFallen_MidRests
          g2 fis%|
          e d%|
 %45
@@ -444,7 +433,7 @@ HymnToTheFallen_Bass =  {
  }
 
 HymnToTheFallen_Alto = {
-         R1*6*4/4 %{r1%} %|
+  \HymnToTheFallen_InitialRests
          <<
            {
              \voiceOne
@@ -500,17 +489,7 @@ HymnToTheFallen_Alto = {
 %25
          d'~%|
          d'2~ d'8 r r4%|
-         R1*4/4 %{r1%} %|
-
-         R1*3*4/4 %{r1%} %|
-%30
-         \time 6/4
-         R1*6/4 %{r1.%} %|
-         \time 4/4 R1*6*4/4 %|
-         R1*2*4/4 %{r1%} %|
-%40
-         \time 2/4 R1*2/4 %{r2%} %|
-         \time 4/4 R1*2*4/4 %{r1%} %|
+         \HymnToTheFallen_MidRests
          <<
            {
              \voiceOne
@@ -618,7 +597,7 @@ HymnToTheFallen_Alto = {
 }
 
 HymnToTheFallen_Soprano =  {
-         R1*6*4/4 %{r1%} %|
+  \HymnToTheFallen_InitialRests
          b'2. a'4%|
          b'2 a'%|
          e' a'%|
@@ -643,17 +622,7 @@ HymnToTheFallen_Soprano =  {
 %25
          g'%|
          g'2 g'8) r r4%|
-         R1*4/4 %{r1%} %|
-
-         R1*3*4/4 %{r1%} %|
-%30
-         \time 6/4
-         R1*6/4 %{r1.%} %|
-         \time 4/4 R1*6*4/4 %|
-         R1*2*4/4 %{r1%} %|
-%40
-         \time 2/4 R1*2/4 %{r2%} %|
-         \time 4/4 R1*2*4/4 %{r1%} %|
+         \HymnToTheFallen_MidRests
          b'2. a'4%|
          b'2 a'%|
 %45
@@ -860,7 +829,6 @@ HymnToTheFallen_BookPart =\bookpart {
 >>
 %\pianoReduction \HymnToTheFallen_TenorContext \HymnToTheFallen_BassContext \HymnToTheFallen_AltoContext \HymnToTheFallen_SopranoContext
 >>
-%\midi { }
 \layout{
   \context {
     \Lyrics
@@ -870,4 +838,74 @@ HymnToTheFallen_BookPart =\bookpart {
 }
 }
 
+HymnToTheFallen_RehersalMidi = #
+(define-music-function
+ (parser location name midiInstrument lyrics) (string? string? ly:music? )
+ #{
+   \removeWithTag #'longRests { \rehearsalMidi $name $midiInstrument
+                                \HymnToTheFallen_SopranoMusic
+                                \HymnToTheFallen_AltoMusic
+                                \HymnToTheFallen_TenorMusic
+                                \HymnToTheFallen_BassMusic
+                                $lyrics }
+ #})
+
+HymnToTheFallen_RehersalMidiCombined = \book {
+  \bookOutputName "Hymn.To.The.Fallen"
+  \bookOutputSuffix "all"
+  \score {
+    \removeWithTag #'longRests {\rehearsalMidiCombined
+                                \HymnToTheFallen_SopranoMusic
+                                \HymnToTheFallen_AltoMusic
+                                \HymnToTheFallen_TenorMusic
+                                \HymnToTheFallen_BassMusic
+    }
+    \midi { }
+  }
+}
+
+HymnToTheFallen_RehersalMidiSoprano = \book {
+  \bookOutputSuffix "soprano"
+  \bookOutputName "Hymn.To.The.Fallen"
+  \score {
+    \HymnToTheFallen_RehersalMidi "soprano" "soprano sax" {}
+    \midi { }
+  }
+}
+
+HymnToTheFallen_RehersalMidiAlto = \book {
+  \bookOutputSuffix "alto"
+  \bookOutputName "Hymn.To.The.Fallen"
+  \score {
+    \HymnToTheFallen_RehersalMidi "alto" "alto sax" {}
+    \midi { }
+  }
+}
+
+HymnToTheFallen_RehersalMidiTenor = \book {
+  \bookOutputSuffix "tenor"
+  \bookOutputName "Hymn.To.The.Fallen"
+  \score {
+    \HymnToTheFallen_RehersalMidi "tenor" "tenor sax" {}
+    \midi { }
+  }
+}
+
+HymnToTheFallen_RehersalMidiBass = \book {
+  \bookOutputSuffix "bass"
+  \bookOutputName "Hymn.To.The.Fallen"
+  \score {
+    \HymnToTheFallen_RehersalMidi "bass" "baritone sax" {}
+    \midi { }
+  }
+}
+
 \HymnToTheFallen_BookPart
+\HymnToTheFallen_RehersalMidiCombined
+\HymnToTheFallen_RehersalMidiSoprano
+\HymnToTheFallen_RehersalMidiAlto
+\HymnToTheFallen_RehersalMidiTenor
+\HymnToTheFallen_RehersalMidiBass
+%{
+%}
+
