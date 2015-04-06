@@ -544,30 +544,6 @@ AbideWithMe_Bass = {
   \AbideWithMe_NotesBass
 }
 
-AbideWithMe_SopranoCompressed = {
-  \AbideWithMe_GlobalStart
-  \clef treble
-  \AbideWithMe_NotesOnlySoprano
-}
-
-AbideWithMe_AltoCompressed = {
-  \AbideWithMe_GlobalStart
-  \clef treble
-  \AbideWithMe_NotesOnlyAlto
-}
-
-AbideWithMe_TenorCompressed = {
-  \AbideWithMe_GlobalStart
-  \clef "G_8"
-  \AbideWithMe_NotesOnlyTenor
-}
-
-AbideWithMe_BassCompressed = {
-  \AbideWithMe_GlobalStart
-  \clef bass
-  \AbideWithMe_NotesOnlyBass
-}
-
 AbideWithMe_BookPart = \bookpart {
   \header {
     title = "Abide With Me"
@@ -629,12 +605,12 @@ AbideWithMe_RehearsalMidi = #
 (define-music-function
  (parser location name midiInstrument lyrics) (string? string? ly:music? )
  #{
-   \rehearsalMidi $name $midiInstrument \AbideWithMe_SopranoCompressed \AbideWithMe_AltoCompressed \AbideWithMe_TenorCompressed \AbideWithMe_BassCompressed$lyrics
+   \removeWithTag #'longRests { \rehearsalMidi $name $midiInstrument \AbideWithMe_Soprano \AbideWithMe_Alto \AbideWithMe_Tenor \AbideWithMe_Bass $lyrics }
  #})
 
 \book {
   \score {
-    \rehearsalMidiCombined \AbideWithMe_SopranoCompressed \AbideWithMe_AltoCompressed \AbideWithMe_TenorCompressed \AbideWithMe_BassCompressed
+    \removeWithTag #'longRests { \rehearsalMidiCombined \AbideWithMe_Soprano \AbideWithMe_Alto \AbideWithMe_Tenor \AbideWithMe_Bass }
     \midi { }
   }
 }
