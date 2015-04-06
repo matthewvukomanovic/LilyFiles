@@ -3,6 +3,7 @@
 \include "Hymn.to.the.Fallen.ly"
 \include "Abide.With.Me.ly"
 \include "Be.Still.My.Soul.ly"
+\include "Advance.Australia.Fair.ly"
 
 \book {
   \bookOutputName "ANZAC.Commemorative.Concert.2015"
@@ -17,5 +18,8 @@
   }
   \bookpart {
   \BeStillMySoul_BookPart
+  }
+  \bookpart {
+  \AdvanceAustraliaFair_BookPart
   }
 }
