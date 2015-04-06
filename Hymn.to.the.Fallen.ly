@@ -870,4 +870,4 @@ HymnToTheFallen_BookPart =\bookpart {
 }
 }
 
-%\HymnToTheFallen_BookPart
+\HymnToTheFallen_BookPart
