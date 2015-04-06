@@ -1,14 +1,6 @@
 \version "2.18.2"
 \include "anzac-common.ily"
 
-\header {
-  title = "Evening Hymn and Last Post"
-  subsubtitle = "from Finlandia."
-  composer = "Sibelius"
-  arranger = "Transcribed by Stephen Button"
-  tagline = ""
-}
-
 easyHeads = { \easyHeadsOff }
 
 BeStillMySoul_GlobalStart = {
@@ -52,8 +44,22 @@ s1*1 | %75
 s1*1 | %76
   }
 
+BeStillMySoul_InitialRests = {
+  \tag #'longRests R1*4 |
+}
+
+BeStillMySoul_MidRestsAndKeyChange = {
+  \tag #'longRests R1*4 |
+  \BeStillMySoul_MiddleKeyChange
+  \tag #'longRests R1*5 |
+}
+
+BeStillMySoul_ThirdLongRests = {
+  \tag #'longRests R1*2 |
+}
+
 BeStillMySoul_Soprano =  {
-         R1*4 |
+  \BeStillMySoul_InitialRests
 %5
          r4 g' f' g' |
          aes'2. g'4 |
@@ -85,9 +91,7 @@ BeStillMySoul_Soprano =  {
          ees'1 ~ |
          ees'4 r r2 |
 %30
-         R1*4 |
-         \BeStillMySoul_MiddleKeyChange
-         R1*5 |
+         \BeStillMySoul_MidRestsAndKeyChange
          r4 d' c' d' |
 %40
          ees'2. d'4 |
@@ -100,7 +104,7 @@ BeStillMySoul_Soprano =  {
          c' d' bes4. c'8 |
          d'1 ~ |
          d'4 r r2 |
-         R1*2 |
+         \BeStillMySoul_ThirdLongRests
          r4 f' f' f' |
          g'2. d'4 |
          d' f' f'4. c'8 |
@@ -134,7 +138,7 @@ BeStillMySoul_Soprano =  {
          f'1 \fermata \bar"|."}
 
 BeStillMySoul_Alto =  {
-         R1*4 |
+  \BeStillMySoul_InitialRests
 %5
          r4 ees' d' ees' |
          d'2. ees'4 |
@@ -166,9 +170,7 @@ BeStillMySoul_Alto =  {
          ees'1 ~ |
          ees'4 r r2 |
 %30
-         R1*4 |
-         \BeStillMySoul_MiddleKeyChange
-         R1*5 |
+         \BeStillMySoul_MidRestsAndKeyChange
          r4 bes a bes |
 %40
          c'2. bes4 |
@@ -181,7 +183,7 @@ BeStillMySoul_Alto =  {
          a bes bes4. a8 |
          bes1 ~ |
          bes4 r r2 |
-         R1*2 |
+         \BeStillMySoul_ThirdLongRests
          r4 d' d' d' |
          d'2. bes4 |
          bes bes bes4. c'8 |
@@ -215,7 +217,7 @@ BeStillMySoul_Alto =  {
          d'1 \fermata \bar"|."}
 
 BeStillMySoul_Tenor =  {
-         R1*4 |
+  \BeStillMySoul_InitialRests
 %5
          r4 bes bes bes |
          bes2. bes4 |
@@ -247,9 +249,7 @@ BeStillMySoul_Tenor =  {
          g1~ |
          g4 r r2 |
 %30
-         R1*4 |
-         \BeStillMySoul_MiddleKeyChange
-         R1*5 |
+         \BeStillMySoul_MidRestsAndKeyChange
          r4 f f f |
 %40
          f2. f4 |
@@ -262,7 +262,7 @@ BeStillMySoul_Tenor =  {
          f f g4. ees8 |
          f1 ~ |
          f4 r r2 |
-         R1*2 |
+         \BeStillMySoul_ThirdLongRests
          r4 bes bes bes |
          bes2. g4 |
          g bes f4. a8 |
@@ -296,7 +296,7 @@ BeStillMySoul_Tenor =  {
          bes1 \fermata  \bar"|."}
 
 BeStillMySoul_Bass =  {
-         R1*4 |
+  \BeStillMySoul_InitialRests
 %5
          r4 ees aes g |
          f2. d4 |
@@ -328,9 +328,7 @@ BeStillMySoul_Bass =  {
          ees1 ~ |
          ees4 r r2 |
 %30
-         R1*4 |
-         \BeStillMySoul_MiddleKeyChange
-         R1*5 |
+         \BeStillMySoul_MidRestsAndKeyChange
          r4 bes, ees d |
 %40
          c2. bes,4 |
@@ -343,7 +341,7 @@ BeStillMySoul_Bass =  {
          ees d ees4. c8 |
          bes,1 ~ |
          bes,4 r r2 |
-         R1*2 |
+         \BeStillMySoul_ThirdLongRests
          r4 bes bes a |
          g2. g4 |
          g d d4. f8 |
@@ -475,6 +473,15 @@ BeStillMySoul_Staff_Bass = \new Staff  << {
                 \BeStillMySoul_BassContext
                 }
                 >>
+BeStillMySoul_BookPart =
+\bookpart {
+\header {
+  title = "Evening Hymn and Last Post"
+  subsubtitle = "from Finlandia."
+  composer = "Sibelius"
+  arranger = "Transcribed by Stephen Button"
+  tagline = ""
+}
 \score {
   <<
     \new ChoirStaff <<
@@ -534,8 +541,7 @@ BeStillMySoul_Staff_Bass = \new Staff  << {
 >>
 \layout{
         }
-\header{
-        }
+}
 }
 
 % Rehearsal MIDI files:
@@ -543,17 +549,19 @@ BeStillMySoul_RehearsalMidi = #
 (define-music-function
  (parser location name midiInstrument lyrics) (string? string? ly:music? )
  #{
-   \rehearsalMidi $name $midiInstrument \BeStillMySoul_Soprano \BeStillMySoul_Alto \BeStillMySoul_Tenor \BeStillMySoul_Bass $lyrics
+    \removeWithTag #'longRests { \rehearsalMidi $name $midiInstrument \BeStillMySoul_Soprano \BeStillMySoul_Alto \BeStillMySoul_Tenor \BeStillMySoul_Bass $lyrics }
  #})
 
-\book {
+BeStillMySoul_RehersalMidiCombined = \book {
+  \bookOutputName "Be.Still.My.Soul"
   \score {
-    \rehearsalMidiCombined \BeStillMySoul_Soprano \BeStillMySoul_Alto \BeStillMySoul_Tenor \BeStillMySoul_Bass
+    \removeWithTag #'longRests { \rehearsalMidiCombined \BeStillMySoul_Soprano \BeStillMySoul_Alto \BeStillMySoul_Tenor \BeStillMySoul_Bass }
     \midi { }
   }
 }
 
-\book {
+BeStillMySoul_RehersalMidiSoprano = \book {
+  \bookOutputName "Be.Still.My.Soul"
   \bookOutputSuffix "soprano"
   \score {
     \BeStillMySoul_RehearsalMidi "soprano" "soprano sax" \BeStillMySoul_SharedWords
@@ -561,7 +569,8 @@ BeStillMySoul_RehearsalMidi = #
   }
 }
 
-\book {
+BeStillMySoul_RehersalMidiAlto = \book {
+  \bookOutputName "Be.Still.My.Soul"
   \bookOutputSuffix "alto"
   \score {
     \BeStillMySoul_RehearsalMidi "alto" "alto sax" \BeStillMySoul_SharedWords
@@ -569,7 +578,8 @@ BeStillMySoul_RehearsalMidi = #
   }
 }
 
-\book {
+BeStillMySoul_RehersalMidiTenor = \book {
+  \bookOutputName "Be.Still.My.Soul"
   \bookOutputSuffix "tenor"
   \score {
     \BeStillMySoul_RehearsalMidi "tenor" "tenor sax" \BeStillMySoul_SharedWords
@@ -577,10 +587,20 @@ BeStillMySoul_RehearsalMidi = #
   }
 }
 
-\book {
+BeStillMySoul_RehersalMidiBass = \book {
+  \bookOutputName "Be.Still.My.Soul"
   \bookOutputSuffix "bass"
   \score {
     \BeStillMySoul_RehearsalMidi "bass" "baritone sax" \BeStillMySoul_SharedWords
     \midi { }
   }
 }
+
+\BeStillMySoul_BookPart
+\BeStillMySoul_RehersalMidiCombined
+\BeStillMySoul_RehersalMidiSoprano
+\BeStillMySoul_RehersalMidiAlto
+\BeStillMySoul_RehersalMidiTenor
+\BeStillMySoul_RehersalMidiBass
+%{
+%}
