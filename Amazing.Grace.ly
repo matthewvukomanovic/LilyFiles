@@ -508,12 +508,6 @@ AmazingGraceScore = \score {
     \set Score.markFormatter = #format-mark-box-numbers
   }
 }
-AmazingGrace_RehersalMidi = #
-(define-music-function
- (parser location name midiInstrument lyrics) (string? string? ly:music? )
- #{
-   \removeWithTag #'longRests { \rehearsalMidi $name $midiInstrument \AmazingGrace_Soprano \AmazingGrace_Alto \AmazingGrace_Tenor \AmazingGrace_Bass $lyrics }
- #})
 
 AmazingGrace_BookPart = \bookpart {
   \include "Amazing.Grace.Header.ly"
@@ -524,6 +518,13 @@ AmazingGrace_BookPart = \bookpart {
 }
 
 % Rehearsal MIDI files:
+AmazingGrace_RehersalMidi = #
+(define-music-function
+ (parser location name midiInstrument lyrics) (string? string? ly:music? )
+ #{
+   \removeWithTag #'longRests { \rehearsalMidi $name $midiInstrument \AmazingGrace_Soprano \AmazingGrace_Alto \AmazingGrace_Tenor \AmazingGrace_Bass $lyrics }
+ #})
+
 AmazingGrace_RehersalMidiCombined = \book {
   \bookOutputName "Amazing.Grace"
   \bookOutputSuffix "all"
