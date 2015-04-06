@@ -504,7 +504,9 @@ AmazingGraceScore = \score {
     >>
     \removeWithTag #'rehersals { \pianoReduction \AmazingGrace_Soprano \AmazingGrace_Alto \AmazingGrace_Tenor \AmazingGrace_Bass }
   >>
-  \layout { }
+  \layout {
+    \set Score.markFormatter = #format-mark-box-numbers
+  }
 }
 AmazingGrace_RehersalMidi = #
 (define-music-function
@@ -513,7 +515,7 @@ AmazingGrace_RehersalMidi = #
    \removeWithTag #'longRests { \rehearsalMidi $name $midiInstrument \AmazingGrace_Soprano \AmazingGrace_Alto \AmazingGrace_Tenor \AmazingGrace_Bass $lyrics }
  #})
 
-AmazingGraceBookPart = \bookpart {
+AmazingGrace_BookPart = \bookpart {
   \include "Amazing.Grace.Header.ly"
   \bookOutputName "Amazing.Grace"
   \score {
@@ -566,7 +568,7 @@ AmazingGrace_RehersalMidiBass = \book {
     \midi { }
   }
 }
-\AmazingGraceBookPart
+\AmazingGrace_BookPart
 \AmazingGrace_RehersalMidiCombined
 \AmazingGrace_RehersalMidiSoprano
 \AmazingGrace_RehersalMidiAlto
