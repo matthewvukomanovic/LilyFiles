@@ -1,24 +1,6 @@
 \version "2.18.2"
 \include "anzac-common.ily"
 
-\layout {
-  \context{
-  \Score
-  {
-    \set markFormatter = #format-mark-box-numbers
-  }
-}
-}
-
-\header {
-  title = "Amazing Grace"
-  subsubtitle = \markup { "G-  E"\flat "version" } % \eyeglasses \sharp
-  composer = "Traditional"
-  arranger = "arr: Sean O'Boyle"
-  copyright = \markup { Copyright \char ##x00a9 2005 }
-  tagline = ""
-}
-
 easyHeads = { \easyHeadsOff }
 
 AmazingGrace_GlobalStart = {
@@ -478,7 +460,7 @@ AmazingGrace_BassVerse = {
 
 %\score { << \new Staff << \new Voice { \compressFullBarRests R1*8 \bar "||" \break } >> >> }
 
-\score {
+AmazingGraceScore = \score {
   <<
     \new ChoirStaff <<
       %{
@@ -524,7 +506,6 @@ AmazingGrace_BassVerse = {
   >>
   \layout { }
 }
-
 AmazingGrace_RehersalMidi = #
 (define-music-function
  (parser location name midiInstrument lyrics) (string? string? ly:music? )
@@ -532,44 +513,64 @@ AmazingGrace_RehersalMidi = #
    \removeWithTag #'longRests { \rehearsalMidi $name $midiInstrument \AmazingGrace_Soprano \AmazingGrace_Alto \AmazingGrace_Tenor \AmazingGrace_Bass $lyrics }
  #})
 
+AmazingGraceBookPart = \bookpart {
+  \include "Amazing.Grace.Header.ly"
+  \bookOutputName "Amazing.Grace"
+  \score {
+    \AmazingGraceScore
+  }
+}
+
 % Rehearsal MIDI files:
-\book {
+AmazingGrace_RehersalMidiCombined = \book {
+  \bookOutputName "Amazing.Grace"
+  \bookOutputSuffix "all"
   \score {
     \removeWithTag #'longRests {\rehearsalMidiCombined \AmazingGrace_Soprano \AmazingGrace_Alto \AmazingGrace_Tenor \AmazingGrace_Bass}
     \midi { }
   }
 }
 
-\book {
+AmazingGrace_RehersalMidiSoprano = \book {
   \bookOutputSuffix "soprano"
+  \bookOutputName "Amazing.Grace"
   \score {
     \AmazingGrace_RehersalMidi "soprano" "soprano sax" \AmazingGrace_SopranoVerse
     \midi { }
   }
 }
 
-\book {
+AmazingGrace_RehersalMidiAlto = \book {
   \bookOutputSuffix "alto"
+  \bookOutputName "Amazing.Grace"
   \score {
     \AmazingGrace_RehersalMidi "alto" "alto sax" \AmazingGrace_AltoVerse
     \midi { }
   }
 }
 
-\book {
+AmazingGrace_RehersalMidiTenor = \book {
   \bookOutputSuffix "tenor"
+  \bookOutputName "Amazing.Grace"
   \score {
     \AmazingGrace_RehersalMidi "tenor" "tenor sax" \AmazingGrace_TenorVerse
     \midi { }
   }
 }
 
-\book {
+AmazingGrace_RehersalMidiBass = \book {
   \bookOutputSuffix "bass"
+  \bookOutputName "Amazing.Grace"
   \score {
     \AmazingGrace_RehersalMidi "bass" "baritone sax" \AmazingGrace_BassVerse
     \midi { }
   }
 }
+\AmazingGraceBookPart
+\AmazingGrace_RehersalMidiCombined
+\AmazingGrace_RehersalMidiSoprano
+\AmazingGrace_RehersalMidiAlto
+\AmazingGrace_RehersalMidiTenor
+\AmazingGrace_RehersalMidiBass
 %{
 %}
