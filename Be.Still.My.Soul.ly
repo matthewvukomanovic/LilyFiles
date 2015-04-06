@@ -1,5 +1,6 @@
 \version "2.18.2"
 \include "anzac-common.ily"
+\include "articulations-not-aligned-with-notes.ily"
 
 easyHeads = { \easyHeadsOff }
 
@@ -35,14 +36,16 @@ s1*7 | %60
 s2 s4\mf s | %67
 s1*1 | %68
 s2 s4\p s  | %69
-s2 s4^\markup{\italic "rit."} \fermata s4 | %70
+s2 s4\fermata ^\markup{\italic "rit."} s4 | %70
 s1 |
 s4\mf s1*3/4 | %72
 s1*1 | %73
 s1*1 | %74
 s1*1 | %75
-s1*1 | %76
-  }
+\at 1*5/24 <>\fermata
+s1
+
+}
 
 BeStillMySoul_InitialRests = {
   \tag #'longRests R1*4 |
@@ -123,19 +126,19 @@ BeStillMySoul_Soprano =  {
          d'2. bes4 |
 %65
          bes c' c'4. bes8 |
-         bes1 \fermata |
+         bes1 |
          r4 r2 d'4 |
-         c' d' ees'2 \fermata |
+         c' d' ees'2 |
          r2 r4 d'4 |
 %70
-         c' d' ees' \fermata r |
+         c' d' ees' r |
          r1 |
          r4 f' f' f' |
          g'2. d'4 |
          d' f' g'4. bes'8 |
 %75
          bes'4 r g'( ees') |
-         f'1 \fermata \bar"|."}
+         f'1 \bar"|."}
 
 BeStillMySoul_Alto =  {
   \BeStillMySoul_InitialRests
@@ -202,19 +205,19 @@ BeStillMySoul_Alto =  {
          bes2. bes4 |
 %65
          bes a a4. bes8 |
-         bes1 \fermata |
+         bes1 |
          r4 r2 bes4 |
-         a bes c'2 \fermata |
+         a bes c'2 |
          r r4 bes |
 %70
-         a bes a \fermata r |
+         a bes a r |
          r1 |
          r4 d' d' d' |
          d'2. d'4 |
          d' d' ees'4. ees'8 |
 %75
          d'4 r <c' ees'>( c') |
-         d'1 \fermata \bar"|."}
+         d'1 \bar"|."}
 
 BeStillMySoul_Tenor =  {
   \BeStillMySoul_InitialRests
@@ -281,19 +284,19 @@ BeStillMySoul_Tenor =  {
          f2. f4 |
 %65
          f f ees4. d8 |
-         d1 \fermata |
+         d1 |
          r2 r4 f |
-         f f g2 \fermata |
+         f f g2 |
          r r4 f |
 %70
-         f f ees \fermata r |
+         f f ees r |
          r1 |
          r4 bes bes bes |
          bes2. bes4 |
          bes bes bes4. bes8 |
 %75
          bes4 r bes~ bes |
-         bes1 \fermata  \bar"|."}
+         bes1 \bar"|."}
 
 BeStillMySoul_Bass =  {
   \BeStillMySoul_InitialRests
@@ -360,19 +363,19 @@ BeStillMySoul_Bass =  {
          f2. d4 |
 %65
          f f, f,4. bes,8 |
-         bes,1 \fermata |
+         bes,1 |
          r2 r4 bes, |
-         ees d c2 \fermata |
+         ees d c2 |
          r r4 bes, |
 %70
-         ees d c \fermata r |
+         ees d c r |
          r1 |
          r4 bes, bes a |
          g2. g4 |
          g f ees8( d c) f |
 %75
          bes,4 r <ees g>( <c ees>) |
-         bes,1 \fermata  \bar"|."}
+         bes,1 \bar"|."}
 
 BeStillMySoul_SharedWords = \lyricmode {
   Be still my |
@@ -447,7 +450,7 @@ BeStillMySoul_AltoMusic =  {\BeStillMySoul_AltoProlog \BeStillMySoul_Alto}
 BeStillMySoul_AltoContext = \context Voice = BeStillMySoul_Alto  {\BeStillMySoul_AltoMusic}
 
 BeStillMySoul_TenorClef = \clef "treble_8"
-BeStillMySoul_TenorClef = \clef "bass"
+%BeStillMySoul_TenorClef = \clef "bass"
 BeStillMySoul_TenorProlog = { \BeStillMySoul_TenorClef \BeStillMySoul_GlobalStart}
 BeStillMySoul_TenorMusic =  {\BeStillMySoul_TenorProlog \BeStillMySoul_Tenor}
 BeStillMySoul_TenorContext = \context Voice = BeStillMySoul_Tenor {\BeStillMySoul_TenorMusic}
