@@ -30,7 +30,7 @@ MvmntIVoiceI =  {
 %10
          r%|
          r%|
-         r4 r c'         \bar"||"         f'2 c'4%|
+         r4 r c'           \bar"||"         f'2 c'4%|
          a2 c'4%|
 %15
          f'2 f'4%|
@@ -48,7 +48,7 @@ MvmntIVoiceI =  {
          g'2 f'4%|
          e'2 d'4%|
          c'2. ~%|
-         c'2 c'4        %|
+         c'2 c'4          %|
          \bar"||"         d'2 e'4%|
 %30
          f'2 d'4%|
@@ -72,7 +72,7 @@ MvmntIVoiceI =  {
          a'2 f'4%|
          g'2 e'4%|
          \time 4/4 f'1 ~%|
-         f'2. des'4        %|
+         f'2. des'4          %|
          \bar"||"         \key ges \major ges'4 des' bes des'%|
 %50
          ges'4. ges'8 ges'4 bes'%|
@@ -96,10 +96,10 @@ MvmntIVoiceI =  {
          ces'' bes' aes' ges'%|
          f' ees' des' ges'%|
          bes'4. ges'8 aes'4 f'%|
-         ges'2. ~ ges'8 r        %|
-         \bar"||"         r2 r4 d'        %|
+         ges'2. ~ ges'8 r          %|
+         \bar"||"         r2 r4 d'          %|
          \bar"||"%70
-         \key g \major g'4 d' b g       
+         \key g \major g'4 d' b g         
          \bar"||"         d'4. d'8 d'4 b'%|
          a' g' fis' e'%|
          d'2. d'4%|
@@ -107,7 +107,7 @@ MvmntIVoiceI =  {
 %75
          d'4. d'8 d'4 b'%|
          a' g' fis' e'%|
-         d'2. d'4         %|
+         d'2. d'4           %|
          \bar"||"         e'4. fis'8 g'4 e'%|
          d'4. b8 b4 d'%|
 %80
@@ -119,7 +119,7 @@ MvmntIVoiceI =  {
 %85
          g'2. a'4%|
          b'4. g'8 a'4. fis'8%|
-         g'2. r4         
+         g'2. r4           
          \bar"||"         r1%|
          r%|
 %90
@@ -211,7 +211,7 @@ MvmntIVoiceI =  {
          d''2. d''4%|
          d''2. d''4%|
          g''1 ~%|
-         g''       \bar"|."}
+         g''         \bar"|."}
 
 
 MvmntIVoiceII =  {
@@ -228,7 +228,7 @@ MvmntIVoiceII =  {
 %10
          r%|
          r%|
-         r       
+         r         
         \bar"||"         r2.%|
          r%|
 %15
@@ -271,7 +271,7 @@ MvmntIVoiceII =  {
          r%|
          r%|
          \time 4/4 r1%|
-         r2 r4 des'        %|
+         r2 r4 des'          %|
          \bar"||"         \key ges \major ges'4 des' bes des'%|
 %50
          ges'4. ges'8 ges'4 bes'%|
@@ -295,11 +295,11 @@ MvmntIVoiceII =  {
          ces'' bes' aes' ges'%|
          f' c'' des'' ces''%|
          bes'4. des''8 des''4 des''%|
-         des''2. ~ des''8 r        %|
-         \bar"||"         r1       
+         des''2. ~ des''8 r          %|
+         \bar"||"         r1         
 %60
          \bar"||"%70
-         \key g \major r1        %|
+         \key g \major r1          %|
          \bar"||"         r1%|
          r%|
          r%|
@@ -307,7 +307,7 @@ MvmntIVoiceII =  {
 %75
          r%|
          r%|
-         r        
+         r          
          \bar"||"         r1%|
          r%|
 %80
@@ -319,7 +319,7 @@ MvmntIVoiceII =  {
 %85
          r%|
          r%|
-         r        
+         r          
         \bar"||"         r1%|
          r%|
 %90
@@ -411,7 +411,7 @@ MvmntIVoiceII =  {
          b'2. b'4%|
          d''2. d''4%|
          g''1 ~%|
-         g''      \bar"|."}
+         g''        \bar"|."}
 
 
 MvmntIVoiceIII =  {
@@ -428,7 +428,7 @@ MvmntIVoiceIII =  {
 %10
          r%|
          r%|
-         r       
+         r         
         \bar"||"         r2.%|
          r%|
 %15
@@ -471,7 +471,7 @@ MvmntIVoiceIII =  {
          r%|
          r%|
          \time 4/4 r1%|
-         r2 r4 des'        %|
+         r2 r4 des'          %|
          \bar"||"         \key ges \major ges'4 des' bes des'%|
 %50
          ges'4. ges'8 ges'4 ges'%|
@@ -495,11 +495,11 @@ MvmntIVoiceIII =  {
          aes' ges' ees' ees'%|
          des' aes' aes' ges'%|
          ges'4. ges'8 aes'4 aes'%|
-         bes'2. ~ bes'8 r     %|
-         \bar"||"         r1       
+         bes'2. ~ bes'8 r       %|
+         \bar"||"         r1         
 %60
          \bar"||"%70
-         \key g \major r1        %|
+         \key g \major r1          %|
          \bar"||"         r1%|
          r%|
          r%|
@@ -507,7 +507,7 @@ MvmntIVoiceIII =  {
 %75
          r%|
          r%|
-         r        
+         r          
          \bar"||"         r1%|
          r%|
 %80
@@ -519,7 +519,7 @@ MvmntIVoiceIII =  {
 %85
          r%|
          r%|
-         r        
+         r          
         \bar"||"         r1%|
          r%|
 %90
@@ -611,7 +611,7 @@ MvmntIVoiceIII =  {
          g'2. g'4%|
          fis'2. d'4%|
          g'1 ~%|
-         g'      \bar"|."}
+         g'        \bar"|."}
 
 
 MvmntIVoiceIV =  {
@@ -628,7 +628,7 @@ MvmntIVoiceIV =  {
 %10
          r%|
          r%|
-         r       
+         r         
         \bar"||"         r2.%|
          r%|
 %15
@@ -671,7 +671,7 @@ MvmntIVoiceIV =  {
          r%|
          r%|
          \time 4/4 r1%|
-         r2 r4 des'        %|
+         r2 r4 des'          %|
          \bar"||"         \key ges \major ges'4 des' bes des'%|
 %50
          ges'4. ges'8 ges'4 des'%|
@@ -695,11 +695,11 @@ MvmntIVoiceIV =  {
          des' des' aes aes%|
          aes ees' des' ces'%|
          des'4. bes8 ces'4 ces'%|
-         bes2. ~ bes8 r        %|
-         \bar"||"         r1       
+         bes2. ~ bes8 r          %|
+         \bar"||"         r1         
 %60
          \bar"||"%70
-         \key g \major r1        %|
+         \key g \major r1          %|
          \bar"||"         r1%|
          r%|
          r%|
@@ -707,7 +707,7 @@ MvmntIVoiceIV =  {
 %75
          r%|
          r%|
-         r        
+         r          
          \bar"||"         r1%|
          r%|
 %80
@@ -719,7 +719,7 @@ MvmntIVoiceIV =  {
 %85
          r%|
          r%|
-         r        
+         r          
         \bar"||"         r1%|
          r%|
 %90
@@ -810,7 +810,8 @@ MvmntIVoiceIV =  {
          d' e' d' c'%|
          d'2. d'4%|
          c'2. d'4%|
-         g'1 ~ g'%|
+         g'1 ~%|
+         g'  %|
               \bar"|."}
 
 
@@ -828,7 +829,7 @@ MvmntIVoiceV =  {
 %10
          r%|
          r%|
-         r       
+         r         
         \bar"||"         r2.%|
          r%|
 %15
@@ -871,35 +872,36 @@ MvmntIVoiceV =  {
          r%|
          r%|
          \time 4/4 r1%|
-         r2 r4 des'        %|
-         \bar"||"         \key ges \major ges'4 des' bes des'%|
+         r2 r4 des          %|
+         \bar"||"         \key ges \major ges4 des bes, des%|
 %50
-         ges'4. ges'8 ges'4 bes'%|
-         aes' ges' f' ges'%|
-         aes'2. des'4%|
-         ges' des' bes ges%|
-         des'4. des'8 des'4 bes'%|
+         ges4. ges8 ges4 ges%|
+         ces c des ees%|
+         f2. des4%|
+         ges des bes, ges,%|
+         des4. des8 des4 c%|
 %55
-         aes' ges' f' ges'%|
-         f'2. aes'4%|
-         ges'4. ges'8 ges'4 ces''%|
-         bes'4. ges'8 ges'4 bes'%|
-         ees'' des'' ces'' bes'%|
+         des ges, aes, c%|
+         des2. des4%|
+         aes,4. aes,8 aes,4 ees%|
+         ges4. bes8 bes4 ges%|
+         ces' bes aes ges%|
 %60
-         aes' ges' f' aes'%|
-         ges'4. ges'8 ges'4 ges'%|
-         ges'4. ges'8 ges'4 aes'%|
-         bes'4. ges'8 ges'4 f'%|
-         ges'2 ~ ges'8 r bes'4%|
+         f ees des des%|
+         ces4. ces8 ces4 c%|
+         des4. des8 des4 d%|
+         des4. des8 des4 des%|
+         ges,2 ~ ges,8 r ges4%|
 %65
-         ces'' bes' aes' ges'%|
-         f' c'' des'' ces''%|
-         bes'4. des''8 des''4 des''%|
-         des''2. ~ des''8 r        %|
-         \bar"||"         r1       
+         f ges ces c%|
+         des ges f8 ees d4%|
+         des4. des8 des4 des%|
+         ges,2. ~ ges,8 r %|
+                 %|
+         \bar"||"         r1         
 %60
          \bar"||"%70
-         \key g \major r1        %|
+         \key g \major r1          %|
          \bar"||"         r1%|
          r%|
          r%|
@@ -907,7 +909,7 @@ MvmntIVoiceV =  {
 %75
          r%|
          r%|
-         r        
+         r          
          \bar"||"         r1%|
          r%|
 %80
@@ -919,7 +921,7 @@ MvmntIVoiceV =  {
 %85
          r%|
          r%|
-         r        
+         r          
         \bar"||"         r1%|
          r%|
 %90
@@ -985,33 +987,33 @@ MvmntIVoiceV =  {
 %140
          r%|
          r%|
-         r2 r4 d'%|
-         g' d' b d'%|
-         g'4. g'8 g'4 b'%|
+         r2 r4 d%|
+         g d b, d%|
+         g4. g8 g4 g%|
 %145
-         a' g' fis' g'%|
-         a'2. d'4%|
-         g' d' b g%|
-         d'4. d'8 d'4 b'%|
-         a' g' fis' e'%|
+         c c a, e%|
+         d2. d4%|
+         g d b, g,%|
+         d4. d8 d4 g%|
+         c cis d e%|
 %150
-         d'2. d'4%|
-         e'4. fis'8 g'4 c''%|
-         b'4. g'8 g'4 b'%|
-         e'' d'' c'' b'%|
-         a'2. a'4%|
+         d2. d4%|
+         c4. c8 c4 c%|
+         e4. b8 b4 g%|
+         c' b a g%|
+         fis e d d%|
 %155
-         g'4. fis'8 g'4 g'%|
-         g'4. g'8 g'4 a'%|
-         b'4. b'8 c''4. c''8%|
-         b'2. b'4%|
-         c'' b' a' e''%|
+         c4. b,8 a,4 ais,%|
+         b,4. e8 e4 a%|
+         g4. e8 fis4. d8%|
+         g2. g4%|
+         fis g c cis%|
 %160
-         d'' cis'' d'' c''%|
-         b'2. b'4%|
-         d''2. d''4%|
-         g''1 ~%|
-         g''      \bar"|."}
+         d g fis ees%|
+         d2. d4%|
+         d2. d4%|
+         g1 ~ g%|
+                \bar"|."}
 
 
 
