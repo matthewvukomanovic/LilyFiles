@@ -608,14 +608,17 @@ AbideWithMe_RehearsalMidi = #
    \removeWithTag #'longRests { \rehearsalMidi $name $midiInstrument \AbideWithMe_Soprano \AbideWithMe_Alto \AbideWithMe_Tenor \AbideWithMe_Bass $lyrics }
  #})
 
-\book {
+AbideWithMe_RehersalMidiCombined = \book {
+  \bookOutputName "Abide.With.Me"
+  \bookOutputSuffix "all"
   \score {
     \removeWithTag #'longRests { \rehearsalMidiCombined \AbideWithMe_Soprano \AbideWithMe_Alto \AbideWithMe_Tenor \AbideWithMe_Bass }
     \midi { }
   }
 }
 
-\book {
+AbideWithMe_RehersalMidiSoprano = \book {
+  \bookOutputName "Abide.With.Me"
   \bookOutputSuffix "soprano"
   \score {
     \AbideWithMe_RehearsalMidi "soprano" "soprano sax" \AbideWithMe_Verse
@@ -623,7 +626,8 @@ AbideWithMe_RehearsalMidi = #
   }
 }
 
-\book {
+AbideWithMe_RehersalMidiAlto = \book {
+  \bookOutputName "Abide.With.Me"
   \bookOutputSuffix "alto"
   \score {
     \AbideWithMe_RehearsalMidi "alto" "alto sax" \AbideWithMe_Verse
@@ -631,7 +635,8 @@ AbideWithMe_RehearsalMidi = #
   }
 }
 
-\book {
+AbideWithMe_RehersalMidiTenor = \book {
+  \bookOutputName "Abide.With.Me"
   \bookOutputSuffix "tenor"
   \score {
     \AbideWithMe_RehearsalMidi "tenor" "tenor sax" \AbideWithMe_Verse
@@ -639,7 +644,8 @@ AbideWithMe_RehearsalMidi = #
   }
 }
 
-\book {
+AbideWithMe_RehersalMidiBass = \book {
+  \bookOutputName "Abide.With.Me"
   \bookOutputSuffix "bass"
   \score {
     \AbideWithMe_RehearsalMidi "bass" "baritone sax" \AbideWithMe_Verse
@@ -648,3 +654,10 @@ AbideWithMe_RehearsalMidi = #
 }
 
 \AbideWithMe_BookPart
+\AbideWithMe_RehersalMidiCombined
+\AbideWithMe_RehersalMidiSoprano
+\AbideWithMe_RehersalMidiAlto
+\AbideWithMe_RehersalMidiTenor
+\AbideWithMe_RehersalMidiBass
+%{
+%}
