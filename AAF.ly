@@ -104,7 +104,7 @@ MvmntIVoiceI =  {
          ges'2. ~ ges'8 r          %|
          \bar"||"         r2 r4 d'          %|
          \bar"||" \mark d' %70
-         \key g \major g'4 d' b g         
+         \key g \major g'4 d' b g
          \bar"||"         d'4. d'8 d'4 b'%|
          a' g' fis' e'%|
          d'2. d'4%|
@@ -124,7 +124,7 @@ MvmntIVoiceI =  {
 %85
          g'2. a'4%|
          b'4. g'8 a'4. fis'8%|
-         g'2. r4           
+         g'2. r4
          \AAF_MiddleLongRests
 
          r2 r4 d' \mark d'%|
@@ -153,7 +153,7 @@ MvmntIVoiceI =  {
          d''2. d''4%|
          d''2. d''4%|
          g''1 ~%|
-         g''\fermata 
+         g''\fermata
          \bar"|."}
 
 MvmntIVoiceII =  {
@@ -184,7 +184,7 @@ MvmntIVoiceII =  {
          f' c'' des'' ces''%|
          bes'4. des''8 des''4 des''%|
          des''2. ~ des''8 r          %|
-         \bar"||"         r1         
+         \bar"||"         r1
 %60
          \bar"||"%70
          \key g \major r1          %|
@@ -220,7 +220,6 @@ MvmntIVoiceII =  {
          g''1 ~%|
          g''\fermata         \bar"|."}
 
-
 MvmntIVoiceIII =  {
          \AAF_ChorusInitialRests
          \time 4/4 r1%|
@@ -249,7 +248,7 @@ MvmntIVoiceIII =  {
          des' aes' aes' ges'%|
          ges'4. ges'8 aes'4 aes'%|
          bes'2. ~ bes'8 r       %|
-         \bar"||"         r1         
+         \bar"||"         r1
 %60
          \bar"||"%70
          \key g \major r1          %|
@@ -284,7 +283,6 @@ MvmntIVoiceIII =  {
          g'1 ~%|
          g'\fermata         \bar"|."}
 
-
 MvmntIVoiceIV =  {
          \AAF_ChorusInitialRests
          \time 4/4 r1%|
@@ -313,7 +311,7 @@ MvmntIVoiceIV =  {
          aes ees' des' ces'%|
          des'4. bes8 ces'4 ces'%|
          bes2. ~ bes8 r          %|
-         \bar"||"         r1         
+         \bar"||"         r1
 %60
          \bar"||"%70
          \key g \major r1          %|
@@ -349,7 +347,6 @@ MvmntIVoiceIV =  {
          g' \fermata   %|
               \bar"|."}
 
-
 MvmntIVoiceV =  {
          \AAF_ChorusInitialRests
          \time 4/4 r1%|
@@ -379,7 +376,7 @@ MvmntIVoiceV =  {
          des4. des8 des4 des%|
          ges,2. ~ ges,8 r %|
                  %|
-         \bar"||"         r1         
+         \bar"||"         r1
 %60
          \bar"||"%70
          \key g \major r1          %|
@@ -443,7 +440,6 @@ AAF_Lyrics_Solo_Third = \lyricmode {
 
 }
 
-
 AAF_Lyrics_Chorus_First = \lyricmode {
   Aus -- tra -- lians all __ let us re -- joice for we are young and free __
   We've gold -- en soil and wealth for toil our home is girt by sea __
@@ -466,40 +462,39 @@ AAF_Lyrics_Chorus =
   \AAF_Lyrics_Solo_Second
 }
 
-
-        MvmntIVoiceITimeSig = \time 3/4 
+        MvmntIVoiceITimeSig = \time 3/4
 MvmntIVoiceIKeySig = \key f \major
- MvmntIVoiceIClef = \clef treble 
+ MvmntIVoiceIClef = \clef treble
 MvmntIVoiceIProlog = { \MvmntIVoiceITimeSig \MvmntIVoiceIKeySig \MvmntIVoiceIClef
 \set Score.markFormatter = #format-mark-box-alphabet
 }
 MvmntIVoiceIMusic =  {\MvmntIVoiceIProlog \MvmntIVoiceI}
 MvmntIVoiceIContext = \context Voice = VoiceIMvmntI  {\MvmntIVoiceIMusic}
 
-        MvmntIVoiceIITimeSig = \time 3/4 
+        MvmntIVoiceIITimeSig = \time 3/4
 MvmntIVoiceIIKeySig = \key f \major
- MvmntIVoiceIIClef = \clef treble 
+ MvmntIVoiceIIClef = \clef treble
 MvmntIVoiceIIProlog = { \MvmntIVoiceIITimeSig \MvmntIVoiceIIKeySig \MvmntIVoiceIIClef}
 MvmntIVoiceIIMusic =  {\MvmntIVoiceIIProlog \MvmntIVoiceII}
 MvmntIVoiceIIContext = \context Voice = VoiceIIMvmntI  {\MvmntIVoiceIIMusic}
 
-        MvmntIVoiceIIITimeSig = \time 3/4 
+        MvmntIVoiceIIITimeSig = \time 3/4
 MvmntIVoiceIIIKeySig = \key f \major
- MvmntIVoiceIIIClef = \clef treble 
+ MvmntIVoiceIIIClef = \clef treble
 MvmntIVoiceIIIProlog = { \MvmntIVoiceIIITimeSig \MvmntIVoiceIIIKeySig \MvmntIVoiceIIIClef}
 MvmntIVoiceIIIMusic =  {\MvmntIVoiceIIIProlog \MvmntIVoiceIII}
 MvmntIVoiceIIIContext = \context Voice = VoiceIIIMvmntI  {\MvmntIVoiceIIIMusic}
 
-        MvmntIVoiceIVTimeSig = \time 3/4 
+        MvmntIVoiceIVTimeSig = \time 3/4
 MvmntIVoiceIVKeySig = \key f \major
- MvmntIVoiceIVClef = \clef "G_8" 
+ MvmntIVoiceIVClef = \clef "G_8"
 MvmntIVoiceIVProlog = { \MvmntIVoiceIVTimeSig \MvmntIVoiceIVKeySig \MvmntIVoiceIVClef}
 MvmntIVoiceIVMusic =  {\MvmntIVoiceIVProlog \MvmntIVoiceIV}
 MvmntIVoiceIVContext = \context Voice = VoiceIVMvmntI  {\MvmntIVoiceIVMusic}
 
-        MvmntIVoiceVTimeSig = \time 3/4 
+        MvmntIVoiceVTimeSig = \time 3/4
 MvmntIVoiceVKeySig = \key f \major
- MvmntIVoiceVClef = \clef bass 
+ MvmntIVoiceVClef = \clef bass
 MvmntIVoiceVProlog = { \MvmntIVoiceVTimeSig \MvmntIVoiceVKeySig \MvmntIVoiceVClef}
 MvmntIVoiceVMusic =  {\MvmntIVoiceVProlog \MvmntIVoiceV}
 MvmntIVoiceVContext = \context Voice = VoiceVMvmntI  {\MvmntIVoiceVMusic}
@@ -553,10 +548,8 @@ MvmntIStaffV = \new Staff
                 \new Lyrics \lyricsto VoiceVMvmntI \AAF_Lyrics_Chorus
                 >>
 
-
-
 \score {
-<< 
+<<
 \new ChoirStaff <<
 \MvmntIStaffI
 \MvmntIStaffII
@@ -573,6 +566,4 @@ MvmntIStaffV = \new Staff
         }
 
 }
-
-
 
