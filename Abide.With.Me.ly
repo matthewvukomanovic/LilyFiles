@@ -1,15 +1,9 @@
 \version "2.18.2"
 \include "anzac-common.ily"
 
-\header {
-  title = "Abide With Me"
-  arranger = "arr: Sean O'Boyle"
-  tagline = ""
-}
-
 easyHeads = { \easyHeadsOff }
 
-globalStart = {
+AbideWithMe_GlobalStart = {
 \time 4/4
 \key ees \major
 \bar ""
@@ -19,7 +13,7 @@ globalStart = {
 }
 
 AbideWithMe_InitialRests = {
-           R1*4
+  \tag #'longRests R1*4
 }
 
 AbideWithMe_NotesOnlySoprano = {
@@ -527,52 +521,59 @@ AbideWithMe_NotesBass = {
 }
 
 AbideWithMe_Soprano = {
-  \globalStart
+  \AbideWithMe_GlobalStart
   \clef treble
   \AbideWithMe_NotesSoprano
 }
 
 AbideWithMe_Alto = {
-  \globalStart
+  \AbideWithMe_GlobalStart
   \clef treble
   \AbideWithMe_NotesAlto
 }
 
 AbideWithMe_Tenor = {
-  \globalStart
+  \AbideWithMe_GlobalStart
   \clef "G_8"
   \AbideWithMe_NotesTenor
 }
 
 AbideWithMe_Bass = {
-  \globalStart
+  \AbideWithMe_GlobalStart
   \clef bass
   \AbideWithMe_NotesBass
 }
 
 AbideWithMe_SopranoCompressed = {
-  \globalStart
+  \AbideWithMe_GlobalStart
   \clef treble
   \AbideWithMe_NotesOnlySoprano
 }
 
 AbideWithMe_AltoCompressed = {
-  \globalStart
+  \AbideWithMe_GlobalStart
   \clef treble
   \AbideWithMe_NotesOnlyAlto
 }
 
 AbideWithMe_TenorCompressed = {
-  \globalStart
+  \AbideWithMe_GlobalStart
   \clef "G_8"
   \AbideWithMe_NotesOnlyTenor
 }
 
 AbideWithMe_BassCompressed = {
-  \globalStart
+  \AbideWithMe_GlobalStart
   \clef bass
   \AbideWithMe_NotesOnlyBass
 }
+
+AbideWithMe_BookPart = \bookpart {
+  \header {
+    title = "Abide With Me"
+    arranger = "arr: Sean O'Boyle"
+    tagline = ""
+  }
 
 \score {
   <<
@@ -621,6 +622,7 @@ AbideWithMe_BassCompressed = {
   \layout {}
   \header {}
 }
+}
 
 % Rehearsal MIDI files:
 AbideWithMe_RehearsalMidi = #
@@ -668,3 +670,5 @@ AbideWithMe_RehearsalMidi = #
     \midi { }
   }
 }
+
+\AbideWithMe_BookPart
