@@ -1,23 +1,17 @@
 \version "2.18.2"
 \include "anzac-common.ily"
 
-  \header {
-    title = "Advance Australia Fair"
-    subsubtitle = "(1988 version)"
-    tagline = ""
-  }
-
 % The music follows
 
-AAF_InitialRests = {
+AdvanceAustraliaFair_InitialRests = {
   \tag #'longRests R1*3/4*11 %|
 }
-AAF_ChorusInitialRests = {
-  \AAF_InitialRests
-  R1*3/4*35
+AdvanceAustraliaFair_ChorusInitialRests = {
+  \AdvanceAustraliaFair_InitialRests
+  \tag #'onlySoloist R1*3/4*35
 }
-AAF_MiddleLongRests = {
-  \bar"||"
+AdvanceAustraliaFair_MiddleLongRests = {
+  \tag #'longRests {\bar"||"
   \mark r
   R1*12 |
   \mark R
@@ -30,10 +24,12 @@ AAF_MiddleLongRests = {
   R1*6 |
   \mark R
   R1*4 |
+  }
 }
 
-MvmntIVoiceI =  {
-         \AAF_InitialRests
+AdvanceAustraliaFair_Solo =  {
+         \AdvanceAustraliaFair_InitialRests
+\tag #'onlySoloist {
          r4 r c'           \bar"||"  \mark c'
          f'2 c'4%|
          a2 c'4%|
@@ -76,6 +72,7 @@ MvmntIVoiceI =  {
 %45
          a'2 f'4%|
          g'2 e'4%|
+}
          \time 4/4 f'1 ~%|
          f'2. des'4    \mark des'      %|
          \bar"||"         \key ges \major ges'4 des' bes des'%|
@@ -125,7 +122,7 @@ MvmntIVoiceI =  {
          g'2. a'4%|
          b'4. g'8 a'4. fis'8%|
          g'2. r4
-         \AAF_MiddleLongRests
+         \AdvanceAustraliaFair_MiddleLongRests
 
          r2 r4 d' \mark d'%|
          g' d' b d'%|
@@ -156,8 +153,8 @@ MvmntIVoiceI =  {
          g''\fermata
          \bar"|."}
 
-MvmntIVoiceII =  {
-         \AAF_ChorusInitialRests
+AdvanceAustraliaFair_Soprano =  {
+         \AdvanceAustraliaFair_ChorusInitialRests
          \time 4/4 r1%|
          r2 r4 des'          %|
          \bar"||"         \key ges \major ges'4 des' bes des'%|
@@ -190,7 +187,7 @@ MvmntIVoiceII =  {
          \key g \major r1          %|
          \bar"||"
          R1*17
-         \AAF_MiddleLongRests
+         \AdvanceAustraliaFair_MiddleLongRests
 
          r2 r4 d'%|
          g' d' b d'%|
@@ -220,8 +217,8 @@ MvmntIVoiceII =  {
          g''1 ~%|
          g''\fermata         \bar"|."}
 
-MvmntIVoiceIII =  {
-         \AAF_ChorusInitialRests
+AdvanceAustraliaFair_Alto =  {
+         \AdvanceAustraliaFair_ChorusInitialRests
          \time 4/4 r1%|
          r2 r4 des'          %|
          \bar"||"         \key ges \major ges'4 des' bes des'%|
@@ -254,7 +251,7 @@ MvmntIVoiceIII =  {
          \key g \major r1          %|
          \bar"||"
          R1*17
-         \AAF_MiddleLongRests
+         \AdvanceAustraliaFair_MiddleLongRests
          r2 r4 d'%|
          g' d' b d'%|
          g'4. g'8 g'4 g'%|
@@ -283,8 +280,8 @@ MvmntIVoiceIII =  {
          g'1 ~%|
          g'\fermata         \bar"|."}
 
-MvmntIVoiceIV =  {
-         \AAF_ChorusInitialRests
+AdvanceAustraliaFair_Tenor =  {
+         \AdvanceAustraliaFair_ChorusInitialRests
          \time 4/4 r1%|
          r2 r4 des'          %|
          \bar"||"         \key ges \major ges'4 des' bes des'%|
@@ -317,7 +314,7 @@ MvmntIVoiceIV =  {
          \key g \major r1          %|
          \bar"||"
          R1*17
-         \AAF_MiddleLongRests
+         \AdvanceAustraliaFair_MiddleLongRests
          r2 r4 d'%|
          g' d' b d'%|
          g'4. g'8 g'4 e'%|
@@ -347,8 +344,8 @@ MvmntIVoiceIV =  {
          g' \fermata   %|
               \bar"|."}
 
-MvmntIVoiceV =  {
-         \AAF_ChorusInitialRests
+AdvanceAustraliaFair_Bass =  {
+         \AdvanceAustraliaFair_ChorusInitialRests
          \time 4/4 r1%|
          r2 r4 des          %|
          \bar"||"         \key ges \major ges4 des bes, des%|
@@ -382,7 +379,7 @@ MvmntIVoiceV =  {
          \key g \major r1          %|
          \bar"||"
          R1*17
-         \AAF_MiddleLongRests
+         \AdvanceAustraliaFair_MiddleLongRests
          r2 r4 d%|
          g d b, d%|
          g4. g8 g4 g%|
@@ -411,7 +408,7 @@ MvmntIVoiceV =  {
          g1 ~ g \fermata %|
                 \bar"|."}
 
-AAF_Lyrics_Solo_First = \lyricmode {
+AdvanceAustraliaFair_Lyrics_Solo_First = \lyricmode {
   Aus -- tra -- lians all __ let us re -- joice for we are Young and Free __
   we've gold -- en soil and wealth for toil our home is girt by Sea __
   our land a -- bounds in na -- ture's gifts of beau -- ty rich and Rare __
@@ -419,7 +416,7 @@ AAF_Lyrics_Solo_First = \lyricmode {
   Ad -- vance Aus -- tra -- lia Fair __
 }
 
-AAF_Lyrics_Solo_Second = \lyricmode {
+AdvanceAustraliaFair_Lyrics_Solo_Second = \lyricmode {
   Aus -- tra -- lians all __ let us re -- joice for we are young and free __
   We've gold -- en soil and wealth for toil our home is girt by sea __
   our land a -- bounds in na -- ture's gifts of beau -- ty rich and rare __
@@ -427,7 +424,7 @@ AAF_Lyrics_Solo_Second = \lyricmode {
   in joy -- ful strains then let us sing Ad -- vance Aus -- tra -- lia Fair
 }
 
-AAF_Lyrics_Solo_Third = \lyricmode {
+AdvanceAustraliaFair_Lyrics_Solo_Third = \lyricmode {
     Be -- neath our rad -- iant South -- ern Cross
     We'll toil with hearts and hands; __
     To make this Co -- mmon -- wealth of ours
@@ -440,7 +437,7 @@ AAF_Lyrics_Solo_Third = \lyricmode {
 
 }
 
-AAF_Lyrics_Chorus_First = \lyricmode {
+AdvanceAustraliaFair_Lyrics_Chorus_First = \lyricmode {
   Aus -- tra -- lians all __ let us re -- joice for we are young and free __
   We've gold -- en soil and wealth for toil our home is girt by sea __
   our land a -- bounds in na -- ture's gifts of beau -- ty rich and rare and rare
@@ -448,122 +445,256 @@ AAF_Lyrics_Chorus_First = \lyricmode {
   in joy -- ful strains then let us sing Ad -- vance Aus -- tra -- lia Fair
 }
 
-AAF_Lyrics_Solo =
+AdvanceAustraliaFair_Lyrics_Solo =
 {
-  \AAF_Lyrics_Solo_First
-  \AAF_Lyrics_Solo_Second
-  \AAF_Lyrics_Solo_Third
-  \AAF_Lyrics_Solo_Second
+  \AdvanceAustraliaFair_Lyrics_Solo_First
+  \AdvanceAustraliaFair_Lyrics_Solo_Second
+  \AdvanceAustraliaFair_Lyrics_Solo_Third
+  \AdvanceAustraliaFair_Lyrics_Solo_Second
 }
 
-AAF_Lyrics_Chorus =
+AdvanceAustraliaFair_Lyrics_Chorus =
 {
-  \AAF_Lyrics_Chorus_First
-  \AAF_Lyrics_Solo_Second
+  \AdvanceAustraliaFair_Lyrics_Chorus_First
+  \AdvanceAustraliaFair_Lyrics_Solo_Second
 }
 
-        MvmntIVoiceITimeSig = \time 3/4
-MvmntIVoiceIKeySig = \key f \major
- MvmntIVoiceIClef = \clef treble
-MvmntIVoiceIProlog = { \MvmntIVoiceITimeSig \MvmntIVoiceIKeySig \MvmntIVoiceIClef
+AdvanceAustraliaFair_InitialTempo = {  \set Score.tempoHideNote = ##t  \tempo 4=120 }
+
+AdvanceAustraliaFair_SoloTimeSig = \time 3/4
+AdvanceAustraliaFair_SoloKeySig = \key f \major
+AdvanceAustraliaFair_SoloClef = \clef treble
+AdvanceAustraliaFair_SoloProlog = { \AdvanceAustraliaFair_SoloTimeSig \AdvanceAustraliaFair_SoloKeySig \AdvanceAustraliaFair_SoloClef
+\AdvanceAustraliaFair_InitialTempo
 \set Score.markFormatter = #format-mark-box-alphabet
 }
-MvmntIVoiceIMusic =  {\MvmntIVoiceIProlog \MvmntIVoiceI}
-MvmntIVoiceIContext = \context Voice = VoiceIMvmntI  {\MvmntIVoiceIMusic}
+AdvanceAustraliaFair_SoloMusic =  {\AdvanceAustraliaFair_SoloProlog \AdvanceAustraliaFair_Solo}
+AdvanceAustraliaFair_SoloContext = \context Voice = AdvanceAustraliaFair_Solo  {\AdvanceAustraliaFair_SoloMusic}
 
-        MvmntIVoiceIITimeSig = \time 3/4
-MvmntIVoiceIIKeySig = \key f \major
- MvmntIVoiceIIClef = \clef treble
-MvmntIVoiceIIProlog = { \MvmntIVoiceIITimeSig \MvmntIVoiceIIKeySig \MvmntIVoiceIIClef}
-MvmntIVoiceIIMusic =  {\MvmntIVoiceIIProlog \MvmntIVoiceII}
-MvmntIVoiceIIContext = \context Voice = VoiceIIMvmntI  {\MvmntIVoiceIIMusic}
+AdvanceAustraliaFair_SopranoTimeSig = \time 3/4
+AdvanceAustraliaFair_SopranoKeySig = \key f \major
+AdvanceAustraliaFair_SopranoClef = \clef treble
+AdvanceAustraliaFair_SopranoProlog = { \AdvanceAustraliaFair_SopranoTimeSig \AdvanceAustraliaFair_SopranoKeySig \AdvanceAustraliaFair_SopranoClef
+\AdvanceAustraliaFair_InitialTempo
+}
+AdvanceAustraliaFair_SopranoMusic =  {\AdvanceAustraliaFair_SopranoProlog \AdvanceAustraliaFair_Soprano}
+AdvanceAustraliaFair_SopranoContext = \context Voice = AdvanceAustraliaFair_Soprano  {\AdvanceAustraliaFair_SopranoMusic}
 
-        MvmntIVoiceIIITimeSig = \time 3/4
-MvmntIVoiceIIIKeySig = \key f \major
- MvmntIVoiceIIIClef = \clef treble
-MvmntIVoiceIIIProlog = { \MvmntIVoiceIIITimeSig \MvmntIVoiceIIIKeySig \MvmntIVoiceIIIClef}
-MvmntIVoiceIIIMusic =  {\MvmntIVoiceIIIProlog \MvmntIVoiceIII}
-MvmntIVoiceIIIContext = \context Voice = VoiceIIIMvmntI  {\MvmntIVoiceIIIMusic}
+AdvanceAustraliaFair_AltoTimeSig = \time 3/4
+AdvanceAustraliaFair_AltoKeySig = \key f \major
+AdvanceAustraliaFair_AltoClef = \clef treble
+AdvanceAustraliaFair_AltoProlog = { \AdvanceAustraliaFair_AltoTimeSig \AdvanceAustraliaFair_AltoKeySig \AdvanceAustraliaFair_AltoClef
+\AdvanceAustraliaFair_InitialTempo}
+AdvanceAustraliaFair_AltoMusic =  {\AdvanceAustraliaFair_AltoProlog \AdvanceAustraliaFair_Alto}
+AdvanceAustraliaFair_AltoContext = \context Voice = AdvanceAustraliaFair_Alto  {\AdvanceAustraliaFair_AltoMusic}
 
-        MvmntIVoiceIVTimeSig = \time 3/4
-MvmntIVoiceIVKeySig = \key f \major
- MvmntIVoiceIVClef = \clef "G_8"
-MvmntIVoiceIVProlog = { \MvmntIVoiceIVTimeSig \MvmntIVoiceIVKeySig \MvmntIVoiceIVClef}
-MvmntIVoiceIVMusic =  {\MvmntIVoiceIVProlog \MvmntIVoiceIV}
-MvmntIVoiceIVContext = \context Voice = VoiceIVMvmntI  {\MvmntIVoiceIVMusic}
+AdvanceAustraliaFair_TenorTimeSig = \time 3/4
+AdvanceAustraliaFair_TenorKeySig = \key f \major
+AdvanceAustraliaFair_TenorClef = \clef "G_8"
+AdvanceAustraliaFair_TenorProlog = { \AdvanceAustraliaFair_TenorTimeSig \AdvanceAustraliaFair_TenorKeySig \AdvanceAustraliaFair_TenorClef
+\AdvanceAustraliaFair_InitialTempo}
+AdvanceAustraliaFair_TenorMusic =  {\AdvanceAustraliaFair_TenorProlog \AdvanceAustraliaFair_Tenor}
+AdvanceAustraliaFair_TenorContext = \context Voice = AdvanceAustraliaFair_Tenor  {\AdvanceAustraliaFair_TenorMusic}
 
-        MvmntIVoiceVTimeSig = \time 3/4
-MvmntIVoiceVKeySig = \key f \major
- MvmntIVoiceVClef = \clef bass
-MvmntIVoiceVProlog = { \MvmntIVoiceVTimeSig \MvmntIVoiceVKeySig \MvmntIVoiceVClef}
-MvmntIVoiceVMusic =  {\MvmntIVoiceVProlog \MvmntIVoiceV}
-MvmntIVoiceVContext = \context Voice = VoiceVMvmntI  {\MvmntIVoiceVMusic}
-MvmntIStaffI = \new Staff
+AdvanceAustraliaFair_BassTimeSig = \time 3/4
+AdvanceAustraliaFair_BassKeySig = \key f \major
+AdvanceAustraliaFair_BassClef = \clef bass
+AdvanceAustraliaFair_BassProlog = { \AdvanceAustraliaFair_BassTimeSig \AdvanceAustraliaFair_BassKeySig \AdvanceAustraliaFair_BassClef
+\AdvanceAustraliaFair_InitialTempo}
+AdvanceAustraliaFair_BassMusic =  {\AdvanceAustraliaFair_BassProlog \AdvanceAustraliaFair_Bass}
+AdvanceAustraliaFair_BassContext = \context Voice = AdvanceAustraliaFair_Bass  {\AdvanceAustraliaFair_BassMusic}
+AdvanceAustraliaFair_SoloStaff = \new Staff
                 \with {
                   instrumentName = "Treble Solo"
                 }
                 << {
-                \MvmntIVoiceIContext
+                \AdvanceAustraliaFair_SoloContext
                 }
-                \new Lyrics \lyricsto VoiceIMvmntI \AAF_Lyrics_Solo
+                \new Lyrics \lyricsto AdvanceAustraliaFair_Solo \AdvanceAustraliaFair_Lyrics_Solo
                 >>
-MvmntIStaffII = \new Staff
+AdvanceAustraliaFair_SopranoStaff = \new Staff
                 \with {
                   instrumentName = "Soprano"
                   \RemoveEmptyStaves
                 }
                 << {
-                \MvmntIVoiceIIContext
+                \AdvanceAustraliaFair_SopranoContext
                 }
-                \new Lyrics \lyricsto VoiceIIMvmntI \AAF_Lyrics_Chorus
+                \new Lyrics \lyricsto AdvanceAustraliaFair_Soprano \AdvanceAustraliaFair_Lyrics_Chorus
                 >>
-MvmntIStaffIII = \new Staff
+AdvanceAustraliaFair_AltoStaff = \new Staff
                 \with {
                   instrumentName = "Alto"
                   \RemoveEmptyStaves
                 }
                 << {
-                \MvmntIVoiceIIIContext
+                \AdvanceAustraliaFair_AltoContext
                 }
-                \new Lyrics \lyricsto VoiceIIIMvmntI \AAF_Lyrics_Chorus
+                \new Lyrics \lyricsto AdvanceAustraliaFair_Alto \AdvanceAustraliaFair_Lyrics_Chorus
                 >>
-MvmntIStaffIV = \new Staff
+AdvanceAustraliaFair_TenorStaff = \new Staff
                 \with {
                   instrumentName = "Tenor"
                   \RemoveEmptyStaves
                 }
                 << {
-                \MvmntIVoiceIVContext
+                \AdvanceAustraliaFair_TenorContext
                 }
-                \new Lyrics \lyricsto VoiceIVMvmntI \AAF_Lyrics_Chorus
+                \new Lyrics \lyricsto AdvanceAustraliaFair_Tenor \AdvanceAustraliaFair_Lyrics_Chorus
                 >>
-MvmntIStaffV = \new Staff
+AdvanceAustraliaFair_BassStaff = \new Staff
                 \with {
                   instrumentName = "Bass"
                   \RemoveEmptyStaves
                 }
                 << {
-                \MvmntIVoiceVContext
+                \AdvanceAustraliaFair_BassContext
                 }
-                \new Lyrics \lyricsto VoiceVMvmntI \AAF_Lyrics_Chorus
+                \new Lyrics \lyricsto AdvanceAustraliaFair_Bass \AdvanceAustraliaFair_Lyrics_Chorus
                 >>
+
+AdvanceAustraliaFair_BookPart = \bookpart
+{
+  \header {
+    title = "Advance Australia Fair"
+    subsubtitle = "(1988 version)"
+    tagline = ""
+  }
 
 \score {
 <<
 \new ChoirStaff <<
-\MvmntIStaffI
-\MvmntIStaffII
-\MvmntIStaffIII
-\MvmntIStaffIV
-\MvmntIStaffV
+\AdvanceAustraliaFair_SoloStaff
+\AdvanceAustraliaFair_SopranoStaff
+\AdvanceAustraliaFair_AltoStaff
+\AdvanceAustraliaFair_TenorStaff
+\AdvanceAustraliaFair_BassStaff
 %{
 %}
 >>
 >>
 \layout{
         }
-\header{
-        }
-
+}
 }
 
+AdvanceAustraliaFair_RehersalMidi = #
+(define-music-function
+ (parser location name midiInstrument lyrics) (string? string? ly:music? )
+ #{
+   \removeWithTag #'longRests {
+     \unfoldRepeats <<
+     \new Staff = "solo" \new Voice = "solo" { \AdvanceAustraliaFair_SoloMusic }
+     \new Staff = "soprano" \new Voice = "soprano" { \AdvanceAustraliaFair_SopranoMusic }
+     \new Staff = "alto" \new Voice = "alto" { \AdvanceAustraliaFair_AltoMusic }
+     \new Staff = "tenor" \new Voice = "tenor" { \AdvanceAustraliaFair_TenorMusic }
+     \new Staff = "bass" \new Voice = "bass" { \AdvanceAustraliaFair_BassMusic }
+     \context Staff = $name {
+       \set Score.midiMinimumVolume = #0.5
+       \set Score.midiMaximumVolume = #0.5
+       \set Score.tempoWholesPerMinute = #(ly:make-moment 100 4)
+       \set Staff.midiMinimumVolume = #0.8
+       \set Staff.midiMaximumVolume = #1.0
+       \set Staff.midiInstrument = $midiInstrument
+     }
+     \new Lyrics \with {
+       alignBelowContext = $name
+     } \lyricsto $name $lyrics
+   >>
+   }
+ #})
+
+AdvanceAustraliaFair_RehersalMidiCombined = #
+(define-music-function
+ (parser location) ()
+ #{
+   \removeWithTag #'longRests {
+     \unfoldRepeats <<
+      \new Staff = "solo" \with {
+        midiInstrument = "choir aahs" midiMinimumVolume = #0.8 midiMaximumVolume = #1.0
+        instrumentName = "Solo"
+      } \new Voice = "Solo" { \AdvanceAustraliaFair_SoloMusic }
+      \new Staff = "soprano" \with {
+        midiInstrument = "choir aahs" midiMinimumVolume = #0.8 midiMaximumVolume = #1.0
+        instrumentName = "Soprano"
+      } \new Voice = "Soprano" { \AdvanceAustraliaFair_SopranoMusic }
+      \new Staff = "alto" \with {
+        midiInstrument = "choir aahs" midiMinimumVolume = #0.8 midiMaximumVolume = #1.0
+        instrumentName = "Alto"
+      } \new Voice = "Alto" { \AdvanceAustraliaFair_AltoMusic }
+      \new Staff = "tenor" \with {
+        midiInstrument = "choir aahs" midiMinimumVolume = #0.8 midiMaximumVolume = #1.0
+        instrumentName = "Tenor"
+      } \new Voice = "Tenor" { \AdvanceAustraliaFair_TenorMusic }
+      \new Staff = "bass" \with {
+        midiInstrument = "choir aahs" midiMinimumVolume = #0.8 midiMaximumVolume = #1.0
+        instrumentName = "Bass"
+      } \new Voice = "Bass" { \AdvanceAustraliaFair_BassMusic }
+   >>
+   }
+ #})
+
+AdvanceAustraliaFair_RehersalMidiCombinedTwo = \book {
+  \bookOutputName "Advance.Australia.Fair"
+  \bookOutputSuffix "all"
+  \score {
+    \removeWithTag #'longRests {\AdvanceAustraliaFair_RehersalMidiCombined
+    }
+    \midi { }
+  }
+}
+
+AdvanceAustraliaFair_RehersalMidiSolo = \book {
+  \bookOutputSuffix "solo"
+  \bookOutputName "Advance.Australia.Fair"
+  \score {
+    \AdvanceAustraliaFair_RehersalMidi "solo" "soprano sax" {}
+    \midi { }
+  }
+}
+
+AdvanceAustraliaFair_RehersalMidiSoprano = \book {
+  \bookOutputSuffix "soprano"
+  \bookOutputName "Advance.Australia.Fair"
+  \score {
+    \AdvanceAustraliaFair_RehersalMidi "soprano" "soprano sax" {}
+    \midi { }
+  }
+}
+
+AdvanceAustraliaFair_RehersalMidiAlto = \book {
+  \bookOutputSuffix "alto"
+  \bookOutputName "Advance.Australia.Fair"
+  \score {
+    \AdvanceAustraliaFair_RehersalMidi "alto" "alto sax" {}
+    \midi { }
+  }
+}
+
+AdvanceAustraliaFair_RehersalMidiTenor = \book {
+  \bookOutputSuffix "tenor"
+  \bookOutputName "Advance.Australia.Fair"
+  \score {
+    \AdvanceAustraliaFair_RehersalMidi "tenor" "tenor sax" {}
+    \midi { }
+  }
+}
+
+AdvanceAustraliaFair_RehersalMidiBass = \book {
+  \bookOutputSuffix "bass"
+  \bookOutputName "Advance.Australia.Fair"
+  \score {
+    \AdvanceAustraliaFair_RehersalMidi "bass" "baritone sax" {}
+    \midi { }
+  }
+}
+
+\AdvanceAustraliaFair_BookPart
+\AdvanceAustraliaFair_RehersalMidiCombinedTwo
+\AdvanceAustraliaFair_RehersalMidiSolo
+\AdvanceAustraliaFair_RehersalMidiSoprano
+\AdvanceAustraliaFair_RehersalMidiAlto
+\AdvanceAustraliaFair_RehersalMidiTenor
+\AdvanceAustraliaFair_RehersalMidiBass
+%{
+%}
