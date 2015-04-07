@@ -336,7 +336,7 @@ AmazingGrace_AltoNotes = {
 
 AmazingGrace_TenorNotes = {
   \AmazingGrace_TenorStartOosNotes
-  \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotes
+  \transpose bes bes, { \AmazingGrace_Soprano_Alto_Tenor_Bass_SharedStartNotes }
   \AmazingGrace_TenorFinishNotesOnly
 }
 

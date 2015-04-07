@@ -427,7 +427,7 @@ AbideWithMe_Verse = \lyricmode {
   | When oth- er
   | help- ers
   | fail, and com- forts
-  | fell,
+  | flee,
   | Help of the
   | Help- less, O a-
   | bide with
