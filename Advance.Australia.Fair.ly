@@ -134,16 +134,16 @@ AdvanceAustraliaFair_Solo =  {
          d'4. d'8 d'4 b'%|
          a' g' fis' e'%|
 %150
-         d'2. d'4%|
+         d'2. d'4 \mark d' \bar "||" %|
          e'4. fis'8 g'4 e'%|
-         d'4. b8 b4 c'%|
+         d'4. b8 b4 c'  %|
          e' g' a' g'%|
          a'2. d'4%|
 %155
          e'4. fis'8 g'4 e'%|
          d'4. g'8 g'4 a'%|
          b'4. g'8 a'4. g'8%|
-         g'2. b'4%|
+         g'2. b'4 \mark b'%|
          c'' b' a' e''%|
 %160
          d'' cis'' d'' c''%|
