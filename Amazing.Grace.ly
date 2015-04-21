@@ -258,7 +258,7 @@ AmazingGrace_TenorFinishNotesOnly = \relative c {
   ees2  ees4 | % saved a
   ees2 ees4 | % wretch like
   d4( d ees | % me
-  f ees2) | % I
+  f ees) ees | % I
   g2 g4 | % once was
   ees2 ees4 | % lost but
   ees2 c8( ees) | % now am
@@ -277,7 +277,7 @@ AmazingGrace_BassFinishNotesOnly = \relative c {
   c2  c4 | % saved a
   f,2 f4 | % wretch like
   bes2.~ | % me
-  bes | % I
+  bes2 bes4 | % I
   ees,2 ees8( f) | % once was
   g2 g4 | % lost but
   aes2 aes4 | % now am
@@ -346,7 +346,7 @@ AmazingGrace_BassNotes = \relative c' {
   \AmazingGrace_BassFinishNotesOnly
 }
 
-AmazingGrace_SharedWordsPartOne = \lyricmode {
+AmazingGrace_SharedWords = \lyricmode {
   My __
   % 77
   | Lord has __
@@ -377,10 +377,7 @@ AmazingGrace_SharedWordsPartOne = \lyricmode {
   | sound that
   | saved a __
   | wretch like
-  | me __
-}
-
-AmazingGrace_SharedWordsPartTwo = \lyricmode {
+  | me __ I __
   | once was
   | lost but
   | now am __
@@ -392,30 +389,22 @@ AmazingGrace_SharedWordsPartTwo = \lyricmode {
 
 AmazingGrace_SopranoWords = \lyricmode {
   Ooh \repeat unfold 28 { \skip 4 }
-  \AmazingGrace_SharedWordsPartOne
-   I __
-  \AmazingGrace_SharedWordsPartTwo
+  \AmazingGrace_SharedWords
 }
 
 AmazingGrace_AltoWords = \lyricmode {
   Ooh \repeat unfold 31 { \skip 4 }
-  \AmazingGrace_SharedWordsPartOne
-   I __
-  \AmazingGrace_SharedWordsPartTwo
+  \AmazingGrace_SharedWords
 }
 
 AmazingGrace_TenorWords = \lyricmode {
   Ooh \repeat unfold 34 { \skip 4 }
-  \AmazingGrace_SharedWordsPartOne
-  % No I
-  \AmazingGrace_SharedWordsPartTwo
+  \AmazingGrace_SharedWords
 }
 
 AmazingGrace_BassWords = \lyricmode {
   Ooh \repeat unfold 33 { \skip 4 }
-  \AmazingGrace_SharedWordsPartOne
-  % No I
-  \AmazingGrace_SharedWordsPartTwo
+  \AmazingGrace_SharedWords
 }
 
 AmazingGrace_Soprano = {
