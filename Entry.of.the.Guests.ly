@@ -4,7 +4,7 @@
 
 easyHeads = { \easyHeadsOff }
 
-BeStillMySoul_GlobalStart = {
+EntranceOfTheGuests_GlobalStart = {
   \key b \major
   \time 4/4
   \bar ""
@@ -13,11 +13,11 @@ BeStillMySoul_GlobalStart = {
   %\override Lyrics.LyricText #'font-size = #2
 }
 
-%BeStillMySoul_MiddleKeyChange = \key bes \major
+%EntranceOfTheGuests_MiddleKeyChange = \key bes \major
 %
 %% The music follows
 %
-  %BeStillMySoul_Dynamics_Shared = {
+  %EntranceOfTheGuests_Dynamics_Shared = {
 %s1*4 | %1
 %    s4^\mp s1*3/4| %5
 %    s1*7 | %6
@@ -47,21 +47,21 @@ BeStillMySoul_GlobalStart = {
 %
 %}
 %
-%BeStillMySoul_InitialRests = {
+%EntranceOfTheGuests_InitialRests = {
 %  \tag #'longRests R1*4 |
 %}
 %
-%BeStillMySoul_MidRestsAndKeyChange = {
+%EntranceOfTheGuests_MidRestsAndKeyChange = {
 %  \tag #'longRests R1*4 |
-%  \BeStillMySoul_MiddleKeyChange
+%  \EntranceOfTheGuests_MiddleKeyChange
 %  \tag #'longRests R1*5 |
 %}
 %
-%BeStillMySoul_ThirdLongRests = {
+%EntranceOfTheGuests_ThirdLongRests = {
 %  \tag #'longRests R1*2 |
 %}
 %
-BeStillMySoul_Soprano =  {
+EntranceOfTheGuests_Soprano =  {
  fis' 2  dis' 4..  b 16 |
  << { b2( fis'4) } { s4 s\turn s }>>  e'4 |
  dis' 4.  b 8  dis' 8.  cis' 16  b 8.  ais 16 |
@@ -183,8 +183,8 @@ dis' 1  |
 %         bes1 \bar"|."
 }
 %
-%BeStillMySoul_Alto =  {
-%  \BeStillMySoul_InitialRests
+%EntranceOfTheGuests_Alto =  {
+%  \EntranceOfTheGuests_InitialRests
 %%5
 %         r4 ees' d' ees' |
 %         d'2. ees'4 |
@@ -216,7 +216,7 @@ dis' 1  |
 %         ees'1 ~ |
 %         ees'4 r r2 |
 %%30
-%         \BeStillMySoul_MidRestsAndKeyChange
+%         \EntranceOfTheGuests_MidRestsAndKeyChange
 %         r4 bes a bes |
 %%40
 %         c'2. bes4 |
@@ -229,7 +229,7 @@ dis' 1  |
 %         a bes bes4. a8 |
 %         bes1 ~ |
 %         bes4 r r2 |
-%         \BeStillMySoul_ThirdLongRests
+%         \EntranceOfTheGuests_ThirdLongRests
 %         r4 d' d' d' |
 %         d'2. bes4 |
 %         bes bes bes4. c'8 |
@@ -262,26 +262,20 @@ dis' 1  |
 %         d'4 r <c' ees'>( c') |
 %         d'1 \bar"|."}
 %
-BeStillMySoul_Tenor =  {
+EntranceOfTheGuests_Tenor =  {
  fis' 2  dis' 4..  b 16 |
-  << % { b2( fis'4) }
-     { \tuplet 5/4 {b8 cis'8 b ais b8 } fis'4 } { s4 s\turn s }>>  e'4 |
+  << \tag #'cutformidi { b2( fis'4) }
+     \tag #'cutformidi { s4 s\turn s }
+     \tag #'onlyformidi { b8 \tuplet 3/2 { cis'8 b ais  } b8 fis'4 }
+  >>  e'4 |
  
  dis' 4.  b 8  dis' 8.  cis' 16  b 8.  ais 16 |
  b 2  fis 4  r |
  gis' 2  e' 4..  cis' 16 |
- << { cis' 2(  gis' 4) }  {
-      s4
-      s4*3/16
-      \once \set suggestAccidentals = ##t
-      \once \override AccidentalSuggestion #'outside-staff-priority = ##f
-      \once \override AccidentalSuggestion #'avoid-slur = #'inside
-      \once \override AccidentalSuggestion #'font-size = #-3
-      \once \override AccidentalSuggestion #'script-priority = #-1
-      \single \hideNotes
-      gis!4\turn \noBeam
-      s4*13/16
-    } >> fis'4
+ << \tag #'cutformidi { cis'2(  gis'4) }
+    \tag #'cutformidi { s4 s\turn s }
+    \tag #'onlyformidi { cis'8 \tuplet 3/2 { dis'8 cis' c'  } cis' gis'4 }
+ >> fis'4
     |
   dis' 4.  b 8  fis'   e'   gis 8.  cis' 16 |
   b 2(  ais 4)  r  |
@@ -304,14 +298,11 @@ BeStillMySoul_Tenor =  {
  dis' 2.  e' 4 |
  fis'   e'   e'   cis' |
  fis' 2  gis' 4  fis' 8.  e' 16 |
- \override NoteHead.color = #blue
- %Page 116
  dis'1 |
  dis'4  r r2 |
  gis8. ais16 bis8. cis'16 dis'8. eis'16 fis'8. dis'16 |
  eis'2 cis' |
  dis' r |
- \override NoteHead.color = #black
  fis'   cis' 4  cis'   |
  a' 2~  a' 8.  gis' 16  fis' 8.  eis' 16 |
  fis' 4(  d') cis'(   e'!)  |
@@ -357,11 +348,9 @@ BeStillMySoul_Tenor =  {
  dis'   dis'   e' 4.  fis' 8  |
  fis' 1
  eis' 2  fis' 4  gis' |
- \override NoteHead.color = #blue
  eis'2(  fis'4)  gis' |
  fis'4. fis'8 fis'4 fis' |
  gis' 1  |
- \override NoteHead.color = #black
  r2  dis' ! 2 |
  fis' 4.  dis' 8  dis' 4  fis' |
  fis' 2.  fis' 4 |
@@ -369,7 +358,7 @@ BeStillMySoul_Tenor =  {
  eis' 2  eis' 4.  eis' 8  |
  e' ! 2  e'   |
  fis' 2.  e' 4  |
-dis' 1  |
+ dis' 1  |
  fis'   |
  e' 2  e' 4  e'   |
  e' 2  e'   |
@@ -390,8 +379,8 @@ dis' 1  |
 %         bes1 \bar"|."
 }
 %
-%BeStillMySoul_Bass =  {
-%  \BeStillMySoul_InitialRests
+%EntranceOfTheGuests_Bass =  {
+%  \EntranceOfTheGuests_InitialRests
 %%5
 %         r4 ees aes g |
 %         f2. d4 |
@@ -423,7 +412,7 @@ dis' 1  |
 %         ees1 ~ |
 %         ees4 r r2 |
 %%30
-%         \BeStillMySoul_MidRestsAndKeyChange
+%         \EntranceOfTheGuests_MidRestsAndKeyChange
 %         r4 bes, ees d |
 %%40
 %         c2. bes,4 |
@@ -436,7 +425,7 @@ dis' 1  |
 %         ees d ees4. c8 |
 %         bes,1 ~ |
 %         bes,4 r r2 |
-%         \BeStillMySoul_ThirdLongRests
+%         \EntranceOfTheGuests_ThirdLongRests
 %         r4 bes bes a |
 %         g2. g4 |
 %         g d d4. f8 |
@@ -469,7 +458,7 @@ dis' 1  |
 %         bes,4 r <ees g>( <c ees>) |
 %         bes,1 \bar"|."}
 %
-%BeStillMySoul_SharedWords = \lyricmode {
+%EntranceOfTheGuests_SharedWords = \lyricmode {
 %  Be still my |
 %  soul the |
 %  Lord is on thy |
@@ -531,47 +520,47 @@ dis' 1  |
 %  men.
 %}
 %
-%BeStillMySoul_SopranoClef = \clef treble
-%BeStillMySoul_SopranoProlog = { \BeStillMySoul_SopranoClef \BeStillMySoul_GlobalStart}
-%BeStillMySoul_SopranoMusic =  {\BeStillMySoul_SopranoProlog \BeStillMySoul_Soprano}
-%BeStillMySoul_SopranoContext = \context Voice = BeStillMySoul_Soprano  {\BeStillMySoul_SopranoMusic}
+%EntranceOfTheGuests_SopranoClef = \clef treble
+%EntranceOfTheGuests_SopranoProlog = { \EntranceOfTheGuests_SopranoClef \EntranceOfTheGuests_GlobalStart}
+%EntranceOfTheGuests_SopranoMusic =  {\EntranceOfTheGuests_SopranoProlog \EntranceOfTheGuests_Soprano}
+%EntranceOfTheGuests_SopranoContext = \context Voice = EntranceOfTheGuests_Soprano  {\EntranceOfTheGuests_SopranoMusic}
 %
-%BeStillMySoul_AltoClef = \clef treble
-%BeStillMySoul_AltoProlog = { \BeStillMySoul_AltoClef \BeStillMySoul_GlobalStart}
-%BeStillMySoul_AltoMusic =  {\BeStillMySoul_AltoProlog \BeStillMySoul_Alto}
-%BeStillMySoul_AltoContext = \context Voice = BeStillMySoul_Alto  {\BeStillMySoul_AltoMusic}
+%EntranceOfTheGuests_AltoClef = \clef treble
+%EntranceOfTheGuests_AltoProlog = { \EntranceOfTheGuests_AltoClef \EntranceOfTheGuests_GlobalStart}
+%EntranceOfTheGuests_AltoMusic =  {\EntranceOfTheGuests_AltoProlog \EntranceOfTheGuests_Alto}
+%EntranceOfTheGuests_AltoContext = \context Voice = EntranceOfTheGuests_Alto  {\EntranceOfTheGuests_AltoMusic}
 %
-BeStillMySoul_TenorClef = \clef "treble_8"
-%BeStillMySoul_TenorClef = \clef "bass"
-BeStillMySoul_TenorProlog = { \BeStillMySoul_TenorClef \BeStillMySoul_GlobalStart}
-BeStillMySoul_TenorMusic =  {\BeStillMySoul_TenorProlog \BeStillMySoul_Tenor}
-BeStillMySoul_TenorContext = \context Voice = BeStillMySoul_Tenor {\BeStillMySoul_TenorMusic}
+EntranceOfTheGuests_TenorClef = \clef "treble_8"
+%EntranceOfTheGuests_TenorClef = \clef "bass"
+EntranceOfTheGuests_TenorProlog = { \EntranceOfTheGuests_TenorClef \EntranceOfTheGuests_GlobalStart}
+EntranceOfTheGuests_TenorMusic =  {\EntranceOfTheGuests_TenorProlog \removeWithTag #'onlyformidi \EntranceOfTheGuests_Tenor}
+EntranceOfTheGuests_TenorContext = \context Voice = EntranceOfTheGuests_Tenor {\EntranceOfTheGuests_TenorMusic}
 %
-%BeStillMySoul_BassClef = \clef bass
-%BeStillMySoul_BassProlog = { \BeStillMySoul_BassClef \BeStillMySoul_GlobalStart}
-%BeStillMySoul_BassMusic =  {\BeStillMySoul_BassProlog \BeStillMySoul_Bass}
-%BeStillMySoul_BassContext = \context Voice = BeStillMySoul_Bass  {\BeStillMySoul_BassMusic}
+%EntranceOfTheGuests_BassClef = \clef bass
+%EntranceOfTheGuests_BassProlog = { \EntranceOfTheGuests_BassClef \EntranceOfTheGuests_GlobalStart}
+%EntranceOfTheGuests_BassMusic =  {\EntranceOfTheGuests_BassProlog \EntranceOfTheGuests_Bass}
+%EntranceOfTheGuests_BassContext = \context Voice = EntranceOfTheGuests_Bass  {\EntranceOfTheGuests_BassMusic}
 %
-%BeStillMySoul_Staff_Soprano = \new Staff  << {
-%                \BeStillMySoul_SopranoContext
+%EntranceOfTheGuests_Staff_Soprano = \new Staff  << {
+%                \EntranceOfTheGuests_SopranoContext
 %                }
 %                >>
-%BeStillMySoul_Staff_Alto = \new Staff  << {
-%                \BeStillMySoul_AltoContext
+%EntranceOfTheGuests_Staff_Alto = \new Staff  << {
+%                \EntranceOfTheGuests_AltoContext
 %                }
 %                >>
-BeStillMySoul_Staff_Tenor = \new Staff  << {
-                \BeStillMySoul_TenorContext
+EntranceOfTheGuests_Staff_Tenor = \new Staff  << {
+                \EntranceOfTheGuests_TenorContext
                 }
                 >>
-%BeStillMySoul_Staff_Bass = \new Staff  << {
-%                \BeStillMySoul_BassContext
+%EntranceOfTheGuests_Staff_Bass = \new Staff  << {
+%                \EntranceOfTheGuests_BassContext
 %                }
 %                >>
-BeStillMySoul_BookPart =
+EntranceOfTheGuests_BookPart =
 \bookpart {
 \header {
-  title = "Wagner - Tännhauser: Entrace of the Guests"
+  title = "Wagner - Tännhauser: Entrance of the Guests"
 %  subsubtitle = "from Finlandia."
 %  composer = "Wagner"
 %  arranger = ""
@@ -588,14 +577,14 @@ BeStillMySoul_BookPart =
 %        \consists "Ambitus_engraver"
 %      }
 %     <<
-%       \new Voice = "BeStillMySoul_Dynamics_Soprano" { \BeStillMySoul_Dynamics_Shared }
-%       \new Voice = "BeStillMySoul_Soprano" { \voiceOne \BeStillMySoul_SopranoContext  }
-%       \new Voice = "BeStillMySoul_Alto" { \voiceTwo \BeStillMySoul_AltoContext  }
+%       \new Voice = "EntranceOfTheGuests_Dynamics_Soprano" { \EntranceOfTheGuests_Dynamics_Shared }
+%       \new Voice = "EntranceOfTheGuests_Soprano" { \voiceOne \EntranceOfTheGuests_SopranoContext  }
+%       \new Voice = "EntranceOfTheGuests_Alto" { \voiceTwo \EntranceOfTheGuests_AltoContext  }
 %     >>
 %
 %     \new Lyrics \with {
 %       %\override VerticalAxisGroup #'staff-affinity = #CENTER
-%     } \lyricsto "BeStillMySoul_Soprano" \BeStillMySoul_SharedWords
+%     } \lyricsto "EntranceOfTheGuests_Soprano" \EntranceOfTheGuests_SharedWords
 %
 %      %{
 %      \new Staff \with {
@@ -603,21 +592,21 @@ BeStillMySoul_BookPart =
 %        \consists "Ambitus_engraver"
 %      }
 %      <<
-%        \new Voice = "BeStillMySoul_Dynamics_Alto" { \BeStillMySoul_Dynamics_Shared }
-%        \new Voice = "BeStillMySoul_Alto" { \BeStillMySoul_AltoContext }
+%        \new Voice = "EntranceOfTheGuests_Dynamics_Alto" { \EntranceOfTheGuests_Dynamics_Shared }
+%        \new Voice = "EntranceOfTheGuests_Alto" { \EntranceOfTheGuests_AltoContext }
 %      >>
-%      \new Lyrics { \lyricsto "BeStillMySoul_Alto" \BeStillMySoul_SharedWords }
+%      \new Lyrics { \lyricsto "EntranceOfTheGuests_Alto" \EntranceOfTheGuests_SharedWords }
 %      %}
       \new Staff = "Tenor" \with {
         instrumentName = "Tenor"
         \consists "Ambitus_engraver"
       }
       <<
-%      \new Voice = "BeStillMySoul_Dynamics_Tenor" { \BeStillMySoul_Dynamics_Shared }
-      \new Voice = "BeStillMySoul_Tenor" { \BeStillMySoul_TenorContext }
+%      \new Voice = "EntranceOfTheGuests_Dynamics_Tenor" { \EntranceOfTheGuests_Dynamics_Shared }
+      \new Voice = "EntranceOfTheGuests_Tenor" { \EntranceOfTheGuests_TenorContext }
       >>
 %      \new Lyrics {
-%        \lyricsto "BeStillMySoul_Tenor" { \BeStillMySoul_SharedWords }
+%        \lyricsto "EntranceOfTheGuests_Tenor" { \EntranceOfTheGuests_SharedWords }
 %      }
 %
 %      \new Staff = "Bass" \with {
@@ -625,14 +614,14 @@ BeStillMySoul_BookPart =
 %        \consists "Ambitus_engraver"
 %      }
 %      <<
-%        \new Voice = "BeStillMySoul_Bass" { \BeStillMySoul_BassContext }
-%        \new Voice = "BeStillMySoul_Dynamics_Bass" { \BeStillMySoul_Dynamics_Shared }
+%        \new Voice = "EntranceOfTheGuests_Bass" { \EntranceOfTheGuests_BassContext }
+%        \new Voice = "EntranceOfTheGuests_Dynamics_Bass" { \EntranceOfTheGuests_Dynamics_Shared }
 %      >>
 %      \new Lyrics {
-%      \lyricsto "BeStillMySoul_Bass" { \BeStillMySoul_SharedWords }
+%      \lyricsto "EntranceOfTheGuests_Bass" { \EntranceOfTheGuests_SharedWords }
 %      }
     >>
-%    %\pianoReduction \BeStillMySoul_Soprano \BeStillMySoul_Alto \BeStillMySoul_Tenor \BeStillMySoul_BassContext
+%    %\pianoReduction \EntranceOfTheGuests_Soprano \EntranceOfTheGuests_Alto \EntranceOfTheGuests_Tenor \EntranceOfTheGuests_BassContext
 >>
 \layout{
         }
@@ -640,7 +629,7 @@ BeStillMySoul_BookPart =
 }
 
 % Rehearsal MIDI files:
-BeStillMySoul_RehearsalMidi = #
+EntranceOfTheGuests_RehearsalMidi = #
 (define-music-function
  (parser location name midiInstrument) (string? string? )
  #{
@@ -648,50 +637,50 @@ BeStillMySoul_RehearsalMidi = #
  #})
 
 
-%BeStillMySoul_RehearsalMidi = #
+%EntranceOfTheGuests_RehearsalMidi = #
 %(define-music-function
 % (parser location name midiInstrument lyrics) (string? string? ly:music? )
 % #{
-%    \removeWithTag #'longRests { \rehearsalMidi $name $midiInstrument \BeStillMySoul_Soprano \BeStillMySoul_Alto \BeStillMySoul_Tenor \BeStillMySoul_Bass $lyrics }
+%    \removeWithTag #'longRests { \rehearsalMidi $name $midiInstrument \EntranceOfTheGuests_Soprano \EntranceOfTheGuests_Alto \EntranceOfTheGuests_Tenor \EntranceOfTheGuests_Bass $lyrics }
 % #})
 
-%BeStillMySoul_RehersalMidiCombined = \book {
+%EntranceOfTheGuests_RehersalMidiCombined = \book {
 %  \bookOutputName "Be.Still.My.Soul"
 %  \bookOutputSuffix "all"
 %  \score {
-%    \removeWithTag #'longRests { \rehearsalMidiCombined \BeStillMySoul_Soprano \BeStillMySoul_Alto \BeStillMySoul_Tenor \BeStillMySoul_Bass }
+%    \removeWithTag #'longRests { \rehearsalMidiCombined \EntranceOfTheGuests_Soprano \EntranceOfTheGuests_Alto \EntranceOfTheGuests_Tenor \EntranceOfTheGuests_Bass }
 %    \midi { }
 %  }
 %}
 %
-%BeStillMySoul_RehersalMidiSoprano = \book {
+%EntranceOfTheGuests_RehersalMidiSoprano = \book {
 %  \bookOutputName "Be.Still.My.Soul"
 %  \bookOutputSuffix "soprano"
 %  \score {
-%    \BeStillMySoul_RehearsalMidi "soprano" "soprano sax" \BeStillMySoul_SharedWords
+%    \EntranceOfTheGuests_RehearsalMidi "soprano" "soprano sax" \EntranceOfTheGuests_SharedWords
 %    \midi { }
 %  }
 %}
 %
-%BeStillMySoul_RehersalMidiAlto = \book {
+%EntranceOfTheGuests_RehersalMidiAlto = \book {
 %  \bookOutputName "Be.Still.My.Soul"
 %  \bookOutputSuffix "alto"
 %  \score {
-%    \BeStillMySoul_RehearsalMidi "alto" "alto sax" \BeStillMySoul_SharedWords
+%    \EntranceOfTheGuests_RehearsalMidi "alto" "alto sax" \EntranceOfTheGuests_SharedWords
 %    \midi { }
 %  }
 %}
 %
 
 
-BeStillMySoul_RehersalMidiTenor = \book {
+EntranceOfTheGuests_RehersalMidiTenor = \book {
   \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
   \bookOutputSuffix "tenor"
   \score {
     { 
       
-      \removeWithTag #'tenorOnlyRests  \unfoldRepeats <<
-     \new Staff = "tenor" \new Voice = "tenor" { \BeStillMySoul_Tenor }
+     \removeWithTag #'cutformidi \removeWithTag #'tenorOnlyRests  \unfoldRepeats <<
+     \new Staff = "tenor" \new Voice = "tenor" { \EntranceOfTheGuests_Tenor }
      \context Staff = "tenor" {
        \set Score.midiMinimumVolume = #0.5
        \set Score.midiMaximumVolume = #0.5
@@ -707,20 +696,20 @@ BeStillMySoul_RehersalMidiTenor = \book {
   }
 }
 %
-%BeStillMySoul_RehersalMidiBass = \book {
+%EntranceOfTheGuests_RehersalMidiBass = \book {
 %  \bookOutputName "Be.Still.My.Soul"
 %  \bookOutputSuffix "bass"
 %  \score {
-%    \BeStillMySoul_RehearsalMidi "bass" "baritone sax" \BeStillMySoul_SharedWords
+%    \EntranceOfTheGuests_RehearsalMidi "bass" "baritone sax" \EntranceOfTheGuests_SharedWords
 %    \midi { }
 %  }
 %}
 %
-\book { \bookOutputName "Wagner.Entrance.of.the.guests" \bookpart {\BeStillMySoul_BookPart }}
-%\BeStillMySoul_RehersalMidiCombined
-%\BeStillMySoul_RehersalMidiSoprano
-%\BeStillMySoul_RehersalMidiAlto
-\BeStillMySoul_RehersalMidiTenor
-%\BeStillMySoul_RehersalMidiBass
+\book { \bookOutputName "Wagner.Entrance.of.the.guests" \bookpart {\EntranceOfTheGuests_BookPart }}
+%\EntranceOfTheGuests_RehersalMidiCombined
+%\EntranceOfTheGuests_RehersalMidiSoprano
+%\EntranceOfTheGuests_RehersalMidiAlto
+\EntranceOfTheGuests_RehersalMidiTenor
+%\EntranceOfTheGuests_RehersalMidiBass
 %%{
 %%}
