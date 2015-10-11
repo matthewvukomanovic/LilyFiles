@@ -61,84 +61,132 @@ BeStillMySoul_GlobalStart = {
 %  \tag #'longRests R1*2 |
 %}
 %
-%BeStillMySoul_Soprano =  {
-%  \BeStillMySoul_InitialRests
-%%5
-%         r4 g' f' g' |
-%         aes'2. g'4 |
-%         f' g' ees'4. f'8 |
-%         f'4 g'2. ~ |
-%         g'4 g' f' g' |
-%%10
-%         aes'2. g'4 |
-%         f' g' ees'4. f'8 |
-%         g'1 ~ |
-%         g'4 bes' bes' bes' |
-%         c''2. g'4 |
-%%15
-%         g' bes' bes'4. f'8 |
-%         f'4 aes'2. ~ |
-%         aes'4 aes' g' f' |
-%         g'2. ees'4 |
-%         ees' f' f'4. g'8 |
-%%20
-%         g'1 ~ |
-%         g'4 bes' bes' bes' |
-%         c''2. g'4 |
-%         g' bes' bes'4. f'8 |
-%         f'4 aes'2. ~ |
-%%25
-%         aes'4 aes' g' f' |
-%         g'2. ees'4 |
-%         ees' f' f'4. ees'8 |
-%         ees'1 ~ |
-%         ees'4 r r2 |
-%%30
-%         \BeStillMySoul_MidRestsAndKeyChange
-%         r4 d' c' d' |
-%%40
-%         ees'2. d'4 |
-%         c' d' bes4. c'8 |
-%         c'4 d'2. ~ |
-%         d'4 r r2 |
-%         r4 d' c' d' |
-%%45
-%         ees'2. d'4 |
-%         c' d' bes4. c'8 |
-%         d'1 ~ |
-%         d'4 r r2 |
-%         \BeStillMySoul_ThirdLongRests
-%         r4 f' f' f' |
-%         g'2. d'4 |
-%         d' f' f'4. c'8 |
-%         c'4 ees'2. ~ |
-%%55
-%         ees'4 ees' d' c' |
-%         d'2. bes4 |
-%         bes c' c'4. d'8 |
-%         d'1 ~ |
-%         d'4 f' f' f' |
-%%60
-%         g'2. d'4 |
-%         d' f' f'4. c'8 |
-%         c'4 ees'2. ~ |
-%         ees'4 ees' d' c' |
-%         d'2. bes4 |
-%%65
-%         bes c' c'4. bes8 |
-%         bes1 |
-%         r4 r2 d'4 |
-%         c' d' ees'2 |
-%         r2 r4 d'4 |
-%%70
-%         c' d' ees' r |
-%         r1 |
-%         r4 f' f' f' |
-%         g'2. d'4 |
-%         d' f' g'4. bes'8 |
-%%75
-%         bes'4 r g'( ees') |
-%         f'1 \bar"|."}
+BeStillMySoul_Soprano =  {
+ fis' 2  dis' 4..  b 16 |
+ << { b2( fis'4) } { s4 s\turn s }>>  e'4 |
+ dis' 4.  b 8  dis' 8.  cis' 16  b 8.  ais 16 |
+ b 2  fis 4  r |
+ gis' 2  e' 4..  cis' 16 |
+ << { cis' 2(  gis' 4) }  {
+      s4
+      s4*3/16
+      \once \set suggestAccidentals = ##t
+      \once \override AccidentalSuggestion #'outside-staff-priority = ##f
+      \once \override AccidentalSuggestion #'avoid-slur = #'inside
+      \once \override AccidentalSuggestion #'font-size = #-3
+      \once \override AccidentalSuggestion #'script-priority = #-1
+      \single \hideNotes
+      gis!4\turn \noBeam
+      s4*13/16
+    } >> fis'4
+    |
+  dis' 4.  b 8  fis'   e'   gis 8.  cis' 16 |
+  b 2(  ais 4)  r  |
+  dis' 2  b 4.  fis 8  |
+  fis 2.  fis 4  |
+  fis' 2  dis' 4.(  b 8) | b2  b |
+  gis'  e' 4.  cis' 8 |
+  gis' 4(  fis'   e')   dis' |
+  fis'   e'   dis'   cis' |
+  b 2  r |
+  r1 |
+ r1*15 |
+ r1 | r1 |
+ dis' 4.(  cis' 8)  b 8.  cis' 16 dis' 8.  e' 16 |
+ fis' 4  fisis'   gis'   dis' |
+ dis' 2  fis' 8  eis'   dis'   eis'  |
+ fis' 2  cis' |
+ cis' 4.  cis' 8  dis'   cis'   dis'   eis' |
+ fis' 2  r  |
+ dis' 2.  e' 4 |
+ fis'   e'   e'   cis' |
+ fis' 2  gis' 4  fis' 8.  e' 16 |
+ \override NoteHead.color = #blue
+ %Page 116
+ fis' 4  fisis'   gis'   dis' |
+ dis' 2  fis' 8  eis'   dis'   cis' |
+ dis' 2  gis |  cis' 4.  cis' 8  eis' 4  cis' |
+ gis' 2  r |
+ \override NoteHead.color = #black
+ fis'   cis' 4  cis'   |
+ a' 2~  a' 8.  gis' 16  fis' 8.  eis' 16 |
+ fis' 4(  d') cis'(   e'!)  |
+ d' 2  a 4  a  |
+ a 2.  a 4 |
+ ais ! 2.  fis' 4  |
+ eis'   dis'   cis'   b |
+ cis' 2  r |
+ e' ! 2  b 4  b   |
+ g' 2~  g' 8.  fis' 16  e' 8.  dis' 16 |
+ e' 4(  c')   b   d'  |
+ c' 2  e'   |
+ e'   dis'  |
+ e'   e' 4  fis  |
+ e' 4.  cis' 8  b 4.  b 8  |
+ cis' 2  fis 4  r |
+ fis' 2  fis' 4.  fis' 8  |
+ fis' 4  b   dis'   fis'  |
+ fis' 1~  |
+ fis' 2  r |
+ fis'   fis' 4..  dis' 16  |
+ dis' 2  cis' |
+ fis' 4.  dis' 8  e' 4  e' |
+
+ dis' 2  dis' 4  r |
+ e' 2  e' 4..  e' 16  |
+ e' 2  e'
+ dis' 4.  dis' 8  cis' 4  e' |
+ e' 2.  r4 |
+ fis' 2  dis' 4.  b 8  |
+ b 2.  b 4  |
+ dis' 2  fis' 4.  dis' 8  |
+ dis' 2  dis'   |
+ e'   gis' 4.  cis' 8  |
+ cis' 4  fis'   fis'   fis' |
+ % 119
+ cis' 2  fis' 4  e'   |
+
+ cis'   fis'   fis'   fis'  |
+ cis'   gis'   fis'   e'   |
+ dis' 2  e' 4.  fis' 8  |
+ fis' 2.  dis' 4  |
+ dis'   dis'   e' 4.  fis' 8  |
+ fis' 1
+ eis' 2  fis' 4  gis' |
+ \override NoteHead.color = #blue
+
+ %soprano again
+ cisis' 2  dis' 4  cis'   |
+ dis' 4.  b 8  dis' 4  fis'   |
+ b' 1  |
+ \override NoteHead.color = #black
+ r2  dis' ! 2 |
+ fis' 4.  dis' 8  dis' 4  fis' |
+ fis' 2.  fis' 4 |
+ eis' 2  eis' 4  r  |
+ eis' 2  eis' 4.  eis' 8  |
+ e' ! 2  e'   |
+ fis' 2.  e' 4  |
+dis' 1  |
+ fis'   |
+ e' 2  e' 4  e'   |
+ e' 2  e'   |
+ dis' 1  |
+ fis'   |
+ e'~   |
+ e' 2  r  |
+ b-^   dis' 4-^  fis'-^   |
+ fis' 2 -^ fis'-^   |
+ e' 1~ -^ |
+ e' 2  fis' -^  |
+ fis' 1~  |
+ fis' 2  r
+
+%         f1 ~ |
+%         f4 r r2 |
+%         bes( a) <g bes>2. ~ |
+%         bes1 \bar"|."
+}
 %
 %BeStillMySoul_Alto =  {
 %  \BeStillMySoul_InitialRests
@@ -234,7 +282,7 @@ BeStillMySoul_Tenor =  {
       \once \override AccidentalSuggestion #'font-size = #-3
       \once \override AccidentalSuggestion #'script-priority = #-1
       \single \hideNotes
-      gis!4\turn \noBeam 
+      gis!4\turn \noBeam
       s4*13/16
     } >> fis'4
     |
@@ -254,17 +302,18 @@ BeStillMySoul_Tenor =  {
  fis' 4  fisis'   gis'   dis' |
  dis' 2  fis' 8  eis'   dis'   eis'  |
  fis' 2  cis' |
- cis' 4.  cis' 8  dis'   cis'   dis'   eis' | 
+ cis' 4.  cis' 8  dis'   cis'   dis'   eis' |
  fis' 2  r  |
  dis' 2.  e' 4 |
  fis'   e'   e'   cis' |
  fis' 2  gis' 4  fis' 8.  e' 16 |
  \override NoteHead.color = #blue
  %Page 116
- fis' 4  fisis'   gis'   dis' |
- dis' 2  fis' 8  eis'   dis'   cis' |
- dis' 2  gis |  cis' 4.  cis' 8  eis' 4  cis' |
- gis' 2  r |
+ dis'1 |
+ dis'4  r r2 |
+ gis8. ais16 bis8. cis'16 dis'8. eis'16 fis'8. dis'16 |
+ eis'2 cis' |
+ dis' r |
  \override NoteHead.color = #black
  fis'   cis' 4  cis'   |
  a' 2~  a' 8.  gis' 16  fis' 8.  eis' 16 |
@@ -289,11 +338,10 @@ BeStillMySoul_Tenor =  {
  fis'   fis' 4..  dis' 16  |
  dis' 2  cis' |
  fis' 4.  dis' 8  e' 4  e' |
- 
- 
+
  dis' 2  dis' 4  r |
  e' 2  e' 4..  e' 16  |
- e' 2  e'  
+ e' 2  e'
  dis' 4.  dis' 8  cis' 4  e' |
  e' 2.  r4 |
  fis' 2  dis' 4.  b 8  |
@@ -304,21 +352,19 @@ BeStillMySoul_Tenor =  {
  cis' 4  fis'   fis'   fis' |
  % 119
  cis' 2  fis' 4  e'   |
- 
+
  cis'   fis'   fis'   fis'  |
  cis'   gis'   fis'   e'   |
  dis' 2  e' 4.  fis' 8  |
  fis' 2.  dis' 4  |
  dis'   dis'   e' 4.  fis' 8  |
- fis' 1  
+ fis' 1
  eis' 2  fis' 4  gis' |
  \override NoteHead.color = #blue
- 
- %soprano again
- cisis' 2  dis' 4  cis'   |
- dis' 4.  b 8  dis' 4  fis'   |
- b' 1  |
- \override NoteHead.color = #black 
+ eis'2(  fis'4)  gis' |
+ fis'4. fis'8 fis'4 fis' |
+ gis' 1  |
+ \override NoteHead.color = #black
  r2  dis' ! 2 |
  fis' 4.  dis' 8  dis' 4  fis' |
  fis' 2.  fis' 4 |
@@ -339,7 +385,7 @@ dis' 1  |
  e' 1~ -^ |
  e' 2  fis' -^  |
  fis' 1~  |
- fis' 2  r 
+ fis' 2  r
 
 %         f1 ~ |
 %         f4 r r2 |
