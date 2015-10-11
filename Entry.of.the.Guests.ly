@@ -262,7 +262,7 @@ dis' 1  |
 %         d'4 r <c' ees'>( c') |
 %         d'1 \bar"|."}
 %
-EntranceOfTheGuests_Tenor =  {
+EntranceOfTheGuests_TenorOne =  {
  fis' 2  dis' 4..  b 16 |
   << \tag #'cutformidi { b2( fis'4) }
      \tag #'cutformidi { s4 s\turn s }
@@ -530,11 +530,11 @@ EntranceOfTheGuests_Tenor =  {
 %EntranceOfTheGuests_AltoMusic =  {\EntranceOfTheGuests_AltoProlog \EntranceOfTheGuests_Alto}
 %EntranceOfTheGuests_AltoContext = \context Voice = EntranceOfTheGuests_Alto  {\EntranceOfTheGuests_AltoMusic}
 %
-EntranceOfTheGuests_TenorClef = \clef "treble_8"
-%EntranceOfTheGuests_TenorClef = \clef "bass"
-EntranceOfTheGuests_TenorProlog = { \EntranceOfTheGuests_TenorClef \EntranceOfTheGuests_GlobalStart}
-EntranceOfTheGuests_TenorMusic =  {\EntranceOfTheGuests_TenorProlog \removeWithTag #'onlyformidi \EntranceOfTheGuests_Tenor}
-EntranceOfTheGuests_TenorContext = \context Voice = EntranceOfTheGuests_Tenor {\EntranceOfTheGuests_TenorMusic}
+EntranceOfTheGuests_TenorOneClef = \clef "treble_8"
+%EntranceOfTheGuests_TenorOneClef = \clef "bass"
+EntranceOfTheGuests_TenorOneProlog = { \EntranceOfTheGuests_TenorOneClef \EntranceOfTheGuests_GlobalStart}
+EntranceOfTheGuests_TenorOneMusic =  {\EntranceOfTheGuests_TenorOneProlog \removeWithTag #'onlyformidi \EntranceOfTheGuests_TenorOne}
+EntranceOfTheGuests_TenorOneContext = \context Voice = EntranceOfTheGuests_TenorOne {\EntranceOfTheGuests_TenorOneMusic}
 %
 %EntranceOfTheGuests_BassClef = \clef bass
 %EntranceOfTheGuests_BassProlog = { \EntranceOfTheGuests_BassClef \EntranceOfTheGuests_GlobalStart}
@@ -549,8 +549,8 @@ EntranceOfTheGuests_TenorContext = \context Voice = EntranceOfTheGuests_Tenor {\
 %                \EntranceOfTheGuests_AltoContext
 %                }
 %                >>
-EntranceOfTheGuests_Staff_Tenor = \new Staff  << {
-                \EntranceOfTheGuests_TenorContext
+EntranceOfTheGuests_Staff_TenorOne = \new Staff  << {
+                \EntranceOfTheGuests_TenorOneContext
                 }
                 >>
 %EntranceOfTheGuests_Staff_Bass = \new Staff  << {
@@ -602,11 +602,11 @@ EntranceOfTheGuests_BookPart =
         \consists "Ambitus_engraver"
       }
       <<
-%      \new Voice = "EntranceOfTheGuests_Dynamics_Tenor" { \EntranceOfTheGuests_Dynamics_Shared }
-      \new Voice = "EntranceOfTheGuests_Tenor" { \EntranceOfTheGuests_TenorContext }
+%      \new Voice = "EntranceOfTheGuests_Dynamics_TenorOne" { \EntranceOfTheGuests_Dynamics_Shared }
+      \new Voice = "EntranceOfTheGuests_TenorOne" { \EntranceOfTheGuests_TenorOneContext }
       >>
 %      \new Lyrics {
-%        \lyricsto "EntranceOfTheGuests_Tenor" { \EntranceOfTheGuests_SharedWords }
+%        \lyricsto "EntranceOfTheGuests_TenorOne" { \EntranceOfTheGuests_SharedWords }
 %      }
 %
 %      \new Staff = "Bass" \with {
@@ -621,7 +621,7 @@ EntranceOfTheGuests_BookPart =
 %      \lyricsto "EntranceOfTheGuests_Bass" { \EntranceOfTheGuests_SharedWords }
 %      }
     >>
-%    %\pianoReduction \EntranceOfTheGuests_Soprano \EntranceOfTheGuests_Alto \EntranceOfTheGuests_Tenor \EntranceOfTheGuests_BassContext
+%    %\pianoReduction \EntranceOfTheGuests_Soprano \EntranceOfTheGuests_Alto \EntranceOfTheGuests_TenorOne \EntranceOfTheGuests_BassContext
 >>
 \layout{
         }
@@ -641,14 +641,14 @@ EntranceOfTheGuests_RehearsalMidi = #
 %(define-music-function
 % (parser location name midiInstrument lyrics) (string? string? ly:music? )
 % #{
-%    \removeWithTag #'longRests { \rehearsalMidi $name $midiInstrument \EntranceOfTheGuests_Soprano \EntranceOfTheGuests_Alto \EntranceOfTheGuests_Tenor \EntranceOfTheGuests_Bass $lyrics }
+%    \removeWithTag #'longRests { \rehearsalMidi $name $midiInstrument \EntranceOfTheGuests_Soprano \EntranceOfTheGuests_Alto \EntranceOfTheGuests_TenorOne \EntranceOfTheGuests_Bass $lyrics }
 % #})
 
 %EntranceOfTheGuests_RehersalMidiCombined = \book {
 %  \bookOutputName "Be.Still.My.Soul"
 %  \bookOutputSuffix "all"
 %  \score {
-%    \removeWithTag #'longRests { \rehearsalMidiCombined \EntranceOfTheGuests_Soprano \EntranceOfTheGuests_Alto \EntranceOfTheGuests_Tenor \EntranceOfTheGuests_Bass }
+%    \removeWithTag #'longRests { \rehearsalMidiCombined \EntranceOfTheGuests_Soprano \EntranceOfTheGuests_Alto \EntranceOfTheGuests_TenorOne \EntranceOfTheGuests_Bass }
 %    \midi { }
 %  }
 %}
@@ -675,12 +675,12 @@ EntranceOfTheGuests_RehearsalMidi = #
 
 EntranceOfTheGuests_RehersalMidiTenor = \book {
   \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
-  \bookOutputSuffix "tenor"
+  \bookOutputSuffix "tenorone"
   \score {
     { 
       
      \removeWithTag #'cutformidi \removeWithTag #'tenorOnlyRests  \unfoldRepeats <<
-     \new Staff = "tenor" \new Voice = "tenor" { \EntranceOfTheGuests_Tenor }
+     \new Staff = "tenor" \new Voice = "tenor" { \EntranceOfTheGuests_TenorOne }
      \context Staff = "tenor" {
        \set Score.midiMinimumVolume = #0.5
        \set Score.midiMaximumVolume = #0.5
