@@ -264,17 +264,17 @@ dis' 1  |
 %
 EntranceOfTheGuests_TenorOne =  {
  fis' 2  dis' 4..  b 16 |
-  << \tag #'cutformidi { b2( fis'4) }
-     \tag #'cutformidi { s4 s\turn s }
-     \tag #'onlyformidi { b8 \tuplet 3/2 { cis'8 b ais  } b8 fis'4 }
+  << \tag #'cutForMidi { b2( fis'4) }
+     \tag #'cutForMidi { s4 s\turn s }
+     \tag #'onlyForMidi { b8 \tuplet 3/2 { cis'8 b ais  } b8 fis'4 }
   >>  e'4 |
  
  dis' 4.  b 8  dis' 8.  cis' 16  b 8.  ais 16 |
  b 2  fis 4  r |
  gis' 2  e' 4..  cis' 16 |
- << \tag #'cutformidi { cis'2(  gis'4) }
-    \tag #'cutformidi { s4 s\turn s }
-    \tag #'onlyformidi { cis'8 \tuplet 3/2 { dis'8 cis' c'  } cis' gis'4 }
+ << \tag #'cutForMidi { cis'2(  gis'4) }
+    \tag #'cutForMidi { s4 s\turn s }
+    \tag #'onlyForMidi { cis'8 \tuplet 3/2 { dis'8 cis' c'  } cis' gis'4 }
  >> fis'4
     |
   dis' 4.  b 8  fis'   e'   gis 8.  cis' 16 |
@@ -287,7 +287,8 @@ EntranceOfTheGuests_TenorOne =  {
   fis'   e'   dis'   cis' |
   b 2  r |
   r1 |
- r1*15 |
+ 
+ \tag #'cutForMidi { r1*15  | }
  r1 | r1 |
  dis' 4.(  cis' 8)  b 8.  cis' 16 dis' 8.  e' 16 |
  fis' 4  fisis'   gis'   dis' |
@@ -533,7 +534,7 @@ EntranceOfTheGuests_TenorOne =  {
 EntranceOfTheGuests_TenorOneClef = \clef "treble_8"
 %EntranceOfTheGuests_TenorOneClef = \clef "bass"
 EntranceOfTheGuests_TenorOneProlog = { \EntranceOfTheGuests_TenorOneClef \EntranceOfTheGuests_GlobalStart}
-EntranceOfTheGuests_TenorOneMusic =  {\EntranceOfTheGuests_TenorOneProlog \removeWithTag #'onlyformidi \EntranceOfTheGuests_TenorOne}
+EntranceOfTheGuests_TenorOneMusic =  {\EntranceOfTheGuests_TenorOneProlog \removeWithTag #'onlyForMidi \EntranceOfTheGuests_TenorOne}
 EntranceOfTheGuests_TenorOneContext = \context Voice = EntranceOfTheGuests_TenorOne {\EntranceOfTheGuests_TenorOneMusic}
 %
 %EntranceOfTheGuests_BassClef = \clef bass
@@ -679,7 +680,7 @@ EntranceOfTheGuests_RehersalMidiTenor = \book {
   \score {
     { 
       
-     \removeWithTag #'cutformidi \removeWithTag #'tenorOnlyRests  \unfoldRepeats <<
+     \removeWithTag #'cutForMidi \removeWithTag #'tenorOnlyRests  \unfoldRepeats <<
      \new Staff = "tenor" \new Voice = "tenor" { \EntranceOfTheGuests_TenorOne }
      \context Staff = "tenor" {
        \set Score.midiMinimumVolume = #0.5
