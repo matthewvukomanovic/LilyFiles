@@ -266,7 +266,7 @@ EntranceOfTheGuests_TenorOne =  {
  fis' 2  dis' 4..  b 16 | % 1
   << \tag #'cutForMidi { b2( fis'4) }
      \tag #'cutForMidi { s4 s\turn s }
-     \tag #'onlyForMidi { b8 \tuplet 3/2 { cis'8 b ais  } b8 fis'4 }
+     \tag #'onlyForMidi { b4  cis'16 b ais b fis'4 }
   >>  e'4 | % 2
 
  dis' 4.  b 8  dis' 8.  cis' 16  b 8.  ais 16 | % 3
@@ -274,7 +274,7 @@ EntranceOfTheGuests_TenorOne =  {
  gis' 2  e' 4..  cis' 16 | % 5
  << \tag #'cutForMidi { cis'2(  gis'4) }
     \tag #'cutForMidi { s4 s\turn s }
-    \tag #'onlyForMidi { cis'8 \tuplet 3/2 { dis'8 cis' c'  } cis' gis'4 }
+    \tag #'onlyForMidi { cis'4 dis'16 cis' c' cis' gis'4 }
  >>
     fis'4 | % 6
   dis' 4.  b 8  fis'   e'   gis 8.  cis' 16 | % 7
