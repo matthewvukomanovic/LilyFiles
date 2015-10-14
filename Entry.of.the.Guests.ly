@@ -507,85 +507,252 @@ EntranceOfTheGuests_TenorTwoAndThree =  {
 %         bes1 \bar"|."
 }
 
-%
-%EntranceOfTheGuests_Bass =  {
-%  \EntranceOfTheGuests_InitialRests
-%%5
-%         r4 ees aes g |
-%         f2. d4 |
-%         aes g aes4. f8 |
-%         f4 ees2.~ |
-%         ees4 ees aes g |
-%%10
-%         f2. ees4 |
-%         aes g aes4. f8 |
-%         ees1 ~ |
-%         ees4 ees' ees' d' |
-%         c'2. c'4 |
-%%15
-%         c' g g4. bes8 |
-%         bes4 f2. ~ |
-%         f4 f g aes |
-%         bes2. g4 |
-%         aes aes aes4. g8 |
-%%20
-%         g1 ~ |
-%         g4 ees ees d |
-%         c2. c4 |
-%         c g, g,4. bes,8 |
-%         bes,4 f,2. ~ |
-%%25
-%         f,4 f, g, aes, |
-%         bes,2. bes,4  |
-%         bes, bes, bes,4. ees8 | |
-%         ees1 ~ |
-%         ees4 r r2 |
-%%30
-%         \EntranceOfTheGuests_MidRestsAndKeyChange
-%         r4 bes, ees d |
-%%40
-%         c2. bes,4 |
-%         ees d ees4. c8 |
-%         c4 bes,2. ~ |
-%         bes,4 r r2 |
-%         r4 bes, ees d |
-%%45
-%         c2. bes,4 |
-%         ees d ees4. c8 |
-%         bes,1 ~ |
-%         bes,4 r r2 |
-%         \EntranceOfTheGuests_ThirdLongRests
-%         r4 bes bes a |
-%         g2. g4 |
-%         g d d4. f8 |
-%         f4 c2. ~ |
-%%55
-%         c4 c d ees |
-%         f2. d4 |
-%         ees ees ees4. d8 |
-%         d1 ~ |
-%         d4 bes bes a |
-%%60
-%         g2. g4 |
-%         g d d4. f8 |
-%         f4 c2. ~ |
-%         c4 c d ees |
-%         f2. d4 |
-%%65
-%         f f, f,4. bes,8 |
-%         bes,1 |
-%         r2 r4 bes, |
-%         ees d c2 |
-%         r r4 bes, |
-%%70
-%         ees d c r |
-%         r1 |
-%         r4 bes, bes a |
-%         g2. g4 |
-%         g f ees8( d c) f |
-%%75
-%         bes,4 r <ees g>( <c ees>) |
-%         bes,1 \bar"|."}
+EntranceOfTheGuests_BassOneAndTwo =  {
+         b2 fis4.. gis16 | % 1
+         gis2 gis | % 2
+         fis e | % 3
+         dis dis4 r | % 4
+%5
+         e2 e4.. e16 | % 5
+         e2 e | % 6
+         fis e | % 7
+         e2. r4 | % 8
+         b2 fis4. dis8 | % 9
+%10
+         dis2. dis4 | % 10
+         dis'2 b4.( fis8) | % 11
+         fis2 fis | % 12
+         b cis'4. gis8 | % 13
+         ais4 b fis b | % 14
+%15
+         gis2 fis4( e) | % 15
+         dis2 r | % 16
+ r1 | % 17
+
+ \tag #'cutForMidi { r1*15  | }
+         b4.( ais8) b8. ais16 gis8. fis16 | % 33
+         b4 ais gis fis | % 34
+%35
+         b4.( ais8) gis8. ais16 b8. cis'16 | % 35
+         dis'4 cis' b ais | % 36
+         gis2 gis4 gis | % 37
+         ais2 ais | % 38
+         <eis gis>4. <eis gis>8 <eis gis>4 gis | % 39
+%40
+         ais2 r | % 40
+         b2. cis'4 | % 41
+         dis' cis' b ais | % 42
+         b2 e'4 dis'8. cis'16 | % 43
+         b4( ais gis fisis) | % 44
+%45
+         gis r r2 | % 45
+         r4 gis8. ais16 bis8. cis'16 dis'8. bis16 | % 46
+         cis'2 ais | % 47
+         gis r | % 48
+         a a4 a | % 49
+%50
+         fis2 cis | % 50
+         d a, | % 51
+         b, cis4 cis | % 52
+         d2. d4 | % 53
+         cis2. cis4 | % 54
+%55
+         cis2 cis4 cis | % 55
+         fis2 r | % 56
+         g g4 g | % 57
+         e2 b, | % 58
+         c g4 g | % 59
+%60
+         a2 b | % 60
+         cis'!2 b | % 61
+         ais!2 cis'4 fis | % 62
+         ais4. ais8 gis4 gis | % 63
+         fis2 fis4 r | % 64
+%65
+         b2 b4. b8 | % 65
+         b4 dis fis b | % 66
+         fis1~  | % 67
+         fis2 r | % 68
+         b dis4.. gis16 | % 69
+%70
+         gis2 e | % 70
+         fis4. fis8 fis4 fis | % 71
+         b2 b,4 r | % 72
+         e2 gis4.. cis'16 | % 73
+         cis'2 fis | % 74
+%75
+         b4. b8 e4 e | % 75
+         fis2. r4 | % 76
+         r1 | % 77
+         r4 b, dis fis | % 78
+         b2. fis4 | % 79
+%80
+         b fis dis b, | % 80
+         e2 cis4. e8 | % 81
+         e4 dis cis b, | % 82
+         cis2 dis4 e | % 83
+         e dis cis bis, | % 84
+%85
+         cis cis dis e | % 85
+         fis2 gis4. a8 | % 86
+         a2. fis4 | % 87
+         fis fis gis4. a8 | % 88
+         a1 | % 89
+%90
+         gis2 fis4 eis | % 90
+         gis2( fis4) eis | % 91
+         fis4. fis8 b4 fis | % 92
+         eis1 | % 93
+         r2 fis | % 94
+%95
+         fis4. b8 b4 fis | % 95
+         dis'2. b4 | % 96
+         fis2 fis4 r | % 97
+         fis2 fis4. fis8 | % 98
+         fis2 fis | % 99
+%100
+         fis2. fis4 | % 100
+         b1 | % 101
+         b | % 102
+         fis2 fis4 fis | % 103
+         fis2 fis | % 104
+%105
+         b1 | % 105
+         b | % 106
+         fis~  | % 107
+         fis2 r | % 108
+         dis fis4 b | % 109
+%110
+         dis'2 b | % 110
+         fis1~  | % 111
+         fis2 fis | % 112
+         b1~  | % 113
+         b2 r | % 114
+}
+
+EntranceOfTheGuests_BassThree =  {
+         b,2 dis4.. gis16 | % 1
+         gis2 e | % 2
+         fis fis, | % 3
+         b, b,4 r | % 4
+%5
+         e,2 gis,4.. cis16 | % 5
+         cis2 fis, | % 6
+         b, e, | % 7
+         fis,2. r4 | % 8
+         fis2 dis4. b,8 | % 9
+%10
+         b,2. b,4 | % 10
+         b2 fis4.( dis8) | % 11
+         dis2 dis | % 12
+         e cis4. e8 | % 13
+         e4 dis cis b, | % 14
+%15
+         cis2 fis, | % 15
+         b, r | % 16
+ r1 | % 17
+
+ \tag #'cutForMidi { r1*15  | }
+         b4.( ais8) b8. ais16 gis8. fis16 | % 33
+         b4 ais gis fis | % 34
+%35
+         b4.( ais8) gis8. ais16 b8. cis'16 | % 35
+         dis'4 cis' b ais | % 36
+         gis2 cis4 cis | % 37
+         fis2 fis | % 38
+         cis4. cis8 cis4 cis | % 39
+%40
+         fis2 r | % 40
+         b2. cis'4 | % 41
+         dis' cis' b ais | % 42
+         b2 e'4 dis'8. cis'16 | % 43
+         b4( ais gis fisis) | % 44
+%45
+         gis r r2 | % 45
+         r4 gis8. ais16 bis8. cis'16 dis'8. bis16 | % 46
+         cis'2 ais | % 47
+         gis r | % 48
+         fis fis4 fis | % 49
+%50
+         fis2 cis | % 50
+         d a, | % 51
+         b, cis4 cis | % 52
+         d2. d4 | % 53
+         cis2. cis4 | % 54
+%55
+         cis2 cis4 cis | % 55
+         fis2 r | % 56
+         e e4 e | % 57
+         e2 b, | % 58
+         c g4 g | % 59
+%60
+         a2 b | % 60
+         cis'!2 b | % 61
+         ais!2 cis'4 fis | % 62
+         ais4. ais8 gis4 gis | % 63
+         fis2 fis4 r | % 64
+%65
+         b2 b4. b8 | % 65
+         b4 dis fis b | % 66
+         fis1~  | % 67
+         fis2 r | % 68
+         b, dis4.. gis16 | % 69
+%70
+         gis2 e | % 70
+         fis4. fis8 fis4 fis | % 71
+         b2 b,4 r | % 72
+         e2 gis4.. cis'16 | % 73
+         cis'2 fis | % 74
+%75
+         b4. b8 e4 e | % 75
+         fis2. r4 | % 76
+         r1 | % 77
+         r4 b, dis fis | % 78
+         b2. fis4 | % 79
+%80
+         b fis dis b, | % 80
+         e2 cis4. e8 | % 81
+         e4 dis cis b, | % 82
+         cis2 dis4 e | % 83
+         e dis cis bis, | % 84
+%85
+         cis cis dis e | % 85
+         fis2 gis4. a8 | % 86
+         a2. fis4 | % 87
+         fis fis gis4. a8 | % 88
+         a1 | % 89
+%90
+         gis2 fis4 eis | % 90
+         gis2( fis4) eis | % 91
+         fis4. fis8 b4 fis | % 92
+         eis1 | % 93
+         r2 fis | % 94
+%95
+         fis4. b8 b4 fis | % 95
+         dis'2. b4 | % 96
+         fis2 fis4 r | % 97
+         fis2 fis4. fis8 | % 98
+         fis2 fis | % 99
+%100
+         fis2. fis4 | % 100
+         b1 | % 101
+         b | % 102
+         fis2 fis4 fis | % 103
+         fis2 fis | % 104
+%105
+         b1 | % 105
+         b | % 106
+         fis~  | % 107
+         fis2 r | % 108
+         dis fis4 b | % 109
+%110
+         dis'2 b | % 110
+         fis1~  | % 111
+         fis2 fis | % 112
+         b,1~  | % 113
+         b,2 r | % 114
+}
+
 %
 %EntranceOfTheGuests_SharedWords = \lyricmode {
 %  Be still my |
@@ -672,10 +839,17 @@ EntranceOfTheGuests_TenorTwoAndThreeMusic =  {\EntranceOfTheGuests_TenorTwoAndTh
 EntranceOfTheGuests_TenorTwoAndThreeContext = \context Voice = EntranceOfTheGuests_TenorTwoAndThree {\EntranceOfTheGuests_TenorTwoAndThreeMusic}
 
 %
-%EntranceOfTheGuests_BassClef = \clef bass
-%EntranceOfTheGuests_BassProlog = { \EntranceOfTheGuests_BassClef \EntranceOfTheGuests_GlobalStart}
-%EntranceOfTheGuests_BassMusic =  {\EntranceOfTheGuests_BassProlog \EntranceOfTheGuests_Bass}
-%EntranceOfTheGuests_BassContext = \context Voice = EntranceOfTheGuests_Bass  {\EntranceOfTheGuests_BassMusic}
+EntranceOfTheGuests_BassOneAndTwoClef = \clef bass
+EntranceOfTheGuests_BassOneAndTwoProlog = { \EntranceOfTheGuests_BassOneAndTwoClef \EntranceOfTheGuests_GlobalStart}
+EntranceOfTheGuests_BassOneAndTwoMusic =  {\EntranceOfTheGuests_BassOneAndTwoProlog \removeWithTag #'onlyForMidi \EntranceOfTheGuests_BassOneAndTwo}
+EntranceOfTheGuests_BassOneAndTwoContext = \context Voice = EntranceOfTheGuests_BassOneAndTwo  {\EntranceOfTheGuests_BassOneAndTwoMusic}
+
+EntranceOfTheGuests_BassThreeClef = \clef bass
+EntranceOfTheGuests_BassThreeProlog = { \EntranceOfTheGuests_BassThreeClef \EntranceOfTheGuests_GlobalStart}
+EntranceOfTheGuests_BassThreeMusic =  {\EntranceOfTheGuests_BassThreeProlog \removeWithTag #'onlyForMidi \EntranceOfTheGuests_BassThree}
+EntranceOfTheGuests_BassThreeContext = \context Voice = EntranceOfTheGuests_BassThree  {\EntranceOfTheGuests_BassThreeMusic}
+
+
 %
 %EntranceOfTheGuests_Staff_Soprano = \new Staff  << {
 %                \EntranceOfTheGuests_SopranoContext
@@ -694,10 +868,14 @@ EntranceOfTheGuests_Staff_TenorTwoAndThree = \new Staff  << {
                 }
                 >>
 
-%EntranceOfTheGuests_Staff_Bass = \new Staff  << {
-%                \EntranceOfTheGuests_BassContext
-%                }
-%                >>
+EntranceOfTheGuests_Staff_BassOneAndTwo = \new Staff  << {
+                \EntranceOfTheGuests_BassOneAndTwoContext
+                }
+                >>
+EntranceOfTheGuests_Staff_BassThree = \new Staff  << {
+                \EntranceOfTheGuests_BassThreeContext
+                }
+                >>
 EntranceOfTheGuests_BookPart =
 \bookpart {
 \header {
@@ -759,18 +937,27 @@ EntranceOfTheGuests_BookPart =
       \new Voice = "EntranceOfTheGuests_TenorTwoAndThree" { \EntranceOfTheGuests_TenorTwoAndThreeContext }
       >>
 
-%
-%      \new Staff = "Bass" \with {
-%        instrumentName = "Bass"
-%        \consists "Ambitus_engraver"
-%      }
-%      <<
-%        \new Voice = "EntranceOfTheGuests_Bass" { \EntranceOfTheGuests_BassContext }
-%        \new Voice = "EntranceOfTheGuests_Dynamics_Bass" { \EntranceOfTheGuests_Dynamics_Shared }
-%      >>
+
+      \new Staff = "Bass 1" \with {
+        instrumentName = "Bass"
+        \consists "Ambitus_engraver"
+      }
+      <<
+%      \new Voice = "EntranceOfTheGuests_Dynamics_BassOne" { \EntranceOfTheGuests_Dynamics_Shared }
+      \new Voice = "EntranceOfTheGuests_BassOneAndTwo" { \EntranceOfTheGuests_BassOneAndTwoContext }
+      >>
 %      \new Lyrics {
-%      \lyricsto "EntranceOfTheGuests_Bass" { \EntranceOfTheGuests_SharedWords }
+%        \lyricsto "EntranceOfTheGuests_BassOneAndTwo" { \EntranceOfTheGuests_SharedWords }
 %      }
+
+      \new Staff = "Bass 2" \with {
+        instrumentName = "Bass"
+        \consists "Ambitus_engraver"
+      }
+      <<
+%      \new Voice = "EntranceOfTheGuests_Dynamics_BassThree" { \EntranceOfTheGuests_Dynamics_Shared }
+      \new Voice = "EntranceOfTheGuests_BassThree" { \EntranceOfTheGuests_BassThreeContext }
+      >>
     >>
 %    %\pianoReduction \EntranceOfTheGuests_Soprano \EntranceOfTheGuests_Alto \EntranceOfTheGuests_TenorOne \EntranceOfTheGuests_BassContext
 >>
@@ -828,7 +1015,7 @@ EntranceOfTheGuests_RehersalMidiTenorOne = \book {
   \score {
     {
 
-     \removeWithTag #'cutForMidi \removeWithTag #'tenorOnlyRests  \unfoldRepeats <<
+     \removeWithTag #'cutForMidi \unfoldRepeats <<
      \new Staff = "tenor" \new Voice = "tenor" { \EntranceOfTheGuests_TenorOne }
      \context Staff = "tenor" {
        \set Score.midiMinimumVolume = #0.5
@@ -851,7 +1038,7 @@ EntranceOfTheGuests_RehersalMidiTenorTwoAndThree = \book {
   \score {
     {
 
-     \removeWithTag #'cutForMidi \removeWithTag #'tenorOnlyRests  \unfoldRepeats <<
+     \removeWithTag #'cutForMidi \unfoldRepeats <<
      \new Staff = "tenor two" \new Voice = "tenor two" { \EntranceOfTheGuests_TenorTwoAndThree }
      \context Staff = "tenor two" {
        \set Score.midiMinimumVolume = #0.5
@@ -860,6 +1047,51 @@ EntranceOfTheGuests_RehersalMidiTenorTwoAndThree = \book {
        \set Staff.midiMinimumVolume = #0.8
        \set Staff.midiMaximumVolume = #1.0
        \set Staff.midiInstrument = "tenor sax"
+     }
+   >>
+
+    }
+    \midi { }
+  }
+}
+
+EntranceOfTheGuests_RehersalMidiBassOneAndTwo = \book {
+  \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+  \bookOutputSuffix "BassOneAndTwo"
+  \score {
+    {
+
+     \removeWithTag #'cutForMidi \unfoldRepeats <<
+     \new Staff = "bass" \new Voice = "bass one" { \EntranceOfTheGuests_BassOneAndTwo }
+     \context Staff = "bass" {
+       \set Score.midiMinimumVolume = #0.5
+       \set Score.midiMaximumVolume = #0.5
+       \set Score.tempoWholesPerMinute = #(ly:make-moment 200 4)
+       \set Staff.midiMinimumVolume = #0.8
+       \set Staff.midiMaximumVolume = #1.0
+       \set Staff.midiInstrument = "baritone sax"
+     }
+   >>
+
+    }
+    \midi { }
+  }
+}
+
+EntranceOfTheGuests_RehersalMidiBassThree = \book {
+  \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+  \bookOutputSuffix "BassThree"
+  \score {
+    {
+     \removeWithTag #'cutForMidi \unfoldRepeats <<
+     \new Staff = "bass" \new Voice = "bass two" { \EntranceOfTheGuests_BassThree }
+     \context Staff = "bass" {
+       \set Score.midiMinimumVolume = #0.5
+       \set Score.midiMaximumVolume = #0.5
+       \set Score.tempoWholesPerMinute = #(ly:make-moment 200 4)
+       \set Staff.midiMinimumVolume = #0.8
+       \set Staff.midiMaximumVolume = #1.0
+       \set Staff.midiInstrument = "baritone sax"
      }
    >>
 
@@ -884,6 +1116,7 @@ EntranceOfTheGuests_RehersalMidiTenorTwoAndThree = \book {
 %\EntranceOfTheGuests_RehersalMidiAlto
 \EntranceOfTheGuests_RehersalMidiTenorOne
 \EntranceOfTheGuests_RehersalMidiTenorTwoAndThree
-%\EntranceOfTheGuests_RehersalMidiBass
+\EntranceOfTheGuests_RehersalMidiBassOneAndTwo
+\EntranceOfTheGuests_RehersalMidiBassThree
 %%{
 %%}
