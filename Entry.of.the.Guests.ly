@@ -4,6 +4,8 @@
 
 easyHeads = { \easyHeadsOff }
 
+midiSpeed = #(ly:make-moment 100 4)
+
 EntranceOfTheGuests_GlobalStart = {
   \key b \major
   \time 4/4
@@ -445,12 +447,11 @@ EntranceOfTheGuests_TenorTwoAndThree =  {
 %70
  dis'2 b4 r | % 72
 
-
  e' 2  e' 4..  e' 16  | % 73
  e'2 cis' | % 74
  dis'4. dis'8 cis'4 cis' | % 75
  cis'2. r4 | % 76
- 
+
  fis' 2  dis' 4.  b 8  | % 76
  b 2.  b 4  | % 77
  dis' 2  fis'4.(  dis'8)  | % 78
@@ -473,12 +474,11 @@ EntranceOfTheGuests_TenorTwoAndThree =  {
  b4. dis'8 fis'4 dis' | % 92
  d'1 | % 93
 
-
  r2  dis' ! 2 | % 92
  fis' 4.  dis' 8  dis' 4  fis' | % 93
  fis' 2.  fis' 4 | % 94
  eis' 2  eis' 4  r  | % 95
- 
+
  b2 b4. b8 | % 98
  cis'2 e' | % 99
  cis'2. cis'4 | % 100
@@ -494,7 +494,7 @@ EntranceOfTheGuests_TenorTwoAndThree =  {
  cis'2 r | % 108
 
  b-^   dis' 4-^  fis'-^   | % 107
- 
+
  fis' 2 -^ dis'-^   | % 108
           cis'1~-^ | % 111
 %110
@@ -849,7 +849,6 @@ EntranceOfTheGuests_BassThreeProlog = { \EntranceOfTheGuests_BassThreeClef \Entr
 EntranceOfTheGuests_BassThreeMusic =  {\EntranceOfTheGuests_BassThreeProlog \removeWithTag #'onlyForMidi \EntranceOfTheGuests_BassThree}
 EntranceOfTheGuests_BassThreeContext = \context Voice = EntranceOfTheGuests_BassThree  {\EntranceOfTheGuests_BassThreeMusic}
 
-
 %
 %EntranceOfTheGuests_Staff_Soprano = \new Staff  << {
 %                \EntranceOfTheGuests_SopranoContext
@@ -937,7 +936,6 @@ EntranceOfTheGuests_BookPart =
       \new Voice = "EntranceOfTheGuests_TenorTwoAndThree" { \EntranceOfTheGuests_TenorTwoAndThreeContext }
       >>
 
-
       \new Staff = "Bass 1" \with {
         instrumentName = "Bass"
         \consists "Ambitus_engraver"
@@ -967,134 +965,95 @@ EntranceOfTheGuests_BookPart =
 }
 
 % Rehearsal MIDI files:
-EntranceOfTheGuests_RehearsalMidi = #
+
+rehearsalMidiEOTG = #
 (define-music-function
- (parser location name midiInstrument) (string? string? )
+ (parser location name midiInstrument tenor1 tenor2 bass1 bass2) (string? string? ly:music? ly:music? ly:music? ly:music?)
  #{
-    \removeWithTag #'longRests
+   \unfoldRepeats <<
+     \new Staff = "tenor 1" \new Voice { $tenor1 }
+     \new Staff = "tenor 2" \new Voice { $tenor2 }
+     \new Staff = "bass 1" \new Voice { $bass1 }
+     \new Staff = "bass 2" \new Voice { $bass2 }
+     \set Score.tempoWholesPerMinute = \midiSpeed
+     \set Score.midiMinimumVolume = #0.5
+     \set Score.midiMaximumVolume = #0.5
+
+     \context Staff = $name {
+       \set Staff.midiMinimumVolume = #0.8
+       \set Staff.midiMaximumVolume = #1.0
+       \set Staff.midiInstrument = $midiInstrument
+     }
+   >>
  #})
 
-%EntranceOfTheGuests_RehearsalMidi = #
-%(define-music-function
-% (parser location name midiInstrument lyrics) (string? string? ly:music? )
-% #{
-%    \removeWithTag #'longRests { \rehearsalMidi $name $midiInstrument \EntranceOfTheGuests_Soprano \EntranceOfTheGuests_Alto \EntranceOfTheGuests_TenorOne \EntranceOfTheGuests_Bass $lyrics }
-% #})
-
-%EntranceOfTheGuests_RehersalMidiCombined = \book {
-%  \bookOutputName "Be.Still.My.Soul"
-%  \bookOutputSuffix "all"
-%  \score {
-%    \removeWithTag #'longRests { \rehearsalMidiCombined \EntranceOfTheGuests_Soprano \EntranceOfTheGuests_Alto \EntranceOfTheGuests_TenorOne \EntranceOfTheGuests_Bass }
-%    \midi { }
-%  }
-%}
-%
-%EntranceOfTheGuests_RehersalMidiSoprano = \book {
-%  \bookOutputName "Be.Still.My.Soul"
-%  \bookOutputSuffix "soprano"
-%  \score {
-%    \EntranceOfTheGuests_RehearsalMidi "soprano" "soprano sax" \EntranceOfTheGuests_SharedWords
-%    \midi { }
-%  }
-%}
-%
-%EntranceOfTheGuests_RehersalMidiAlto = \book {
-%  \bookOutputName "Be.Still.My.Soul"
-%  \bookOutputSuffix "alto"
-%  \score {
-%    \EntranceOfTheGuests_RehearsalMidi "alto" "alto sax" \EntranceOfTheGuests_SharedWords
-%    \midi { }
-%  }
-%}
-%
+EntranceOfTheGuests_RehearsalMidi = #
+(define-music-function
+ (parser location name midiInstrument) (string? string?)
+ #{
+    \removeWithTag #'cutForMidi { \rehearsalMidiEOTG $name $midiInstrument \EntranceOfTheGuests_TenorOne \EntranceOfTheGuests_TenorTwoAndThree \EntranceOfTheGuests_BassOneAndTwo \EntranceOfTheGuests_BassThree}
+ #})
 
 EntranceOfTheGuests_RehersalMidiTenorOne = \book {
-  \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
-  \bookOutputSuffix "tenorone"
-  \score {
-    {
-
-     \removeWithTag #'cutForMidi \unfoldRepeats <<
-     \new Staff = "tenor" \new Voice = "tenor" { \EntranceOfTheGuests_TenorOne }
-     \context Staff = "tenor" {
-       \set Score.midiMinimumVolume = #0.5
-       \set Score.midiMaximumVolume = #0.5
-       \set Score.tempoWholesPerMinute = #(ly:make-moment 100 4)
-       \set Staff.midiMinimumVolume = #0.8
-       \set Staff.midiMaximumVolume = #1.0
-       \set Staff.midiInstrument = "tenor sax"
-     }
-   >>
-
+      \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+      \bookOutputSuffix "tenorone"
+      \score {
+        \EntranceOfTheGuests_RehearsalMidi "tenor 1" "tenor sax"
+        \midi { }
+      }
     }
-    \midi { }
-  }
-}
 
 EntranceOfTheGuests_RehersalMidiTenorTwoAndThree = \book {
-  \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
-  \bookOutputSuffix "tenorTwoAndThree"
-  \score {
-    {
-
-     \removeWithTag #'cutForMidi \unfoldRepeats <<
-     \new Staff = "tenor two" \new Voice = "tenor two" { \EntranceOfTheGuests_TenorTwoAndThree }
-     \context Staff = "tenor two" {
-       \set Score.midiMinimumVolume = #0.5
-       \set Score.midiMaximumVolume = #0.5
-       \set Score.tempoWholesPerMinute = #(ly:make-moment 100 4)
-       \set Staff.midiMinimumVolume = #0.8
-       \set Staff.midiMaximumVolume = #1.0
-       \set Staff.midiInstrument = "tenor sax"
-     }
-   >>
-
+      \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+      \bookOutputSuffix "tenorTwoAndThree"
+      \score {
+        \EntranceOfTheGuests_RehearsalMidi "tenor 2" "tenor sax"
+        \midi { }
+      }
     }
-    \midi { }
-  }
-}
 
 EntranceOfTheGuests_RehersalMidiBassOneAndTwo = \book {
-  \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
-  \bookOutputSuffix "BassOneAndTwo"
-  \score {
-    {
-
-     \removeWithTag #'cutForMidi \unfoldRepeats <<
-     \new Staff = "bass" \new Voice = "bass one" { \EntranceOfTheGuests_BassOneAndTwo }
-     \context Staff = "bass" {
-       \set Score.midiMinimumVolume = #0.5
-       \set Score.midiMaximumVolume = #0.5
-       \set Score.tempoWholesPerMinute = #(ly:make-moment 200 4)
-       \set Staff.midiMinimumVolume = #0.8
-       \set Staff.midiMaximumVolume = #1.0
-       \set Staff.midiInstrument = "baritone sax"
-     }
-   >>
-
+      \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+      \bookOutputSuffix "BassOneAndTwo"
+      \score {
+        \EntranceOfTheGuests_RehearsalMidi "bass 1" "baritone sax"
+        \midi { }
+      }
     }
-    \midi { }
-  }
-}
 
 EntranceOfTheGuests_RehersalMidiBassThree = \book {
+      \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+      \bookOutputSuffix "BassThree"
+      \score {
+        \EntranceOfTheGuests_RehearsalMidi "bass 2" "baritone sax"
+        \midi { }
+      }
+    }
+
+EntranceOfTheGuests_RehersalMidiMen = \book {
   \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
-  \bookOutputSuffix "BassThree"
+  \bookOutputSuffix "Men"
   \score {
     {
+     \set Score.tempoWholesPerMinute = \midiSpeed
      \removeWithTag #'cutForMidi \unfoldRepeats <<
-     \new Staff = "bass" \new Voice = "bass two" { \EntranceOfTheGuests_BassThree }
-     \context Staff = "bass" {
-       \set Score.midiMinimumVolume = #0.5
-       \set Score.midiMaximumVolume = #0.5
-       \set Score.tempoWholesPerMinute = #(ly:make-moment 200 4)
-       \set Staff.midiMinimumVolume = #0.8
-       \set Staff.midiMaximumVolume = #1.0
-       \set Staff.midiInstrument = "baritone sax"
+     \new Staff = "tenor 1" \new Voice { \EntranceOfTheGuests_TenorOne }
+     \new Staff = "tenor 2" \new Voice { \EntranceOfTheGuests_TenorTwoAndThree }
+     \new Staff = "bass 1" \new Voice { \EntranceOfTheGuests_BassOneAndTwo }
+     \new Staff = "bass 2" \new Voice { \EntranceOfTheGuests_BassThree }
+     \context Staff = "tenor 1" {
+       \set Staff.midiInstrument = "acoustic grand"
+     }
+     \context Staff = "tenor 2" {
+       \set Staff.midiInstrument = "acoustic grand"
+     }
+     \context Staff = "bass 1" {
+       \set Staff.midiInstrument = "acoustic grand"
+     }
+     \context Staff = "bass 2" {
+       \set Staff.midiInstrument = "acoustic grand"
      }
    >>
-
     }
     \midi { }
   }
@@ -1118,5 +1077,6 @@ EntranceOfTheGuests_RehersalMidiBassThree = \book {
 \EntranceOfTheGuests_RehersalMidiTenorTwoAndThree
 \EntranceOfTheGuests_RehersalMidiBassOneAndTwo
 \EntranceOfTheGuests_RehersalMidiBassThree
+\EntranceOfTheGuests_RehersalMidiMen
 %%{
 %%}
