@@ -916,7 +916,7 @@ EntranceOfTheGuests_BookPart =
 %      \new Lyrics { \lyricsto "EntranceOfTheGuests_Alto" \EntranceOfTheGuests_SharedWords }
 %      %}
       \new Staff = "Tenor 1" \with {
-        instrumentName = "Tenor"
+        instrumentName = "Tenor 1"
         \consists "Ambitus_engraver"
       }
       <<
@@ -928,7 +928,7 @@ EntranceOfTheGuests_BookPart =
 %      }
 
       \new Staff = "Tenor 2" \with {
-        instrumentName = "Tenor"
+        instrumentName = "Tenor 2"
         \consists "Ambitus_engraver"
       }
       <<
@@ -937,7 +937,7 @@ EntranceOfTheGuests_BookPart =
       >>
 
       \new Staff = "Bass 1" \with {
-        instrumentName = "Bass"
+        instrumentName = "Bass 1"
         \consists "Ambitus_engraver"
       }
       <<
@@ -949,7 +949,7 @@ EntranceOfTheGuests_BookPart =
 %      }
 
       \new Staff = "Bass 2" \with {
-        instrumentName = "Bass"
+        instrumentName = "Bass 2"
         \consists "Ambitus_engraver"
       }
       <<
