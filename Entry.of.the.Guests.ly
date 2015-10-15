@@ -95,7 +95,8 @@ EntranceOfTheGuests_Soprano =  {
   r1 |
  r1*15 |
   }
- r1 | r1 |
+ r1 |
+ r1 |
  dis' 4.(  cis' 8)  b 8.  cis' 16 dis' 8.  e' 16 |
  fis' 4  fisis'   gis'   dis' |
  dis' 2  fis' 8  eis'   dis'   eis'  |
@@ -184,86 +185,197 @@ dis' 1  |
 %         bes( a) <g bes>2. ~ |
 %         bes1 \bar"|."
 }
-%
-%EntranceOfTheGuests_Alto =  {
-%  \EntranceOfTheGuests_InitialRests
-%%5
-%         r4 ees' d' ees' |
-%         d'2. ees'4 |
-%         d' ees' c'4. d'8 |
-%         d'4 ees'2. ~ |
-%         ees'4 ees' d' ees' |
-%%10
-%         d'2. ees'4 |
-%         d' ees' c'4. d'8 |
-%         ees'1 ~ |
-%         ees'4 g' g' g' |
-%         g'2. ees'4 |
-%%15
-%         ees' ees' ees'4. d'8 |
-%         d'4 f'2. ~ |
-%         f'4 f' e' f' |
-%         ees'2. ees'4 |
-%         ees' ees' ees'4. d'8 |
-%%20
-%         d'1 ~ |
-%         d'4 g' g' g' |
-%         g'2. ees'4 |
-%         ees' ees' ees'4. d'8 |
-%         d'4 f'2. ~ |
-%%25
-%         f'4 f' e' f' |
-%         ees'2. bes4 |
-%         bes ees' d'4. ees'8 |
-%         ees'1 ~ |
-%         ees'4 r r2 |
-%%30
-%         \EntranceOfTheGuests_MidRestsAndKeyChange
-%         r4 bes a bes |
-%%40
-%         c'2. bes4 |
-%         a bes bes4. a8 |
-%         a4 bes2. ~ |
-%         bes4 r r2 |
-%         r4 bes a bes |
-%%45
-%         c'2. bes4 |
-%         a bes bes4. a8 |
-%         bes1 ~ |
-%         bes4 r r2 |
-%         \EntranceOfTheGuests_ThirdLongRests
-%         r4 d' d' d' |
-%         d'2. bes4 |
-%         bes bes bes4. c'8 |
-%         c'4 c'2. ~ |
-%%55
-%         c'4 c' b c' |
-%         bes2. bes4 |
-%         bes a a4. a8 |
-%         a1 ~ |
-%         a4 d' d' d' |
-%%60
-%         d'2. d'4 |
-%         d' bes bes4. a8 |
-%         a4 c'2. ~ |
-%         c'4 c' b c' |
-%         bes2. bes4 |
-%%65
-%         bes a a4. bes8 |
-%         bes1 |
-%         r4 r2 bes4 |
-%         a bes c'2 |
-%         r r4 bes |
-%%70
-%         a bes a r |
-%         r1 |
-%         r4 d' d' d' |
-%         d'2. d'4 |
-%         d' d' ees'4. ees'8 |
-%%75
-%         d'4 r <c' ees'>( c') |
-%         d'1 \bar"|."}
-%
+
+EntranceOfTheGuests_WomenOriginalRests = \tag #'womenOnlyRests {
+ r1 | % 1
+ r1 | % 2
+ r1 | % 3
+ r1 | % 4
+ r1 | % 5
+%5
+ r1 | % 6
+ r1 | % 7
+ r1 | % 8
+ r1 | % 9
+ r1 | % 10
+%10
+ r1 | % 11
+ r1 | % 12
+ r1 | % 13
+ r1 | % 14
+ r1 | % 15
+%15
+ r1 | % 16  
+}
+
+EntranceOfTheGuests_WomenMiddleRests = \tag #'womenOnlyRests {
+ r1 |  % 33
+ r1 | % 34
+%35
+ r1 | % 35
+ r1 | % 36
+ r1 | % 37
+ r1 | % 38
+ r1 | % 39
+}
+
+EntraceOfTheGuests_AltoSharedMusic = {
+ gis'4. gis'8 cis''4 ais' | % 47
+ bis'2 r | % 48
+ r1 | % 49
+%50
+ fis'2 eis'4 b' | % 50
+ a'2 g' | % 51
+ fis'4. fis'8 fis'4 fis' | % 52
+ fis'2 fis'4 fis' | % 53
+ fis'2. fis'4 | % 54
+%55
+ gis' b' fis' eis' | % 55
+ fis'2 r | % 56
+ r1 | % 57
+ e'2 dis'4 a' | % 58
+ g'2 f' | % 59
+%60
+ e' g' | % 60
+ fis' fis' | % 61
+ fis' fis'4 fis' | % 62
+ fis'4. fis'8 b'4 b' | % 63
+ ais'2 fis'4 r | % 64
+%65
+ b'2 b'4. b'8 | % 65
+ b'4 fis' b' b' | % 66
+ ais'1~  | % 67
+ ais'2 r | % 68
+ b' b'4.. gis'16 | % 69
+%70
+ gis'2 gis' | % 70
+ b'4. fis'8 fis'4 fis' | % 71
+ fis'2 fis'4 r | % 72
+ b'2 b'4.. gis'16 | % 73
+ gis'2 ais' | % 74
+%75
+ b'4. fis'8 gis'4 gis' | % 75
+ fis'2. r4 | % 76
+ b'2 fis'4. dis'8 | % 77
+ dis'2. dis'4 | % 78
+ b'2 b'4.( fis'8) | % 79
+%80
+ fis'2 fis' | % 80
+ b' e'4. gis'8 | % 81
+ ais'4 b' cis'' dis'' | % 82
+ gis'2 gis'4 gis' | % 83
+ ais' b' cis'' dis'' | % 84
+%85
+ gis' gis' gis' gis' | % 85
+ b'1 | % 86
+ b'2 b'4. b'8 | % 87
+ b'2. b'4 | % 88
+ b'1 | % 89
+%90
+ b'2 b'4 b' | % 90
+ b'2. b'4 | % 91
+ b'4. b'8 b'4 b' | % 92
+ b'1 | % 93
+ r2 b' | % 94
+%95
+ b'4. fis'8 fis'4 b' | % 95
+ b'2. b'4 | % 96
+ b'2 b'4 r | % 97
+ gis'2 gis'4. gis'8 | % 98
+ ais'2 ais' | % 99
+%100
+ ais'2. fis'4 | % 100
+ fis'1 | % 101
+ b' | % 102
+ ais'2 ais'4 ais' | % 103
+ ais'2 fis' | % 104
+%105
+ fis'1 | % 105
+ b' | % 106
+ ais'~  | % 107
+ ais'2 r | % 108
+ fis'-^ b'4-^ b'-^ | % 109
+%110
+ b'2-^ b'-^ | % 110
+}
+
+EntranceOfTheGuests_AltoOne = {
+ \EntranceOfTheGuests_WomenOriginalRests
+ dis'2 dis'4.. fis'16 | % 17
+ fis'4.. dis'16 dis'4 fis' | % 18
+ b'2. fis'4 | % 19
+%20
+ e'2 e'4 r | % 20
+ e'2 gis'4.. gis'16 | % 21
+ ais'2 fis' | % 22
+ fis'4. fis'8 gis'4 b' | % 23
+ ais'2 r | % 24
+%25
+ dis' dis'4.. fis'16 | % 25
+ fis'4.. dis'16 dis'4 fis' | % 26
+ b'2. fis'4 | % 27
+ e'2 e'4 r | % 28
+ ais'2 ais'4 ais' | % 29
+%30
+ b'2 gis' | % 30
+ ais'4 ais' b'4. b'8 | % 31
+ ais'2 r | % 32
+ \EntranceOfTheGuests_WomenMiddleRests
+%40
+ r1 | % 40  
+ b'4.( ais'8) b'8. ais'16 gis'8. fis'16 | % 41
+ b'4 ais' gis' fis' | % 42
+ b'4.( ais'8) gis'8. ais'16 b'8. cis''16 | % 43
+ dis''4 dis'' dis'' cis'' | % 44
+%45
+ bis'2 <gis' cis''>4 gis' | % 45
+ bis'2 gis' | % 46
+ \EntraceOfTheGuests_AltoSharedMusic
+
+ cis''1-^~  | % 111
+ cis''2 cis''-^ | % 112
+ dis''1~  | % 113
+ dis''2 r | % 114
+}
+
+EntranceOfTheGuests_AltoTwo =  {
+ \EntranceOfTheGuests_WomenOriginalRests
+ b2 b4.. dis'16 | % 16
+ dis'4.. b16 b4 dis' | % 17
+ dis'2( fis'4) dis' | % 18
+ e'2 e'4 r | % 19
+%20
+ cis'2 e'4.. e'16 | % 20
+ fis'2 e' | % 21
+ dis'4. dis'8 dis'4 gis' | % 22
+ fis'2 r | % 23
+ b b4.. dis'16 | % 24
+%25
+ dis'4.. b16 b4 dis' | % 25
+ dis'2( fis'4) dis' | % 26
+ e'2 e'4 r | % 27
+ e'2 e'4 e' | % 28
+ dis'2 dis' | % 29
+%30
+ fis'4 fis' gis'4. gis'8 | % 30
+ fis'2 r | % 31
+ \EntranceOfTheGuests_WomenMiddleRests
+%40
+ r1 | % 40  
+ b'4.( ais'8) b'8. ais'16 gis'8. fis'16 | % 40
+ b'4 ais' gis' fis' | % 41
+ b'4.( ais'8) gis'8. ais'16 b'8. cis''16 | % 42
+ dis''4 cis'' bis' ais' | % 43
+ gis'2 cis'4 eis' | % 44
+%45
+ gis'2 gis' | % 45
+ \EntraceOfTheGuests_AltoSharedMusic
+ ais'1-^~  |
+ ais'2-^ ais'-^ |
+ b'1~  |
+ b'2 r |
+}
+
 EntranceOfTheGuests_TenorOne =  {
  fis' 2  dis' 4..  b 16 | % 1
   << \tag #'cutForMidi { b2( fis'4) }
@@ -291,7 +403,7 @@ EntranceOfTheGuests_TenorOne =  {
   b 2  r | % 16
   r1 | % 17
 
- \tag #'cutForMidi { r1*15  | }
+ \tag #'menOnlyRests { r1*15  | }
  r1 | % 32
  r1 | % 33
  dis' 4.(  cis' 8)  b 8.  cis' 16 dis' 8.  e' 16 | %33
@@ -400,7 +512,7 @@ EntranceOfTheGuests_TenorTwoAndThree =  {
  fis2 r | % 16
  r1 | % 17
 
- \tag #'cutForMidi { r1*15  | }
+ \tag #'menOnlyRests { r1*15  | }
  r1 | % 32
  r1 | % 33
  dis' 4.(  cis' 8)  b 8.  cis' 16 dis' 8.  e' 16 | %33
@@ -496,264 +608,259 @@ EntranceOfTheGuests_TenorTwoAndThree =  {
  b-^   dis' 4-^  fis'-^   | % 107
 
  fis' 2 -^ dis'-^   | % 108
-          cis'1~-^ | % 111
+ cis'1~-^ | % 111
 %110
-         cis'2 e'-^ | % 112
-         dis'1~ | % 113
-         dis'2 r | % 114
-%         f1 ~ |
-%         f4 r r2 |
-%         bes( a) <g bes>2. ~ |
-%         bes1 \bar"|."
+ cis'2 e'-^ | % 112
+ dis'1~ | % 113
+ dis'2 r | % 114
 }
 
 EntranceOfTheGuests_BassOneAndTwo =  {
-         b2 fis4.. gis16 | % 1
-         gis2 gis | % 2
-         fis e | % 3
-         dis dis4 r | % 4
+ b2 fis4.. gis16 | % 1
+ gis2 gis | % 2
+ fis e | % 3
+ dis dis4 r | % 4
 %5
-         e2 e4.. e16 | % 5
-         e2 e | % 6
-         fis e | % 7
-         e2. r4 | % 8
-         b2 fis4. dis8 | % 9
+ e2 e4.. e16 | % 5
+ e2 e | % 6
+ fis e | % 7
+ e2. r4 | % 8
+ b2 fis4. dis8 | % 9
 %10
-         dis2. dis4 | % 10
-         dis'2 b4.( fis8) | % 11
-         fis2 fis | % 12
-         b cis'4. gis8 | % 13
-         ais4 b fis b | % 14
+ dis2. dis4 | % 10
+ dis'2 b4.( fis8) | % 11
+ fis2 fis | % 12
+ b cis'4. gis8 | % 13
+ ais4 b fis b | % 14
 %15
-         gis2 fis4( e) | % 15
-         dis2 r | % 16
+ gis2 fis4( e) | % 15
+ dis2 r | % 16
  r1 | % 17
 
- \tag #'cutForMidi { r1*15  | }
-         b4.( ais8) b8. ais16 gis8. fis16 | % 33
-         b4 ais gis fis | % 34
+ \tag #'menOnlyRests { r1*15  | }
+ b4.( ais8) b8. ais16 gis8. fis16 | % 33
+ b4 ais gis fis | % 34
 %35
-         b4.( ais8) gis8. ais16 b8. cis'16 | % 35
-         dis'4 cis' b ais | % 36
-         gis2 gis4 gis | % 37
-         ais2 ais | % 38
-         <eis gis>4. <eis gis>8 <eis gis>4 gis | % 39
+ b4.( ais8) gis8. ais16 b8. cis'16 | % 35
+ dis'4 cis' b ais | % 36
+ gis2 gis4 gis | % 37
+ ais2 ais | % 38
+ <eis gis>4. <eis gis>8 <eis gis>4 gis | % 39
 %40
-         ais2 r | % 40
-         b2. cis'4 | % 41
-         dis' cis' b ais | % 42
-         b2 e'4 dis'8. cis'16 | % 43
-         b4( ais gis fisis) | % 44
+ ais2 r | % 40
+ b2. cis'4 | % 41
+ dis' cis' b ais | % 42
+ b2 e'4 dis'8. cis'16 | % 43
+ b4( ais gis fisis) | % 44
 %45
-         gis r r2 | % 45
-         r4 gis8. ais16 bis8. cis'16 dis'8. bis16 | % 46
-         cis'2 ais | % 47
-         gis r | % 48
-         a a4 a | % 49
+ gis r r2 | % 45
+ r4 gis8. ais16 bis8. cis'16 dis'8. bis16 | % 46
+ cis'2 ais | % 47
+ gis r | % 48
+ a a4 a | % 49
 %50
-         fis2 cis | % 50
-         d a, | % 51
-         b, cis4 cis | % 52
-         d2. d4 | % 53
-         cis2. cis4 | % 54
+ fis2 cis | % 50
+ d a, | % 51
+ b, cis4 cis | % 52
+ d2. d4 | % 53
+ cis2. cis4 | % 54
 %55
-         cis2 cis4 cis | % 55
-         fis2 r | % 56
-         g g4 g | % 57
-         e2 b, | % 58
-         c g4 g | % 59
+ cis2 cis4 cis | % 55
+ fis2 r | % 56
+ g g4 g | % 57
+ e2 b, | % 58
+ c g4 g | % 59
 %60
-         a2 b | % 60
-         cis'!2 b | % 61
-         ais!2 cis'4 fis | % 62
-         ais4. ais8 gis4 gis | % 63
-         fis2 fis4 r | % 64
+ a2 b | % 60
+ cis'!2 b | % 61
+ ais!2 cis'4 fis | % 62
+ ais4. ais8 gis4 gis | % 63
+ fis2 fis4 r | % 64
 %65
-         b2 b4. b8 | % 65
-         b4 dis fis b | % 66
-         fis1~  | % 67
-         fis2 r | % 68
-         b dis4.. gis16 | % 69
+ b2 b4. b8 | % 65
+ b4 dis fis b | % 66
+ fis1~  | % 67
+ fis2 r | % 68
+ b dis4.. gis16 | % 69
 %70
-         gis2 e | % 70
-         fis4. fis8 fis4 fis | % 71
-         b2 b,4 r | % 72
-         e2 gis4.. cis'16 | % 73
-         cis'2 fis | % 74
+ gis2 e | % 70
+ fis4. fis8 fis4 fis | % 71
+ b2 b,4 r | % 72
+ e2 gis4.. cis'16 | % 73
+ cis'2 fis | % 74
 %75
-         b4. b8 e4 e | % 75
-         fis2. r4 | % 76
-         r1 | % 77
-         r4 b, dis fis | % 78
-         b2. fis4 | % 79
+ b4. b8 e4 e | % 75
+ fis2. r4 | % 76
+ r1 | % 77
+ r4 b, dis fis | % 78
+ b2. fis4 | % 79
 %80
-         b fis dis b, | % 80
-         e2 cis4. e8 | % 81
-         e4 dis cis b, | % 82
-         cis2 dis4 e | % 83
-         e dis cis bis, | % 84
+ b fis dis b, | % 80
+ e2 cis4. e8 | % 81
+ e4 dis cis b, | % 82
+ cis2 dis4 e | % 83
+ e dis cis bis, | % 84
 %85
-         cis cis dis e | % 85
-         fis2 gis4. a8 | % 86
-         a2. fis4 | % 87
-         fis fis gis4. a8 | % 88
-         a1 | % 89
+ cis cis dis e | % 85
+ fis2 gis4. a8 | % 86
+ a2. fis4 | % 87
+ fis fis gis4. a8 | % 88
+ a1 | % 89
 %90
-         gis2 fis4 eis | % 90
-         gis2( fis4) eis | % 91
-         fis4. fis8 b4 fis | % 92
-         eis1 | % 93
-         r2 fis | % 94
+ gis2 fis4 eis | % 90
+ gis2( fis4) eis | % 91
+ fis4. fis8 b4 fis | % 92
+ eis1 | % 93
+ r2 fis | % 94
 %95
-         fis4. b8 b4 fis | % 95
-         dis'2. b4 | % 96
-         fis2 fis4 r | % 97
-         fis2 fis4. fis8 | % 98
-         fis2 fis | % 99
+ fis4. b8 b4 fis | % 95
+ dis'2. b4 | % 96
+ fis2 fis4 r | % 97
+ fis2 fis4. fis8 | % 98
+ fis2 fis | % 99
 %100
-         fis2. fis4 | % 100
-         b1 | % 101
-         b | % 102
-         fis2 fis4 fis | % 103
-         fis2 fis | % 104
+ fis2. fis4 | % 100
+ b1 | % 101
+ b | % 102
+ fis2 fis4 fis | % 103
+ fis2 fis | % 104
 %105
-         b1 | % 105
-         b | % 106
-         fis~  | % 107
-         fis2 r | % 108
-         dis fis4 b | % 109
+ b1 | % 105
+ b | % 106
+ fis~  | % 107
+ fis2 r | % 108
+ dis fis4 b | % 109
 %110
-         dis'2 b | % 110
-         fis1~  | % 111
-         fis2 fis | % 112
-         b1~  | % 113
-         b2 r | % 114
+ dis'2 b | % 110
+ fis1~  | % 111
+ fis2 fis | % 112
+ b1~  | % 113
+ b2 r | % 114
 }
 
 EntranceOfTheGuests_BassThree =  {
-         b,2 dis4.. gis16 | % 1
-         gis2 e | % 2
-         fis fis, | % 3
-         b, b,4 r | % 4
+ b,2 dis4.. gis16 | % 1
+ gis2 e | % 2
+ fis fis, | % 3
+ b, b,4 r | % 4
 %5
-         e,2 gis,4.. cis16 | % 5
-         cis2 fis, | % 6
-         b, e, | % 7
-         fis,2. r4 | % 8
-         fis2 dis4. b,8 | % 9
+ e,2 gis,4.. cis16 | % 5
+ cis2 fis, | % 6
+ b, e, | % 7
+ fis,2. r4 | % 8
+ fis2 dis4. b,8 | % 9
 %10
-         b,2. b,4 | % 10
-         b2 fis4.( dis8) | % 11
-         dis2 dis | % 12
-         e cis4. e8 | % 13
-         e4 dis cis b, | % 14
+ b,2. b,4 | % 10
+ b2 fis4.( dis8) | % 11
+ dis2 dis | % 12
+ e cis4. e8 | % 13
+ e4 dis cis b, | % 14
 %15
-         cis2 fis, | % 15
-         b, r | % 16
+ cis2 fis, | % 15
+ b, r | % 16
  r1 | % 17
 
- \tag #'cutForMidi { r1*15  | }
-         b4.( ais8) b8. ais16 gis8. fis16 | % 33
-         b4 ais gis fis | % 34
+ \tag #'menOnlyRests { r1*15  | }
+ b4.( ais8) b8. ais16 gis8. fis16 | % 33
+ b4 ais gis fis | % 34
 %35
-         b4.( ais8) gis8. ais16 b8. cis'16 | % 35
-         dis'4 cis' b ais | % 36
-         gis2 cis4 cis | % 37
-         fis2 fis | % 38
-         cis4. cis8 cis4 cis | % 39
+ b4.( ais8) gis8. ais16 b8. cis'16 | % 35
+ dis'4 cis' b ais | % 36
+ gis2 cis4 cis | % 37
+ fis2 fis | % 38
+ cis4. cis8 cis4 cis | % 39
 %40
-         fis2 r | % 40
-         b2. cis'4 | % 41
-         dis' cis' b ais | % 42
-         b2 e'4 dis'8. cis'16 | % 43
-         b4( ais gis fisis) | % 44
+ fis2 r | % 40
+ b2. cis'4 | % 41
+ dis' cis' b ais | % 42
+ b2 e'4 dis'8. cis'16 | % 43
+ b4( ais gis fisis) | % 44
 %45
-         gis r r2 | % 45
-         r4 gis8. ais16 bis8. cis'16 dis'8. bis16 | % 46
-         cis'2 ais | % 47
-         gis r | % 48
-         fis fis4 fis | % 49
+ gis r r2 | % 45
+ r4 gis8. ais16 bis8. cis'16 dis'8. bis16 | % 46
+ cis'2 ais | % 47
+ gis r | % 48
+ fis fis4 fis | % 49
 %50
-         fis2 cis | % 50
-         d a, | % 51
-         b, cis4 cis | % 52
-         d2. d4 | % 53
-         cis2. cis4 | % 54
+ fis2 cis | % 50
+ d a, | % 51
+ b, cis4 cis | % 52
+ d2. d4 | % 53
+ cis2. cis4 | % 54
 %55
-         cis2 cis4 cis | % 55
-         fis2 r | % 56
-         e e4 e | % 57
-         e2 b, | % 58
-         c g4 g | % 59
+ cis2 cis4 cis | % 55
+ fis2 r | % 56
+ e e4 e | % 57
+ e2 b, | % 58
+ c g4 g | % 59
 %60
-         a2 b | % 60
-         cis'!2 b | % 61
-         ais!2 cis'4 fis | % 62
-         ais4. ais8 gis4 gis | % 63
-         fis2 fis4 r | % 64
+ a2 b | % 60
+ cis'!2 b | % 61
+ ais!2 cis'4 fis | % 62
+ ais4. ais8 gis4 gis | % 63
+ fis2 fis4 r | % 64
 %65
-         b2 b4. b8 | % 65
-         b4 dis fis b | % 66
-         fis1~  | % 67
-         fis2 r | % 68
-         b, dis4.. gis16 | % 69
+ b2 b4. b8 | % 65
+ b4 dis fis b | % 66
+ fis1~  | % 67
+ fis2 r | % 68
+ b, dis4.. gis16 | % 69
 %70
-         gis2 e | % 70
-         fis4. fis8 fis4 fis | % 71
-         b2 b,4 r | % 72
-         e2 gis4.. cis'16 | % 73
-         cis'2 fis | % 74
+ gis2 e | % 70
+ fis4. fis8 fis4 fis | % 71
+ b2 b,4 r | % 72
+ e2 gis4.. cis'16 | % 73
+ cis'2 fis | % 74
 %75
-         b4. b8 e4 e | % 75
-         fis2. r4 | % 76
-         r1 | % 77
-         r4 b, dis fis | % 78
-         b2. fis4 | % 79
+ b4. b8 e4 e | % 75
+ fis2. r4 | % 76
+ r1 | % 77
+ r4 b, dis fis | % 78
+ b2. fis4 | % 79
 %80
-         b fis dis b, | % 80
-         e2 cis4. e8 | % 81
-         e4 dis cis b, | % 82
-         cis2 dis4 e | % 83
-         e dis cis bis, | % 84
+ b fis dis b, | % 80
+ e2 cis4. e8 | % 81
+ e4 dis cis b, | % 82
+ cis2 dis4 e | % 83
+ e dis cis bis, | % 84
 %85
-         cis cis dis e | % 85
-         fis2 gis4. a8 | % 86
-         a2. fis4 | % 87
-         fis fis gis4. a8 | % 88
-         a1 | % 89
+ cis cis dis e | % 85
+ fis2 gis4. a8 | % 86
+ a2. fis4 | % 87
+ fis fis gis4. a8 | % 88
+ a1 | % 89
 %90
-         gis2 fis4 eis | % 90
-         gis2( fis4) eis | % 91
-         fis4. fis8 b4 fis | % 92
-         eis1 | % 93
-         r2 fis | % 94
+ gis2 fis4 eis | % 90
+ gis2( fis4) eis | % 91
+ fis4. fis8 b4 fis | % 92
+ eis1 | % 93
+ r2 fis | % 94
 %95
-         fis4. b8 b4 fis | % 95
-         dis'2. b4 | % 96
-         fis2 fis4 r | % 97
-         fis2 fis4. fis8 | % 98
-         fis2 fis | % 99
+ fis4. b8 b4 fis | % 95
+ dis'2. b4 | % 96
+ fis2 fis4 r | % 97
+ fis2 fis4. fis8 | % 98
+ fis2 fis | % 99
 %100
-         fis2. fis4 | % 100
-         b1 | % 101
-         b | % 102
-         fis2 fis4 fis | % 103
-         fis2 fis | % 104
+ fis2. fis4 | % 100
+ b1 | % 101
+ b | % 102
+ fis2 fis4 fis | % 103
+ fis2 fis | % 104
 %105
-         b1 | % 105
-         b | % 106
-         fis~  | % 107
-         fis2 r | % 108
-         dis fis4 b | % 109
+ b1 | % 105
+ b | % 106
+ fis~  | % 107
+ fis2 r | % 108
+ dis fis4 b | % 109
 %110
-         dis'2 b | % 110
-         fis1~  | % 111
-         fis2 fis | % 112
-         b,1~  | % 113
-         b,2 r | % 114
+ dis'2 b | % 110
+ fis1~  | % 111
+ fis2 fis | % 112
+ b,1~  | % 113
+ b,2 r | % 114
 }
 
-%
 %EntranceOfTheGuests_SharedWords = \lyricmode {
 %  Be still my |
 %  soul the |
@@ -815,17 +922,23 @@ EntranceOfTheGuests_BassThree =  {
 %  last. A -- |
 %  men.
 %}
-%
-%EntranceOfTheGuests_SopranoClef = \clef treble
-%EntranceOfTheGuests_SopranoProlog = { \EntranceOfTheGuests_SopranoClef \EntranceOfTheGuests_GlobalStart}
-%EntranceOfTheGuests_SopranoMusic =  {\EntranceOfTheGuests_SopranoProlog \EntranceOfTheGuests_Soprano}
-%EntranceOfTheGuests_SopranoContext = \context Voice = EntranceOfTheGuests_Soprano  {\EntranceOfTheGuests_SopranoMusic}
-%
-%EntranceOfTheGuests_AltoClef = \clef treble
-%EntranceOfTheGuests_AltoProlog = { \EntranceOfTheGuests_AltoClef \EntranceOfTheGuests_GlobalStart}
-%EntranceOfTheGuests_AltoMusic =  {\EntranceOfTheGuests_AltoProlog \EntranceOfTheGuests_Alto}
-%EntranceOfTheGuests_AltoContext = \context Voice = EntranceOfTheGuests_Alto  {\EntranceOfTheGuests_AltoMusic}
-%
+
+%{
+EntranceOfTheGuests_SopranoClef = \clef treble
+EntranceOfTheGuests_SopranoProlog = { \EntranceOfTheGuests_SopranoClef \EntranceOfTheGuests_GlobalStart}
+EntranceOfTheGuests_SopranoOneMusic =  {\EntranceOfTheGuests_SopranoProlog \EntranceOfTheGuests_SopranoOne}
+EntranceOfTheGuests_SopranoOneContext = \context Voice = EntranceOfTheGuests_SopranoOne  {\EntranceOfTheGuests_SopranoOneMusic}
+EntranceOfTheGuests_SopranoTwoMusic =  {\EntranceOfTheGuests_SopranoProlog \EntranceOfTheGuests_SopranoTwo}
+EntranceOfTheGuests_SopranoTwoContext = \context Voice = EntranceOfTheGuests_SopranoTwo  {\EntranceOfTheGuests_SopranoTwoMusic}
+%}
+
+EntranceOfTheGuests_AltoClef = \clef treble
+EntranceOfTheGuests_AltoProlog = { \EntranceOfTheGuests_AltoClef \EntranceOfTheGuests_GlobalStart}
+EntranceOfTheGuests_AltoOneMusic =  {\EntranceOfTheGuests_AltoProlog \EntranceOfTheGuests_AltoOne}
+EntranceOfTheGuests_AltoOneContext = \context Voice = EntranceOfTheGuests_AltoOne  {\EntranceOfTheGuests_AltoOneMusic}
+EntranceOfTheGuests_AltoTwoMusic =  {\EntranceOfTheGuests_AltoProlog \EntranceOfTheGuests_AltoTwo}
+EntranceOfTheGuests_AltoTwoContext = \context Voice = EntranceOfTheGuests_AltoTwo  {\EntranceOfTheGuests_AltoTwoMusic}
+
 EntranceOfTheGuests_TenorOneClef = \clef "treble_8"
 %EntranceOfTheGuests_TenorOneClef = \clef "bass"
 EntranceOfTheGuests_TenorOneProlog = { \EntranceOfTheGuests_TenorOneClef \EntranceOfTheGuests_GlobalStart}
@@ -849,15 +962,24 @@ EntranceOfTheGuests_BassThreeProlog = { \EntranceOfTheGuests_BassThreeClef \Entr
 EntranceOfTheGuests_BassThreeMusic =  {\EntranceOfTheGuests_BassThreeProlog \removeWithTag #'onlyForMidi \EntranceOfTheGuests_BassThree}
 EntranceOfTheGuests_BassThreeContext = \context Voice = EntranceOfTheGuests_BassThree  {\EntranceOfTheGuests_BassThreeMusic}
 
-%
-%EntranceOfTheGuests_Staff_Soprano = \new Staff  << {
-%                \EntranceOfTheGuests_SopranoContext
-%                }
-%                >>
-%EntranceOfTheGuests_Staff_Alto = \new Staff  << {
-%                \EntranceOfTheGuests_AltoContext
-%                }
-%                >>
+%{
+EntranceOfTheGuests_Staff_SopranoOne = \new Staff  << {
+                \EntranceOfTheGuests_SopranoOneContext
+                }
+                >>
+EntranceOfTheGuests_Staff_SopranoTwo = \new Staff  << {
+                \EntranceOfTheGuests_SopranoTwoContext
+                }
+                >>
+%}
+EntranceOfTheGuests_Staff_AltoOne = \new Staff  << {
+                \EntranceOfTheGuests_AltoOneContext
+                }
+                >>
+EntranceOfTheGuests_Staff_AltoTwo = \new Staff  << {
+                \EntranceOfTheGuests_AltoTwoContext
+                }
+                >>
 EntranceOfTheGuests_Staff_TenorOne = \new Staff  << {
                 \EntranceOfTheGuests_TenorOneContext
                 }
@@ -878,9 +1000,9 @@ EntranceOfTheGuests_Staff_BassThree = \new Staff  << {
 EntranceOfTheGuests_BookPart =
 \bookpart {
 \header {
-  title = "Wagner - Tännhauser: Entrance of the Guests"
+  title = "Tännhauser: Entrance of the Guests"
 %  subsubtitle = "from Finlandia."
-%  composer = "Wagner"
+  composer = "Wagner"
 %  arranger = ""
 %  tagline = ""
 }
@@ -888,7 +1010,37 @@ EntranceOfTheGuests_BookPart =
   <<
     \new ChoirStaff <<
       %{
+      \new Staff \with {
+        instrumentName = "Soprano 1"
+        \consists "Ambitus_engraver"
+      }
+      <<
+%        \new Voice = "EntranceOfTheGuests_Dynamics_Soprano" { \EntranceOfTheGuests_Dynamics_Shared }
+        \new Voice = "EntranceOfTheGuests_SopranoOne" { \EntranceOfTheGuests_SopranoOneContext }
+      >>
+
+      \new Staff \with {
+        instrumentName = "Soprano 2"
+        \consists "Ambitus_engraver"
+      }
+      <<
+%        \new Voice = "EntranceOfTheGuests_Dynamics_Soprano" { \EntranceOfTheGuests_Dynamics_Shared }
+        \new Voice = "EntranceOfTheGuests_SopranoTwo" { \EntranceOfTheGuests_SopranoTwoContext }
+      >>
       %}
+      
+      
+      \new Staff \with {
+        instrumentName = "Alto"
+        \consists "Ambitus_engraver"
+      }
+      <<
+%        \new Voice = "EntranceOfTheGuests_Dynamics_Alto" { \EntranceOfTheGuests_Dynamics_Shared }
+        \new Voice = "EntranceOfTheGuests_AltoOne" { \voiceOne \EntranceOfTheGuests_AltoOneContext }
+        \new Voice = "EntranceOfTheGuests_AltoTwo" { \voiceTwo \EntranceOfTheGuests_AltoTwoContext }
+      >>
+    >>
+    \new ChoirStaff <<
 
 %      \new Staff = "Sops and Alto" \with {
 %        instrumentName = \markup \center-column { "Soprano" "Alto" }
@@ -905,16 +1057,7 @@ EntranceOfTheGuests_BookPart =
 %     } \lyricsto "EntranceOfTheGuests_Soprano" \EntranceOfTheGuests_SharedWords
 %
 %      %{
-%      \new Staff \with {
-%        instrumentName = "Alto"
-%        \consists "Ambitus_engraver"
-%      }
-%      <<
-%        \new Voice = "EntranceOfTheGuests_Dynamics_Alto" { \EntranceOfTheGuests_Dynamics_Shared }
-%        \new Voice = "EntranceOfTheGuests_Alto" { \EntranceOfTheGuests_AltoContext }
-%      >>
-%      \new Lyrics { \lyricsto "EntranceOfTheGuests_Alto" \EntranceOfTheGuests_SharedWords }
-%      %}
+
       \new Staff = "Tenor 1" \with {
         instrumentName = "Tenor 1"
         \consists "Ambitus_engraver"
@@ -966,7 +1109,33 @@ EntranceOfTheGuests_BookPart =
 
 % Rehearsal MIDI files:
 
-rehearsalMidiEOTG = #
+rehearsalMidiEOTGAll = #
+(define-music-function
+ (parser location name midiInstrument alto1 alto2 tenor1 tenor2 bass1 bass2) (string? string? ly:music? ly:music? ly:music? ly:music? ly:music? ly:music?)
+ #{
+   \unfoldRepeats <<
+%     \new Staff = "soprano 1" \new Voice { $soprano1 }
+%     \new Staff = "soprano 2" \new Voice { $soprano2 }
+     \new Staff = "alto 1" \new Voice { $alto1 }
+     \new Staff = "alto 2" \new Voice { $alto2 }
+     \new Staff = "tenor 1" \new Voice { $tenor1 }
+     \new Staff = "tenor 2" \new Voice { $tenor2 }
+     \new Staff = "bass 1" \new Voice { $bass1 }
+     \new Staff = "bass 2" \new Voice { $bass2 }
+     \set Score.tempoWholesPerMinute = \midiSpeed
+     \set Score.midiMinimumVolume = #0.5
+     \set Score.midiMaximumVolume = #0.5
+
+     \context Staff = $name {
+       \set Staff.midiMinimumVolume = #0.8
+       \set Staff.midiMaximumVolume = #1.0
+       \set Staff.midiInstrument = $midiInstrument
+     }
+   >>
+ #})
+
+
+rehearsalMidiEOTGMen = #
 (define-music-function
  (parser location name midiInstrument tenor1 tenor2 bass1 bass2) (string? string? ly:music? ly:music? ly:music? ly:music?)
  #{
@@ -987,50 +1156,203 @@ rehearsalMidiEOTG = #
    >>
  #})
 
+rehearsalMidiEOTGWomen = #
+(define-music-function
+ (parser location name midiInstrument alto1 alto2) (string? string? ly:music? ly:music?)
+ #{
+   \unfoldRepeats <<
+     \new Staff = "alto 1" \new Voice { $alto1 }
+     \new Staff = "alto 2" \new Voice { $alto2 }
+%     \new Staff = "soprano 1" \new Voice { $soprano1 }
+%     \new Staff = "soprano 2" \new Voice { $soprano2 }
+     \set Score.tempoWholesPerMinute = \midiSpeed
+     \set Score.midiMinimumVolume = #0.5
+     \set Score.midiMaximumVolume = #0.5
+
+     \context Staff = $name {
+       \set Staff.midiMinimumVolume = #0.8
+       \set Staff.midiMaximumVolume = #1.0
+       \set Staff.midiInstrument = $midiInstrument
+     }
+   >>
+ #})
+
 EntranceOfTheGuests_RehearsalMidi = #
 (define-music-function
  (parser location name midiInstrument) (string? string?)
  #{
-    \removeWithTag #'cutForMidi { \rehearsalMidiEOTG $name $midiInstrument \EntranceOfTheGuests_TenorOne \EntranceOfTheGuests_TenorTwoAndThree \EntranceOfTheGuests_BassOneAndTwo \EntranceOfTheGuests_BassThree}
+    \removeWithTag #'cutForMidi { \rehearsalMidiEOTGAll $name $midiInstrument \EntranceOfTheGuests_AltoOne \EntranceOfTheGuests_AltoTwo \EntranceOfTheGuests_TenorOne \EntranceOfTheGuests_TenorTwoAndThree \EntranceOfTheGuests_BassOneAndTwo \EntranceOfTheGuests_BassThree}
  #})
+
+EntranceOfTheGuests_RehearsalMidiMen = #
+(define-music-function
+ (parser location name midiInstrument) (string? string?)
+ #{
+    \removeWithTag #'menOnlyRests \removeWithTag #'cutForMidi { \rehearsalMidiEOTGMen $name $midiInstrument \EntranceOfTheGuests_TenorOne \EntranceOfTheGuests_TenorTwoAndThree \EntranceOfTheGuests_BassOneAndTwo \EntranceOfTheGuests_BassThree}
+ #})
+
+EntranceOfTheGuests_RehearsalMidiWomen = #
+(define-music-function
+ (parser location name midiInstrument) (string? string?)
+ #{
+    \removeWithTag #'womenOnlyRests \removeWithTag #'cutForMidi { \rehearsalMidiEOTGWomen $name $midiInstrument \EntranceOfTheGuests_AltoOne \EntranceOfTheGuests_AltoTwo}
+ #})
+
+
+EntranceOfTheGuests_RehersalMidiSopranoOne_WomenOnly = \book {
+      \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+      \bookOutputSuffix "Soprano.One-Women.Only"
+      \score {
+        \EntranceOfTheGuests_RehearsalMidiWomen "soprano 1" "soprano sax"
+        \midi { }
+      }
+    }
+
+EntranceOfTheGuests_RehersalMidiSopranoTwo_WomenOnly = \book {
+      \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+      \bookOutputSuffix "Soprano.Two-Women.Only"
+      \score {
+        \EntranceOfTheGuests_RehearsalMidiWomen "soprano 2" "soprano sax"
+        \midi { }
+      }
+    }
+
+EntranceOfTheGuests_RehersalMidiAltoOne_WomenOnly = \book {
+      \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+      \bookOutputSuffix "Alto.One-Women.Only"
+      \score {
+        \EntranceOfTheGuests_RehearsalMidiWomen "alto 1" "alto sax"
+        \midi { }
+      }
+    }
+
+EntranceOfTheGuests_RehersalMidiAltoTwo_WomenOnly = \book {
+      \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+      \bookOutputSuffix "Alto.Two-Women.Only"
+      \score {
+        \EntranceOfTheGuests_RehearsalMidiWomen "alto 2" "alto sax"
+        \midi { }
+      }
+    }
+
+EntranceOfTheGuests_RehersalMidiTenorOne_MenOnly = \book {
+      \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+      \bookOutputSuffix "Tenor.One-Men.Only"
+      \score {
+        \EntranceOfTheGuests_RehearsalMidiMen "tenor 1" "tenor sax"
+        \midi { }
+      }
+    }
+
+EntranceOfTheGuests_RehersalMidiTenorTwo_MenOnly = \book {
+      \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+      \bookOutputSuffix "Tenor.Two-Men.Only"
+      \score {
+        \EntranceOfTheGuests_RehearsalMidiMen "tenor 2" "tenor sax"
+        \midi { }
+      }
+    }
+
+EntranceOfTheGuests_RehersalMidiBassOne_MenOnly = \book {
+      \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+      \bookOutputSuffix "Bass.One-Men.Only"
+      \score {
+        \EntranceOfTheGuests_RehearsalMidiMen "bass 1" "baritone sax"
+        \midi { }
+      }
+    }
+
+EntranceOfTheGuests_RehersalMidiBassTwo_MenOnly = \book {
+      \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+      \bookOutputSuffix "Bass.Two-Men.Only"
+      \score {
+        \EntranceOfTheGuests_RehearsalMidiMen "bass 2" "baritone sax"
+        \midi { }
+      }
+    }
+
+EntranceOfTheGuests_RehersalMidiSopranoOne = \book {
+      \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+      \bookOutputSuffix "Soprano.One"
+      \score {
+        \EntranceOfTheGuests_RehearsalMidi "soprano 1" "soprano sax"
+        \midi { }
+      }
+    }
+
+EntranceOfTheGuests_RehersalMidiSopranoTwo = \book {
+      \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+      \bookOutputSuffix "Soprano.Two"
+      \score {
+        \EntranceOfTheGuests_RehearsalMidi "soprano 2" "soprano sax"
+        \midi { }
+      }
+    }
+
+EntranceOfTheGuests_RehersalMidiAltoOne = \book {
+      \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+      \bookOutputSuffix "Alto.One"
+      \score {
+        \EntranceOfTheGuests_RehearsalMidi "alto 1" "alto sax"
+        \midi { }
+      }
+    }
+
+EntranceOfTheGuests_RehersalMidiAltoTwo = \book {
+      \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+      \bookOutputSuffix "Alto.Two"
+      \score {
+        \EntranceOfTheGuests_RehearsalMidi "alto 2" "alto sax"
+        \midi { }
+      }
+    }
 
 EntranceOfTheGuests_RehersalMidiTenorOne = \book {
       \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
-      \bookOutputSuffix "tenorone"
+      \bookOutputSuffix "Tenor.One"
       \score {
         \EntranceOfTheGuests_RehearsalMidi "tenor 1" "tenor sax"
         \midi { }
       }
     }
 
-EntranceOfTheGuests_RehersalMidiTenorTwoAndThree = \book {
+EntranceOfTheGuests_RehersalMidiTenorTwo = \book {
       \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
-      \bookOutputSuffix "tenorTwoAndThree"
+      \bookOutputSuffix "Tenor.Two"
       \score {
         \EntranceOfTheGuests_RehearsalMidi "tenor 2" "tenor sax"
         \midi { }
       }
     }
 
-EntranceOfTheGuests_RehersalMidiBassOneAndTwo = \book {
+EntranceOfTheGuests_RehersalMidiBassOne = \book {
       \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
-      \bookOutputSuffix "BassOneAndTwo"
+      \bookOutputSuffix "Bass.One"
       \score {
         \EntranceOfTheGuests_RehearsalMidi "bass 1" "baritone sax"
         \midi { }
       }
     }
 
-EntranceOfTheGuests_RehersalMidiBassThree = \book {
+EntranceOfTheGuests_RehersalMidiBassTwo = \book {
       \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
-      \bookOutputSuffix "BassThree"
+      \bookOutputSuffix "Bass.Two"
       \score {
         \EntranceOfTheGuests_RehearsalMidi "bass 2" "baritone sax"
         \midi { }
       }
     }
+    
+EntranceOfTheGuests_RehersalMidiCombined = \book {
+      \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+      \bookOutputSuffix "Combined"
+      \score {
+        \EntranceOfTheGuests_RehearsalMidi "none" "baritone sax"
+        \midi { }
+      }
+    }    
 
-EntranceOfTheGuests_RehersalMidiMen = \book {
+EntranceOfTheGuests_RehersalMidiMenCombined = \book {
   \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
   \bookOutputSuffix "Men"
   \score {
@@ -1059,24 +1381,69 @@ EntranceOfTheGuests_RehersalMidiMen = \book {
   }
 }
 
-%
-%EntranceOfTheGuests_RehersalMidiBass = \book {
-%  \bookOutputName "Be.Still.My.Soul"
-%  \bookOutputSuffix "bass"
-%  \score {
-%    \EntranceOfTheGuests_RehearsalMidi "bass" "baritone sax" \EntranceOfTheGuests_SharedWords
-%    \midi { }
-%  }
-%}
-%
+
+EntranceOfTheGuests_RehersalMidiWomenCombined = \book {
+  \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
+  \bookOutputSuffix "Women"
+  \score {
+    {
+     \set Score.tempoWholesPerMinute = \midiSpeed
+     \removeWithTag #'cutForMidi \unfoldRepeats <<
+     \new Staff = "alto 1" \new Voice { \EntranceOfTheGuests_AltoOne }
+     \new Staff = "alto 2" \new Voice { \EntranceOfTheGuests_AltoTwo }
+     \new Staff = "soprano 1" \new Voice { \EntranceOfTheGuests_AltoOne }
+     \new Staff = "soprano 2" \new Voice { \EntranceOfTheGuests_AltoTwo }
+     \context Staff = "alto 1" {
+       \set Staff.midiInstrument = "acoustic grand"
+     }
+     \context Staff = "alto 2" {
+       \set Staff.midiInstrument = "acoustic grand"
+     }
+     \context Staff = "soprano 1" {
+       \set Staff.midiInstrument = "acoustic grand"
+     }
+     \context Staff = "soprano 2" {
+       \set Staff.midiInstrument = "acoustic grand"
+     }
+   >>
+    }
+    \midi { }
+  }
+}
+
+
 \book { \bookOutputName "Wagner.Entrance.of.the.guests" \bookpart {\EntranceOfTheGuests_BookPart }}
-%\EntranceOfTheGuests_RehersalMidiCombined
-%\EntranceOfTheGuests_RehersalMidiSoprano
-%\EntranceOfTheGuests_RehersalMidiAlto
+
+%{
+%}
+
+\EntranceOfTheGuests_RehersalMidiCombined
+\EntranceOfTheGuests_RehersalMidiWomenCombined
+\EntranceOfTheGuests_RehersalMidiMenCombined
+
+%\EntranceOfTheGuests_RehersalMidiSopranoOne
+%\EntranceOfTheGuests_RehersalMidiSopranoTwo
+
+\EntranceOfTheGuests_RehersalMidiAltoOne
+\EntranceOfTheGuests_RehersalMidiAltoTwo
+
 \EntranceOfTheGuests_RehersalMidiTenorOne
-\EntranceOfTheGuests_RehersalMidiTenorTwoAndThree
-\EntranceOfTheGuests_RehersalMidiBassOneAndTwo
-\EntranceOfTheGuests_RehersalMidiBassThree
-\EntranceOfTheGuests_RehersalMidiMen
-%%{
-%%}
+\EntranceOfTheGuests_RehersalMidiTenorTwo
+
+\EntranceOfTheGuests_RehersalMidiBassOne
+\EntranceOfTheGuests_RehersalMidiBassTwo
+
+%\EntranceOfTheGuests_RehersalMidiSopranoOne_WomenOnly
+%\EntranceOfTheGuests_RehersalMidiSopranoTwo_WomenOnly
+
+\EntranceOfTheGuests_RehersalMidiAltoOne_WomenOnly
+\EntranceOfTheGuests_RehersalMidiAltoTwo_WomenOnly
+
+\EntranceOfTheGuests_RehersalMidiTenorOne_MenOnly
+\EntranceOfTheGuests_RehersalMidiTenorTwo_MenOnly
+
+\EntranceOfTheGuests_RehersalMidiBassOne_MenOnly
+\EntranceOfTheGuests_RehersalMidiBassTwo_MenOnly
+
+%{
+%}
