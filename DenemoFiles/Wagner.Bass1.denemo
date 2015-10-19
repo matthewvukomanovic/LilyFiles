@@ -4,7 +4,7 @@
     <papersize>a4</papersize>
     <fontsize>18</fontsize>
     <orientation>1</orientation>
-    <total-edit-time>7654</total-edit-time>
+    <total-edit-time>7791</total-edit-time>
     <score-directives>
       <directive>
         <tag>ScoreIndent</tag>
@@ -20,8 +20,8 @@
   <movement>
     <edit-info>
       <staffno>1</staffno>
-      <measureno>113</measureno>
-      <cursorposition>0</cursorposition>
+      <measureno>74</measureno>
+      <cursorposition>1</cursorposition>
       <tonalcenter>5</tonalcenter>
       <zoom>100</zoom>
       <system-height>100</system-height>
@@ -1759,6 +1759,17 @@
             </chord>
             <chord show="true" id="id311">
               <duration base="quarter"></duration>
+              <directives>
+                <directive>
+                  <tag>ToggleTurn</tag>
+                  <postfix>-\turn</postfix>
+                  <graphic_name>
+
+emmentaler</graphic_name>
+                  <gx>7</gx>
+                  <override>1073741824</override>
+                </directive>
+              </directives>
               <slur-end>1</slur-end>
               <notes>
                 <note id="id312">
@@ -1901,6 +1912,17 @@
             </chord>
             <chord show="true" id="id340">
               <duration base="quarter"></duration>
+              <directives>
+                <directive>
+                  <tag>ToggleTurn</tag>
+                  <postfix>-\turn</postfix>
+                  <graphic_name>
+
+emmentaler</graphic_name>
+                  <gx>7</gx>
+                  <override>1073741824</override>
+                </directive>
+              </directives>
               <slur-end>1</slur-end>
               <notes>
                 <note id="id341">
@@ -2936,6 +2958,17 @@ emmentaler</graphic_name>
           <measure>
             <chord show="true" id="id534">
               <duration base="whole"></duration>
+              <directives>
+                <directive>
+                  <tag>ToggleMarcato</tag>
+                  <postfix>-\marcato</postfix>
+                  <graphic_name>
+
+emmentaler</graphic_name>
+                  <gx>7</gx>
+                  <override>1073741824</override>
+                </directive>
+              </directives>
               <tie></tie>
               <notes>
                 <note id="id535">
