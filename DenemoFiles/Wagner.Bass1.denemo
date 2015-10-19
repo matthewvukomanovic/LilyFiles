@@ -4,7 +4,7 @@
     <papersize>a4</papersize>
     <fontsize>18</fontsize>
     <orientation>1</orientation>
-    <total-edit-time>6747</total-edit-time>
+    <total-edit-time>7654</total-edit-time>
     <score-directives>
       <directive>
         <tag>ScoreIndent</tag>
@@ -20,8 +20,8 @@
   <movement>
     <edit-info>
       <staffno>1</staffno>
-      <measureno>114</measureno>
-      <cursorposition>2</cursorposition>
+      <measureno>113</measureno>
+      <cursorposition>0</cursorposition>
       <tonalcenter>5</tonalcenter>
       <zoom>100</zoom>
       <system-height>100</system-height>
@@ -2779,6 +2779,17 @@
           <measure>
             <chord show="true" id="id518">
               <duration base="half"></duration>
+              <directives>
+                <directive>
+                  <tag>ToggleMarcato</tag>
+                  <postfix>-\marcato</postfix>
+                  <graphic_name>
+
+emmentaler</graphic_name>
+                  <gx>7</gx>
+                  <override>1073741824</override>
+                </directive>
+              </directives>
               <notes>
                 <note id="id519">
                   <middle-c-offset>3</middle-c-offset>
@@ -2788,6 +2799,17 @@
             </chord>
             <chord show="true" id="id520">
               <duration base="quarter"></duration>
+              <directives>
+                <directive>
+                  <tag>ToggleMarcato</tag>
+                  <postfix>-\marcato</postfix>
+                  <graphic_name>
+
+emmentaler</graphic_name>
+                  <gx>7</gx>
+                  <override>1073741824</override>
+                </directive>
+              </directives>
               <notes>
                 <note id="id521">
                   <middle-c-offset>6</middle-c-offset>
@@ -2796,6 +2818,17 @@
             </chord>
             <chord show="true" id="id522">
               <duration base="quarter"></duration>
+              <directives>
+                <directive>
+                  <tag>ToggleMarcato</tag>
+                  <postfix>-\marcato</postfix>
+                  <graphic_name>
+
+emmentaler</graphic_name>
+                  <gx>7</gx>
+                  <override>1073741824</override>
+                </directive>
+              </directives>
               <notes>
                 <note id="id523">
                   <middle-c-offset>8</middle-c-offset>
@@ -2807,6 +2840,17 @@
           <measure>
             <chord show="true" id="id524">
               <duration base="half"></duration>
+              <directives>
+                <directive>
+                  <tag>ToggleMarcato</tag>
+                  <postfix>-\marcato</postfix>
+                  <graphic_name>
+
+emmentaler</graphic_name>
+                  <gx>7</gx>
+                  <override>1073741824</override>
+                </directive>
+              </directives>
               <notes>
                 <note id="id525">
                   <middle-c-offset>10</middle-c-offset>
@@ -2816,6 +2860,17 @@
             </chord>
             <chord show="true" id="id526">
               <duration base="half"></duration>
+              <directives>
+                <directive>
+                  <tag>ToggleMarcato</tag>
+                  <postfix>-\marcato</postfix>
+                  <graphic_name>
+
+emmentaler</graphic_name>
+                  <gx>7</gx>
+                  <override>1073741824</override>
+                </directive>
+              </directives>
               <notes>
                 <note id="id527">
                   <middle-c-offset>10</middle-c-offset>
@@ -2827,6 +2882,17 @@
           <measure>
             <chord show="true" id="id528">
               <duration base="whole"></duration>
+              <directives>
+                <directive>
+                  <tag>ToggleMarcato</tag>
+                  <postfix>-\marcato</postfix>
+                  <graphic_name>
+
+emmentaler</graphic_name>
+                  <gx>7</gx>
+                  <override>1073741824</override>
+                </directive>
+              </directives>
               <tie></tie>
               <notes>
                 <note id="id529">
@@ -2848,6 +2914,17 @@
             </chord>
             <chord show="true" id="id532">
               <duration base="half"></duration>
+              <directives>
+                <directive>
+                  <tag>ToggleMarcato</tag>
+                  <postfix>-\marcato</postfix>
+                  <graphic_name>
+
+emmentaler</graphic_name>
+                  <gx>7</gx>
+                  <override>1073741824</override>
+                </directive>
+              </directives>
               <notes>
                 <note id="id533">
                   <middle-c-offset>10</middle-c-offset>
