@@ -1,1 +1,6 @@
-Something
+[Tenor 1](Wagner.Tannhauser.Entrance.of.the.Guests-tenorone.mid)
+[Tenor 2](Wagner.Tannhauser.Entrance.of.the.Guests-tenorTwoAndThree.mid)
+[Bass 1](Wagner.Tannhauser.Entrance.of.the.Guests-BassOneAndTwo.mid)
+[Bass 2](Wagner.Tannhauser.Entrance.of.the.Guests-BassThree.mid)
+[Men](Wagner.Tannhauser.Entrance.of.the.Guests-Men.mid)
+[PDF](Wagner.Entrance.of.the.guests.pdf)
