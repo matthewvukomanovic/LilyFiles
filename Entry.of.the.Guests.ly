@@ -1172,20 +1172,11 @@ EntranceOfTheGuests_RehersalMidiBassTwo_MenOnly = \book {
       }
     }
 
-EntranceOfTheGuests_RehersalMidiSopranoOne = \book {
+EntranceOfTheGuests_RehersalMidiSoprano = \book {
       \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
-      \bookOutputSuffix "Soprano.One"
+      \bookOutputSuffix "Soprano"
       \score {
-        \EntranceOfTheGuests_RehearsalMidi "soprano 1" "soprano sax"
-        \midi { }
-      }
-    }
-
-EntranceOfTheGuests_RehersalMidiSopranoTwo = \book {
-      \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
-      \bookOutputSuffix "Soprano.Two"
-      \score {
-        \EntranceOfTheGuests_RehearsalMidi "soprano 2" "soprano sax"
+        \EntranceOfTheGuests_RehearsalMidi "soprano" "soprano sax"
         \midi { }
       }
     }
@@ -1317,8 +1308,7 @@ EntranceOfTheGuests_RehersalMidiWomenCombined = \book {
 \EntranceOfTheGuests_RehersalMidiWomenCombined
 \EntranceOfTheGuests_RehersalMidiMenCombined
 
-\EntranceOfTheGuests_RehersalMidiSoprano_WomenOnly
-%\EntranceOfTheGuests_RehersalMidiSopranoTwo
+\EntranceOfTheGuests_RehersalMidiSoprano
 
 \EntranceOfTheGuests_RehersalMidiAltoOne
 \EntranceOfTheGuests_RehersalMidiAltoTwo
@@ -1329,8 +1319,7 @@ EntranceOfTheGuests_RehersalMidiWomenCombined = \book {
 \EntranceOfTheGuests_RehersalMidiBassOne
 \EntranceOfTheGuests_RehersalMidiBassTwo
 
-%\EntranceOfTheGuests_RehersalMidiSopranoOne_WomenOnly
-%\EntranceOfTheGuests_RehersalMidiSopranoTwo_WomenOnly
+\EntranceOfTheGuests_RehersalMidiSoprano_WomenOnly
 
 \EntranceOfTheGuests_RehersalMidiAltoOne_WomenOnly
 \EntranceOfTheGuests_RehersalMidiAltoTwo_WomenOnly
