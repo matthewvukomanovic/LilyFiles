@@ -17,7 +17,6 @@ EntranceOfTheGuests_GlobalStart = {
 }
 
 EntranceOfTheGuests_WomenOriginalRests = \tag #'womenOnlyRests {
- %R1*16
  r1*16
 }
 
@@ -61,7 +60,7 @@ EntranceOfTheGuests_SopranoSharedEndingNotes = {
          r1 | %49
 %50
          cis''2 cis''4 cis'' | %50
-         fis''2( fis''8.) e''?16 d''8. cis''16 | %51
+         fis''2( fis''8.) e''!16 d''8. cis''16 | %51
          d''2 cis''4 cis'' | %52
          bis'2. bis'4 | %53
          cis''2( fis''4) ais' | %54
@@ -73,7 +72,7 @@ EntranceOfTheGuests_SopranoSharedEndingNotes = {
          e''2( e''8.) d''16 c''8. b'16 | %59
 %60
          c''2 b' | %60
-         ais'?2( b'8 ais') b'8. bis'16 | %61
+         ais'!2( b'8 ais') b'8. bis'16 | %61
          cis''2 ais'4 fis' | %62
          cis''4. cis''8 dis'' cis'' dis''8. eis''16 | %63
          fis''2 fis'4 r | %64
@@ -344,7 +343,7 @@ EntranceOfTheGuests_TenorOne =  {
   b 2  r | % 16
   r1 | % 17
 
- \EntraceOfTheGuests_MenMidRests
+\EntraceOfTheGuests_MenMidRests
  r1 | % 32
  r1 | % 33
  dis' 4.(  cis' 8)  b 8.  cis' 16 dis' 8.  e' 16 | %33
@@ -452,7 +451,7 @@ EntranceOfTheGuests_TenorTwoAndThree =  {
 %15
  fis2 r | % 16
  r1 | % 17
-\tag #'menOnlyRests  { r1*15  | }
+\EntraceOfTheGuests_MenMidRests
  r1 | % 32
  r1 | % 33
  dis' 4.(  cis' 8)  b 8.  cis' 16 dis' 8.  e' 16 | %33
@@ -577,7 +576,7 @@ EntranceOfTheGuests_BassOneAndTwo =  {
  dis2 r | % 16
  r1 | % 17
 
- \EntraceOfTheGuests_MenMidRests
+\EntraceOfTheGuests_MenMidRests
  b4.( ais8) b8. ais16 gis8. fis16 | % 33
  b4 ais gis fis | % 34
 %35
@@ -700,7 +699,7 @@ EntranceOfTheGuests_BassThree =  {
  b, r | % 16
  r1 | % 17
 
- \EntraceOfTheGuests_MenMidRests
+\EntraceOfTheGuests_MenMidRests
  b4.( ais8) b8. ais16 gis8. fis16 | % 33
  b4 ais gis fis | % 34
 %35
@@ -1247,7 +1246,6 @@ EntranceOfTheGuests_RehersalMidiBassTwo = \book {
     
 EntranceOfTheGuests_RehersalMidiCombined = \book {
       \bookOutputName "Wagner.Tannhauser.Entrance.of.the.Guests"
-      \bookOutputSuffix "Combined"
       \score {
         \EntranceOfTheGuests_RehearsalMidi "none" "baritone sax"
         \midi { }
@@ -1260,7 +1258,7 @@ EntranceOfTheGuests_RehersalMidiMenCombined = \book {
   \score {
     {
      \set Score.tempoWholesPerMinute = \midiSpeed
-     \removeWithTag #'womenOnlyRests \removeWithTag #'cutForMidi \unfoldRepeats <<
+     \removeWithTag #'menOnlyRests \removeWithTag #'cutForMidi \unfoldRepeats <<
      \new Staff = "tenor 1" \new Voice { \EntranceOfTheGuests_TenorOne }
      \new Staff = "tenor 2" \new Voice { \EntranceOfTheGuests_TenorTwoAndThree }
      \new Staff = "bass 1" \new Voice { \EntranceOfTheGuests_BassOneAndTwo }
@@ -1290,7 +1288,7 @@ EntranceOfTheGuests_RehersalMidiWomenCombined = \book {
   \score {
     {
      \set Score.tempoWholesPerMinute = \midiSpeed
-     \removeWithTag #'menOnlyRests \removeWithTag #'cutForMidi \unfoldRepeats <<
+     \removeWithTag #'womenOnlyRests \removeWithTag #'cutForMidi \unfoldRepeats <<
      \new Staff = "soprano" \new Voice { \EntranceOfTheGuests_SopranoComplete }
      \new Staff = "alto 1" \new Voice { \EntranceOfTheGuests_AltoOne }
      \new Staff = "alto 2" \new Voice { \EntranceOfTheGuests_AltoTwo }
