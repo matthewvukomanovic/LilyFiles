@@ -16,176 +16,176 @@ AutoEndMovementBarline = \bar "|."
 % The music follows
 
 MvmntIVoiceI = {
-s1*4/4 |
-s1*4/4 |
-s1*4/4 |
-s1*4/4 | %5
-s1*4/4 |
-s1*4/4 |
-s1*4/4 |
-s1*4/4 |
-s1*4/4 | %10
-s1*4/4 |
-s1*4/4 |
-s1*4/4 |
-s1*4/4 |
-s1*4/4 | %15
-s1*4/4 |
-s1*4/4 |
-fis'2 eis'8. fis'16 gis'8. ais'16 |
-         b'2( \grace {cis''8}  b'8. ais'16) b'8. dis''16 |
-         fis''4. eis''8 e'' dis'' cis''8. b'16 |
+         s1*4/4 | %1
+         s1*4/4 | %2
+         s1*4/4 | %3
+         s1*4/4 | %4
+         s1*4/4 | %5
+         s1*4/4 | %6
+         s1*4/4 | %7
+         s1*4/4 | %8
+         s1*4/4 | %9
+         s1*4/4 | %10
+         s1*4/4 | %11
+         s1*4/4 | %12
+         s1*4/4 | %13
+         s1*4/4 | %14
+         s1*4/4 | %15
+         s1*4/4 | %16
+         fis'2 eis'8. fis'16 gis'8. ais'16 | %17
+         b'2( \grace {cis''8}  b'8. ais'16) b'8. dis''16 | %18
+         fis''4. eis''8 e'' dis'' cis''8. b'16 | %19
 %20
-         ais'2 gis'4 r |
-         gis'2 bis'8 cis'' dis'' e'' |
-         e''2 ais' |
-         b'4. ais'8 b'4 dis'' |
-         fis''2 r |
+         ais'2 gis'4 r | %20
+         gis'2 bis'8 cis'' dis'' e'' | %21
+         e''2 ais' | %22
+         b'4. ais'8 b'4 dis'' | %23
+         fis''2 r | %24
 %25
-         fis' eis'8. fis'16 gis'8. ais'16 |
-         b'2( \grace {cis''8}  b'8. ais'16) b'8. dis''16 |
-         fis''4. eis''8 e'' dis'' cis''8. b'16 |
-         ais'2 gis'4 r |
-         cis''2 cis''4 cis'' |
+         fis' eis'8. fis'16 gis'8. ais'16 | %25
+         b'2( \grace {cis''8}  b'8. ais'16) b'8. dis''16 | %26
+         fis''4. eis''8 e'' dis'' cis''8. b'16 | %27
+         ais'2 gis'4 r | %28
+         cis''2 cis''4 cis'' | %29
 %30
-         fis''2 b' |
-         cis''4 cis'' eis''4. cis''8 |
-         fis''2 r |
-         R1*4/4 |
-         R1*4/4 |
+         fis''2 b' | %30
+         cis''4 cis'' eis''4. cis''8 | %31
+         fis''2 r | %32
+         R1*4/4 | %33
+         R1*4/4 | %34
 %35
-         R1*4/4 |
-         R1*4/4 |
-         R1*4/4 |
-         R1*4/4 |
-         R1*4/4 |
+         R1*4/4 | %35
+         R1*4/4 | %36
+         R1*4/4 | %37
+         R1*4/4 | %38
+         R1*4/4 | %39
 %40
-         R1*4/4 |
-         R1*4/4 |
-         R1*4/4 |
-         dis''4.( cis''8) b'8. cis''16 dis''8. e''16 |
-         fis''4 fisis'' gis'' dis'' |
+         R1*4/4 | %40
+         R1*4/4 | %41
+         R1*4/4 | %42
+         dis''4.( cis''8) b'8. cis''16 dis''8. e''16 | %43
+         fis''4 fisis'' gis'' dis'' | %44
 %45
-         dis''2 fis''8 eis'' dis'' cis'' |
-         dis''2 gis' |
-         cis''4. cis''8 eis''4 cis'' |
-         gis''2 r |
-         r1 |
+         dis''2 fis''8 eis'' dis'' cis'' | %45
+         dis''2 gis' | %46
+         cis''4. cis''8 eis''4 cis'' | %47
+         gis''2 r | %48
+         r1 | %49
 %50
-         cis''2 cis''4 cis'' |
-         fis''2( fis''8.) e''?16 d''8. cis''16 |
-         d''2 cis''4 cis'' |
-         bis'2. bis'4 |
-         cis''2( fis''4) ais' |
+         cis''2 cis''4 cis'' | %50
+         fis''2( fis''8.) e''?16 d''8. cis''16 | %51
+         d''2 cis''4 cis'' | %52
+         bis'2. bis'4 | %53
+         cis''2( fis''4) ais' | %54
 %55
-         cis'' b' ais' gis' |
-         ais'2 r |
-         r1 |
-         b'2 b'4 b' |
-         e''2( e''8.) d''16 c''8. b'16 |
+         cis'' b' ais' gis' | %55
+         ais'2 r | %56
+         r1 | %57
+         b'2 b'4 b' | %58
+         e''2( e''8.) d''16 c''8. b'16 | %59
 %60
-         c''2 b' |
-         ais'?2( b'8 ais') b'8. bis'16 |
-         cis''2 ais'4 fis' |
-         cis''4. cis''8 dis'' cis'' dis''8. eis''16 |
-         fis''2 fis'4 r |
+         c''2 b' | %60
+         ais'?2( b'8 ais') b'8. bis'16 | %61
+         cis''2 ais'4 fis' | %62
+         cis''4. cis''8 dis'' cis'' dis''8. eis''16 | %63
+         fis''2 fis'4 r | %64
 %65
-         dis''2 dis''4. dis''8 |
-         dis''4 fis' b' dis'' |
-         fis''1~  |
-         fis''2 r |
-         fis'' dis''4.. b'16 |
+         dis''2 dis''4. dis''8 | %65
+         dis''4 fis' b' dis'' | %66
+         fis''1~  | %67
+         fis''2 r | %68
+         fis'' dis''4.. b'16 | %69
 %70
-         b'2(-\turn fis''4) e''4 |
-         dis''4. b'8 dis''8. cis''16 b'8. ais'16 |
-         b'2 fis'4 r |
-         gis''2 e''4.. cis''16 |
-         cis''2(-\turn gis''4) fis''4 |
+         b'2(-\turn fis''4) e''4 | %70
+         dis''4. b'8 dis''8. cis''16 b'8. ais'16 | %71
+         b'2 fis'4 r | %72
+         gis''2 e''4.. cis''16 | %73
+         cis''2(-\turn gis''4) fis''4 | %74
 %75
-         dis''4. b'8 fis'' e'' gis'8. cis''16 |
-         b'2( ais'4) r |
-         fis''2 b'4. fis'8 |
-         fis'2. fis'4 |
-         fis''2 dis''4.( b'8) |
+         dis''4. b'8 fis'' e'' gis'8. cis''16 | %75
+         b'2( ais'4) r | %76
+         fis''2 b'4. fis'8 | %77
+         fis'2. fis'4 | %78
+         fis''2 dis''4.( b'8) | %79
 %80
-         b'2 b' |
-         gis'' e''4. cis''8 |
-         gis''4 fis'' e'' dis'' |
-         fis''( e'') dis'' cis'' |
-         fis'' e'' dis'' cis'' |
+         b'2 b' | %80
+         gis'' e''4. cis''8 | %81
+         gis''4 fis'' e'' dis'' | %82
+         fis''( e'') dis'' cis'' | %83
+         fis'' e'' dis'' cis'' | %84
 %85
-         gis'' fis'' e'' dis'' |
-         b'2 b'4. dis''8 |
-         dis''2. b'4 |
-         b' b' b'4. dis''8 |
-         dis''1 |
+         gis'' fis'' e'' dis'' | %85
+         b'2 b'4. dis''8 | %86
+         dis''2. b'4 | %87
+         b' b' b'4. dis''8 | %88
+         dis''1 | %89
 %90
-         cisis''2 dis''4 cis'' |
-         cisis''2( dis''4) cis'' |
-         dis''4. b'8 dis''4 fis'' |
-         b''1 |
-         r2 fis'' |
+         cisis''2 dis''4 cis'' | %90
+         cisis''2( dis''4) cis'' | %91
+         dis''4. b'8 dis''4 fis'' | %92
+         b''1 | %93
+         r2 fis'' | %94
 %95
-         dis''4. b'8 b'4 dis'' |
-         fis''2. dis''4 |
-         cis''2 cis''4 r |
-         cis''2 cis''4. cis''8 |
-         cis''2 cis'' |
+         dis''4. b'8 b'4 dis'' | %95
+         fis''2. dis''4 | %96
+         cis''2 cis''4 r | %97
+         cis''2 cis''4. cis''8 | %98
+         cis''2 cis'' | %99
 %100
-         e''2. ais'4 |
-         b'1 |
-         dis'' |
-         fis''2 fis''4 fis'' |
-         fis''2 ais' |
+         e''2. ais'4 | %100
+         b'1 | %101
+         dis'' | %102
+         fis''2 fis''4 fis'' | %103
+         fis''2 ais' | %104
 %105
-         b'1 |
-         dis'' |
-         fis''~  |
-         fis''2 r |
-         fis'-^ b'4-^ dis''4-^ |
+         b'1 | %105
+         dis'' | %106
+         fis''~  | %107
+         fis''2 r | %108
+         fis'-^ b'4-^ dis''4-^ | %109
 %110
-         fis''2-^ fis''2-^ |
-         gis''1-^~  |
-         gis''2 fis''-^ |
-         b''1-^~  |
-         b''2 r  |
+         fis''2-^ fis''2-^ | %110
+         gis''1-^~  | %111
+         gis''2 fis''-^ | %112
+         b''1-^~  | %113
+         b''2 r  | %114
 }
 
 
 MvmntIVoiceII = {
-s1*4/4 |
-s1*4/4 |
-s1*4/4 |
-s1*4/4 %5
-s1*4/4 |
-s1*4/4 |
-s1*4/4 |
-s1*4/4 |
-s1*4/4 %10
-s1*4/4 |
-s1*4/4 |
-s1*4/4 |
-s1*4/4 |
-s1*4/4 %15
-s1*4/4 |
-s1*4/4 |
-s1*4/4 |
-s1*4/4 |
-s1*4/4 %20
-s1*4/4 |
-s1*4/4 |
-s1*4/4 |
-s2 s4 b' |
-cis''2  s2 | %25
-s1*4/4 |
-s1*4/4 |
-s1*4/4 |
-s1*4/4 |
-s1*4/4 %30
-s1*4/4 |
-s1*4/4 |
-cis''2 s |
-         }
+s1*4/4 | %1
+s1*4/4 | %2
+s1*4/4 | %3
+s1*4/4 | %4
+s1*4/4 | %5
+s1*4/4 | %6
+s1*4/4 | %7
+s1*4/4 | %8
+s1*4/4 | %9
+s1*4/4 | %10
+s1*4/4 | %11
+s1*4/4 | %12
+s1*4/4 | %13
+s1*4/4 | %14 
+s1*4/4 | %15
+s1*4/4 | %16
+s1*4/4 | %17
+s1*4/4 | %18
+s1*4/4 | %19
+s1*4/4 | %20
+s1*4/4 | %21
+s1*4/4 | %22
+s2 s4 b' | %23
+cis''2  s2 | %24
+s1*4/4 | %25
+s1*4/4 | %26
+s1*4/4 | %27
+s1*4/4 | %28
+s1*4/4 | %29
+s1*4/4 | %30
+s1*4/4 | %31
+cis''2 s | %32
+}
 
 
 MvmntIVoiceIII = {
