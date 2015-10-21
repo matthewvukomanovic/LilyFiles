@@ -1,54 +1,12 @@
-# Wagner Tannhauser
-
-[Wagner Tannhauser - All Files](Wagner.Tannhauser.Entrance.of.the.Guests.zip?raw=true)
-
-## MIDI Files
-
-[Wagner Tannhauser - All - MIDI](Wagner.Tannhauser.Entrance.of.the.Guests.mid?raw=true)
-
-### Highlighted Parts
-
-#### Women
-
-[Wagner Tannhauser - Soprano - MIDI](Wagner.Tannhauser.Entrance.of.the.Guests-Soprano.mid?raw=true)
-
-[Wagner Tannhauser - Alto One - MIDI](Wagner.Tannhauser.Entrance.of.the.Guests-Alto_One.mid?raw=true)
-
-[Wagner Tannhauser - Alto Two - MIDI](Wagner.Tannhauser.Entrance.of.the.Guests-Alto_Two.mid?raw=true)
+# Villa Lobos
 
 #### Men
 
-[Wagner Tannhauser - Tenor One - MIDI](Wagner.Tannhauser.Entrance.of.the.Guests-Tenor_One.mid?raw=true)
+[Tenor 1 - Fast](Villa.Lobos-Tenor1Fast.mid?raw=true)
 
-[Wagner Tannhauser - Tenor Two - MIDI](Wagner.Tannhauser.Entrance.of.the.Guests-Tenor_Two.mid?raw=true)
+[Tenor 1 - Medium](Villa.Lobos-Tenor1Medium.mid?raw=true)
 
-[Wagner Tannhauser - Bass One - MIDI](Wagner.Tannhauser.Entrance.of.the.Guests-Bass_One.mid?raw=true)
-
-[Wagner Tannhauser - Bass Two - MIDI](Wagner.Tannhauser.Entrance.of.the.Guests-Bass_Two.mid?raw=true)
-
-### Separated Parts
-
-#### Women
-
-[Wagner Tannhauser - Women Only - MIDI](Wagner.Tannhauser.Entrance.of.the.Guests-Women.mid?raw=true)
-
-[Wagner Tannhauser - Soprano - Women Only - MIDI](Wagner.Tannhauser.Entrance.of.the.Guests-Soprano_Women_Only.mid?raw=true)
-
-[Wagner Tannhauser - Alto One - Women Only - MIDI](Wagner.Tannhauser.Entrance.of.the.Guests-Alto_One-Women_Only.mid?raw=true)
-
-[Wagner Tannhauser - Alto Two - Women Only - MIDI](Wagner.Tannhauser.Entrance.of.the.Guests-Alto_Two-Women_Only.mid?raw=true)
-
-#### Men
-
-[Wagner Tannhauser - Men Only - MIDI](Wagner.Tannhauser.Entrance.of.the.Guests-Men.mid?raw=true)
-
-[Wagner Tannhauser - Tenor One - Men Only - MIDI](Wagner.Tannhauser.Entrance.of.the.Guests-Tenor_One-Men_Only.mid?raw=true)
-
-[Wagner Tannhauser - Tenor Two - Men Only - MIDI](Wagner.Tannhauser.Entrance.of.the.Guests-Tenor_Two-Men_Only.mid?raw=true)
-
-[Wagner Tannhauser - Bass One - Men Only - MIDI](Wagner.Tannhauser.Entrance.of.the.Guests-Bass_One-Men_Only.mid?raw=true)
-
-[Wagner Tannhauser - Bass Two - Men Only - MIDI](Wagner.Tannhauser.Entrance.of.the.Guests-Bass_Two-Men_Only.mid?raw=true)
+[Tenor 1 - Slow](Villa.Lobos-Tenor1Slow.mid?raw=true)
 
 ### PDF
 
