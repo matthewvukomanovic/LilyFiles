@@ -15,67 +15,70 @@ AutoEndMovementBarline = \bar "|."
 
 % The music follows
 
+
 MvmntIVoiceI = {
-         bes2 bes |
-         bes r4 bes |
-         des'2 ees' |
-         des' r4 f |
+         \dynamicUp
+         
+         bes2\ppp  bes |
+         bes\fermata r4 bes^"rit." |
+         des'2^"a tempo" ees' |
+         des'\fermata r4 f |
 %5
          des'2 bes |
          des' des' |
-         bes des'4 bes |
-         \time 3/4  aes2 ges4 |
-         f2 ges4~  |
+         bes des'4( bes) |
+         \time 3/4  aes2( ges4 |
+         f2 ges4)~  |
 %10
-         ges r aes |
+         ges r aes\ppp |
          \time 4/4  bes2 bes |
-         b b |
+         b\fermata b\fermata |
          r4 b2. |
          b b4 |
 %15
-         b2 b4 r |
-         ees'1 |
-         fes'2. fes'4 |
-         ees'1 |
-         f'4 r ges'2 |
+         b2\fermata b4\fermata r |
+         ees'!1 |
+         fes'2.\> fes'4\! |
+         ees'1( |
+         f'2) \breathe ges'2\pppp |
 %20
-         ges'1 |
-         ges'2 f' |
+         ges'1~ |
+         ges'2( f') |
          ges'4 r r2 |
          R1*4/4 |
          R1*4/4 |
 %25
          R1*4/4 |
          R1*4/4 |
-         \time 2/4  des'4 ees' |
+         \time 2/4  des'4\ppp( ees' |
          \time 3/4  des'2 bes4 |
-         des'2. |
+         des'2.) |
 %30
-         \time 4/4  r4 ges' f' ees' |
-         \time 3/4  des'2. |
+         \time 4/4  r4 ges'( f' ees' |
+         \time 3/4  des'2.) \breathe |
          \time 2/4  bes4 des' |
          \time 3/4  des'2 des'4 |
          des'2. |
 %35
          \time 2/4  r4 des' |
-         \time 4/4  ees'2 aes4 bes |
+         \time 4/4  ees'2 aes4( bes) |
          aes2. r4 |
-         \time 3/4  r r aes |
-         \time 4/4  des'2 ees' |
+         \time 3/4  r r aes\< |
+         \time 4/4  des'2 ees'\!\breathe |
 %40
-         e' b |
+         e'\fermata\ppp b\fermata |
          r4 b b b |
          b2. b4 |
-         b1 |
-         \time 3/4  b4 r ces' |
+         b1( |
+         \time 3/4  b2) \breathe ces'4 |
 %45
          \time 4/4  ces'2. ces'4 |
          bes2 ces'4 des' |
-         ees'1 |
-         ees'2 eeses' |
+         ees'1~\ppp \breathe|
+         ees'2( eeses') |
          des'1 |
 %50
-         \time 3/2  ces'1. |
+         \time 3/2  ces'1.^"cres decres" |
          \time 4/4  bes2 r |
          \key des \major R1*4/4 |
          R1*4/4 |
@@ -83,33 +86,33 @@ MvmntIVoiceI = {
 %55
          R1*4/4 |
          R1*4/4 |
-         r2 f4 f |
+         r2\pp f4^> f^> |
          bes2 c' |
-         bes r4 f8 aes |
+         bes r4 f8( aes) |
 %60
          des'4 c' bes2 |
-         aes r4 f8 aes |
-         des'2 ees' |
-         c'4 ees' fes' f' |
-         ges'2 ees' |
+         aes r4 f8\f aes |
+         des'2^> ees'^> \breathe |
+         c'4(^> ees')^> fes'(^> f')^> |
+         ges'2^> ees'^> |
 %65
          R1*4/4 |
          R1*4/4 |
          R1*4/4 |
-         R1*4/4 |
-         c'2 bes4 aes |
+         r2\fermata r2\fermata |
+         c'2\ppp bes4 aes |
 %70
-         bes2 ees |
+         bes2\fermata ees\fermata |
          aes g4 a |
-         c'2. bes4 |
-         aes2 r4 f' |
+         c'2.( bes4) |
+         aes2\fermata r4 f'\ff |
          f'2. f'4 |
 %75
-         f'2 r4 f' |
-         ees'2. ees'4 |
-         ees' d'2 d'4 |
-         des'1 |
-         des'2 r |
+         f'2 r4\fermata f'\mf |
+         ees'2.\dim ees'4 |
+         ees'( d'2) \breathe d'4\ppp |
+         des'!1\> |
+         des'!2\! r |
 %80
          \key ees \major R1*4/4 |
          R1*4/4 |
@@ -121,71 +124,70 @@ MvmntIVoiceI = {
          R1*4/4 |
          R1*4/4 |
          R1*4/4 |
-         r2 r4 c' |
+         r2 r4 c'\pp |
 %90
          d'2. b4 |
-         c' d' e' fis' |
+         c'\< d' e' fis'\! |
          a'2. g'4 |
-         fis' g'8 e' d'4 e'8 c' |
-         b2 d' |
+         fis' g'8( e') d'4 e'8( c') |
+         b2( d') |
 %95
-         r r4 c' |
+         r r4 c'\p |
          g'2. d'4 |
-         c' d' e' fis' |
+         c'\cresc d' e' fis' |
          e'2. d'4 |
-         cis' d' e' fis' |
+         cis'(\f d') e'( fis') |
 %100
-         a'2. g'4 |
-         fis' g' a' bes' |
-         f'1 |
-         fis' |
+         a'2.(\f g'4 |
+         fis' g') a'( bes') |
+         f'1^^( |
+         fis'^^) |
          g'2 r |
 %105
          r1 |
-         bes |
-         bes2 ees |
-         f g |
-         aes bes |
+         bes^^(\ff |
+         bes2) ees^^ |
+         f^^ g^^ |
+         aes^^ bes^^ |
 %110
-         d'1 |
-         d'2 c' |
+         d'1^^~ |
+         d'2( c') |
          b4 r r2 |
          r1 |
-         f' |
+         f'!~^^ |
 %115
-         f'2 e' |
-         ees' d' |
-         f' ees' |
-         bes'1 |
-         bes' |
+         f'2 e'^^ |
+         ees'^^ d'^^ |
+         f'^^ ees'^^ |
+         bes'1~\> |
+         bes'( |
 %120
-         aes' |
-         aes' |
-         aes'2 r |
-         g'2. g'4 |
-         g'2 r4 g' |
+         aes')\< |
+         aes'2 r\! |
+         g'2.\fff^^ g'4^^ |
+         g'2^^ r4 g'^^ |
+         aes'2.^^ aes'4^^ |
 %125
-         aes'2. aes'4 |
          g'2 r4 ees' |
-         d'2 ees' |
-         f' g' |
+         d'2 \breathe ees' |
+         f' \breathe g' |
          g' g' |
+         f'2..\< r8\! |
 %130
-         f'2.. r8 |
-         bes2 c'4 c' |
-         des'1 |
-         aes2 r |
-         des' ees'4 ees' |
+         bes2^^ c'4^^ c'^^ |
+         des'1^^ |
+         aes2^^ r |
+         des'^^ ees'4^^ ees'^^ |
+         f'1^^ |
 %135
-         f'1 |
-         c'2 r4 c' |
-         aes'2. aes'4 |
-         g'2 f'4 e' |
-         bes'2 a'4 gis' |
+         c'2^^ r4 c'\f |
+         aes'2.^^ aes'4 |
+         g'2^^( f'4) e' |
+         \tuplet 3/2 { bes'2^^( a'^^) gis'^^ } |
+         g'2^^ ges'^^ |
 %140
-         g'2 ges' |
-         f'1 |
-         aes' |
+         f'1^^(\< |
+         aes')\fff |
          g'2 r |
 }
 
