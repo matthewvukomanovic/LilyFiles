@@ -486,11 +486,11 @@ tagline = \markup {"D:\\Code\\Scores\\DenemoFiles\\Mahler.Symphony2.denemo" on \
 
 \score {
   \unfoldRepeats <<
-    \new Staff = "Oboe" \with { instrumentName = "Oboe" \consists "Ambitus_engraver" }
+    \new Staff = "Oboe" \with { instrumentName = "Oboe" \consists "Ambitus_engraver" \RemoveEmptyStaves}
     <<
       \new Voice = "VoiceOboe"  {  \clef treble    \key des \major    \time 4/4 \VoiceOboe }
     >>
-    \new Staff = "Violin" \with { instrumentName = "Violin" \consists "Ambitus_engraver" }
+    \new Staff = "Violin" \with { instrumentName = "Violin" \consists "Ambitus_engraver" \RemoveEmptyStaves}
     <<
       \new Voice = "VoiceViolin"  {  \clef treble    \key des \major    \time 4/4 \VoiceViolin }
     >>
