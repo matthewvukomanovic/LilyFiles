@@ -3,7 +3,8 @@
 
 %%http://www.gnu.org/software/denemo/
 
-\version "2.18.0"
+\version "2.18.2"
+\include "common.ily"
 
 CompactChordSymbols = {}
 #(define DenemoTransposeStep 0)
@@ -15,10 +16,53 @@ AutoEndMovementBarline = \bar "|."
 
 % The music follows
 
+VoiceTromboneI = {
+  \compressFullBarRests
+         R1*59 R2
+         <bes ees'>2 <ges ces'> |
+         <aes ces'>2 <c' e'> |
+         <b d'> <aes c'> |
+         <f bes>1 |
+         <g bes>2\fermata  r\fermata |
+}
 
-MvmntIVoiceI = {
+
+VoiceTromboneII = {
+  \compressFullBarRests
+         R1*59 R2
+         ees2 ces |
+         e2 <c g> |
+         <g, g> <aes, ees> |
+         <<
+         { bes,1 }
+         \\
+         { ees2 d2 }
+         >> 
+         <ees g>\fermata r\fermata
+}
+
+
+VoiceTubaI = {
+  \compressFullBarRests
+         R1*59 R2
+         ees,2 ces, |
+         e,2 c, |
+         g,, aes,, |
+         bes,,1 |
+         ees,2\fermata r\fermata |
+}
+
+
+VoiceTimpani = {
+  \compressFullBarRests
+         R1*59 R2
+         r1 r r r ees,2\fermata r\fermata |
+}
+
+
+
+VoiceTenorI = {
          \dynamicUp
-         
          bes2\ppp  bes |
          bes\fermata r4 bes^"rit." |
          des'2^"a tempo" ees' |
@@ -69,8 +113,8 @@ MvmntIVoiceI = {
          e'\fermata\ppp b\fermata |
          r4 b b b |
          b2. b4 |
-         b1( |
-         \time 3/4  b2) \breathe ces'4 |
+         b1~ |
+         \time 3/4  b2 \breathe ces'4 |
 %45
          \time 4/4  ces'2. ces'4 |
          bes2 ces'4 des' |
@@ -145,8 +189,8 @@ MvmntIVoiceI = {
          g'2 r |
 %105
          r1 |
-         bes^^(\ff |
-         bes2) ees^^ |
+         bes^^~\ff |
+         bes2 ees^^ |
          f^^ g^^ |
          aes^^ bes^^ |
 %110
@@ -208,20 +252,77 @@ tagline = \markup {"D:\\Code\\Scores\\DenemoFiles\\Mahler.Symphony2.denemo" on \
 
        }
 
-\score { %Start of Movement
-          <<
+\score {
+  \unfoldRepeats <<
+    \new Staff = "Trombone 1" \with { instrumentName = "Trombone 1" \consists "Ambitus_engraver" \RemoveEmptyStaves}
+    <<
+      \new Voice = "VoiceTromboneI"  {  \clef tenor    \key des \major    \time 4/4   \VoiceTromboneI }
+    >>
+    \new Staff = "Trombone 2" \with { instrumentName = "Trombone 2" \consists "Ambitus_engraver" \RemoveEmptyStaves}
+    <<
+      \new Voice = "VoiceTromboneII"  {  \clef bass    \key des \major    \time 4/4   \VoiceTromboneII }
+    >>
+    \new Staff = "Tuba" \with { instrumentName = "Tuba" \consists "Ambitus_engraver" \RemoveEmptyStaves}
+    <<
+      \new Voice = "VoiceTubaI"  {  \clef bass    \key des \major    \time 4/4    \VoiceTubaI }
+    >> 
+    \new Staff = "Timpani" \with { instrumentName = "Timpani" \consists "Ambitus_engraver" \RemoveEmptyStaves}
+    <<
+      \new Voice = "VoiceTimpani"  { \clef bass    \key des \major    \time 4/4   \VoiceTimpani }
+    >>     
+    \new ChoirStaff <<
+      %{
+      %}
 
-%Start of Staff
-\new Staff = "Part 1"  << 
- \new Voice = "VoiceIMvmntI"  { 
-  \clef "treble_8"    \key ges \major    \time 4/4   \MvmntIVoiceI
-                        } %End of voice
+%      \new Staff = "Sops and Alto" \with {
+%        instrumentName = \markup \center-column { "Soprano" "Alto" }
+%        \consists "Ambitus_engraver"
+%      }
+%     <<
+%       \new Voice = "BeStillMySoul_Dynamics_Soprano" { \BeStillMySoul_Dynamics_Shared }
+%       \new Voice = "BeStillMySoul_Soprano" { \voiceOne \BeStillMySoul_SopranoContext  }
+%       \new Voice = "BeStillMySoul_Alto" { \voiceTwo \BeStillMySoul_AltoContext  }
+%     >>
 
-                        >> %End of Staff
+%     \new Lyrics \with {
+%       %\override VerticalAxisGroup #'staff-affinity = #CENTER
+%     } \lyricsto "BeStillMySoul_Soprano" \BeStillMySoul_SharedWords
 
-          >>
+      %{
+      \new Staff \with {
+        instrumentName = "Alto"
+        \consists "Ambitus_engraver"
+      }
+      <<
+        \new Voice = "BeStillMySoul_Dynamics_Alto" { \BeStillMySoul_Dynamics_Shared }
+        \new Voice = "BeStillMySoul_Alto" { \BeStillMySoul_AltoContext }
+      >>
+      \new Lyrics { \lyricsto "BeStillMySoul_Alto" \BeStillMySoul_SharedWords }
+      %}
+      \new Staff = "Tenor 1" \with { instrumentName = "Tenor 1" \consists "Ambitus_engraver" }
+      <<
+ %     \new Voice = "BeStillMySoul_Dynamics_Tenor" { \BeStillMySoul_Dynamics_Shared }
+      \new Voice = "Mahler2_Tenor1" { \clef "treble_8"    \key ges \major    \time 4/4   \VoiceTenorI }
+      >>
+%      \new Lyrics {
+%        \lyricsto "BeStillMySoul_Tenor" { \BeStillMySoul_SharedWords }
+%      }
 
-       } %End of Movement
-
-
+%      \new Staff = "Bass" \with {
+%        instrumentName = "Bass"
+%        \consists "Ambitus_engraver"
+%      }
+%      <<
+%        \new Voice = "BeStillMySoul_Bass" { \BeStillMySoul_BassContext }
+%        \new Voice = "BeStillMySoul_Dynamics_Bass" { \BeStillMySoul_Dynamics_Shared }
+%      >>
+%      \new Lyrics {
+%      \lyricsto "BeStillMySoul_Bass" { \BeStillMySoul_SharedWords }
+%      }
+    >>
+    %\pianoReduction \BeStillMySoul_Soprano \BeStillMySoul_Alto \BeStillMySoul_Tenor \BeStillMySoul_BassContext
+>>
+\layout{
+        }
+}
 
