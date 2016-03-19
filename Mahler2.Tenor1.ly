@@ -46,6 +46,44 @@ OrchestraInitialRests = {
   r1*9
 }
 
+BassRests = {
+  \OrchestraInitialRests
+  r1*16
+}
+
+AltoRests = {
+  \BassRests
+  \key ees \major
+  r1*5 |
+}
+
+
+VoiceAlto = {
+  \AltoRests
+  r2 r4 bes |
+  ees'2. bes4 |
+  c' d' ees' f' |
+  aes'2. g'4 |
+  f' g'8 ees' d'4 ees'8 c' |
+%90
+  b2 d' |
+  r r4 des' |
+  des'2. b4 |
+}
+
+VoiceBass = {
+  \BassRests
+  \key ees \major r1 |
+  r2 aes, |
+  bes,2. g,4 |
+  aes, bes, c d |
+  f2. ees4 |
+%85
+  d ees8 c bes,4 c8 aes, |
+  g,2 bes, |
+}
+
+
 VoiceFlutes = {
   \AllOrchestraInitialRests
   r2 r4 des'' |
@@ -484,8 +522,16 @@ tagline = \markup {"D:\\Code\\Scores\\DenemoFiles\\Mahler.Symphony2.denemo" on \
 
        }
 
+  %\bookOutputName "Advance.Australia.Fair"
+  \header {
+    composer = "Gustav MAHLER"
+    title = "Symphony No. 2"
+    subsubtitle = "Tenor Parts"
+    tagline = ""
+  }
 \score {
   \unfoldRepeats <<
+%     \new ChoirStaff <<
     \new Staff = "Oboe" \with { instrumentName = "Oboe" \consists "Ambitus_engraver" \RemoveEmptyStaves}
     <<
       \new Voice = "VoiceOboe"  {  \clef treble    \key des \major    \time 4/4 \VoiceOboe }
@@ -543,6 +589,10 @@ tagline = \markup {"D:\\Code\\Scores\\DenemoFiles\\Mahler.Symphony2.denemo" on \
       >>
       \new Lyrics { \lyricsto "BeStillMySoul_Alto" \BeStillMySoul_SharedWords }
       %}
+      \new Staff = "Alto" \with { instrumentName = "Alto" \consists "Ambitus_engraver" \RemoveEmptyStaves}
+      <<
+      \new Voice = "Mahler2_Alto" { \clef treble  \key ges \major    \time 4/4   \VoiceAlto }
+      >>      
       \new Staff = "Tenor 1" \with { instrumentName = "Tenor 1" \consists "Ambitus_engraver" }
       <<
  %     \new Voice = "BeStillMySoul_Dynamics_Tenor" { \BeStillMySoul_Dynamics_Shared }
@@ -552,6 +602,10 @@ tagline = \markup {"D:\\Code\\Scores\\DenemoFiles\\Mahler.Symphony2.denemo" on \
       <<
  %     \new Voice = "BeStillMySoul_Dynamics_Tenor" { \BeStillMySoul_Dynamics_Shared }
       \new Voice = "Mahler2_Tenor2" { \clef "treble_8"    \key ges \major    \time 4/4   \VoiceTenorII }
+      >> 
+      \new Staff = "Bass" \with { instrumentName = "Bass" \consists "Ambitus_engraver" \RemoveEmptyStaves}
+      <<
+      \new Voice = "Mahler2_Bass" { \clef bass  \key ges \major    \time 4/4   \VoiceBass }
       >>      
 %      \new Lyrics {
 %        \lyricsto "BeStillMySoul_Tenor" { \BeStillMySoul_SharedWords }
@@ -570,6 +624,7 @@ tagline = \markup {"D:\\Code\\Scores\\DenemoFiles\\Mahler.Symphony2.denemo" on \
 %      }
     >>
     %\pianoReduction \BeStillMySoul_Soprano \BeStillMySoul_Alto \BeStillMySoul_Tenor \BeStillMySoul_BassContext
+%  >>
 >>
 \layout{
         }
