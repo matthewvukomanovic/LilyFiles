@@ -59,12 +59,13 @@ VoiceAlto = {
   r2 r4 bes |
   ees'2. bes4 |
   c' d' ees' f' |
-  aes'2. g'4 |
+  aes'2.
+  g'4 |
   f' g'8 ees' d'4 ees'8 c' |
 %90
   b2 d' |
-  r r4 des' |
-  des'2. b4 |
+  r r4 d' |
+  d'2. b4 |
 }
 
 VoiceBass = {
@@ -121,8 +122,8 @@ VoiceOboe = {
 VoiceTromboneI = {
   \clef tenor    \key des \major    \time 4/4   
   \OrchestraInitialRests
-  r1
-%<bes ees'>2 <ges ces'> |
+  \tag #'onlyMidiRests { r1 }
+  <bes ees'>2 <ges ces'> |
   <aes ces'>2 <c' e'> |
   <b d'> <aes c'> |
   <f bes>1 |
@@ -133,8 +134,8 @@ VoiceTromboneI = {
 VoiceTromboneII = {
   \clef bass    \key des \major    \time 4/4   
   \OrchestraInitialRests
-  r1
-% ees2 ces |
+  \tag #'onlyMidiRests { r1 }
+  ees2 ces |
   e2 <c g> |
   <g, g> <aes, ees> |
   <<
@@ -149,8 +150,8 @@ VoiceTromboneII = {
 VoiceTubaI = {
   \clef bass    \key des \major    \time 4/4    
   \OrchestraInitialRests
-  r1
-% ees,2 ces, |
+  \tag #'onlyMidiRests { r1 }
+  ees,2 ces, |
   e,2 c, |
   g,, aes,, |
   bes,,1 |
@@ -161,6 +162,7 @@ VoiceTubaI = {
 VoiceTimpani = {
   \clef bass    \key des \major    \time 4/4   
   \OrchestraInitialRests
+  \tag #'onlyMidiRests { r1 }
   r1 r r r ees,2\fermata r\fermata |
 }
 
@@ -529,6 +531,7 @@ VoiceTenorII = {
     tagline = ""
   }
 MahlerScore = \score {
+  \removeWithTag #'onlyMidiRests {
   \unfoldRepeats <<
 %     \new ChoirStaff <<
     \new Staff = "Oboe" \with { instrumentName = "Oboe" \consists "Ambitus_engraver" \RemoveEmptyStaves}
@@ -579,6 +582,7 @@ MahlerScore = \score {
     >>
 %  >>
 >>
+  }
 \layout{
         }
 }
