@@ -627,7 +627,7 @@ MahlerII_RehersalMidi = #
 
 \book {
   \bookOutputSuffix "tenor1"
-  \bookOutputName "MahlerII"
+  \bookOutputName "Mahler2"
   \score {
     \MahlerII_RehersalMidi "Tenor 1" "tenor sax" {}
     \midi { }
@@ -636,7 +636,7 @@ MahlerII_RehersalMidi = #
 
 \book {
   \bookOutputSuffix "tenor2"
-  \bookOutputName "MahlerII"
+  \bookOutputName "Mahler2"
   \score {
     \MahlerII_RehersalMidi "Tenor 2" "tenor sax" {}
     \midi { }
