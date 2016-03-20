@@ -66,6 +66,13 @@ VoiceAlto = {
   b2 d' |
   r r4 d' |
   d'2. b4 |
+  r1*7 |
+  a'2. g'4 |
+  fis' g' a' bes' |
+  c''2. bes'4 |
+  c''2. bes'4 |
+  c''1~  |
+  c''2 bes' |
 }
 
 VoiceBass = {
@@ -263,8 +270,8 @@ VoiceTenorI = {
          f'2 r4\fermata f'\mf |
          ees'2.^"dim"\> ees'4 |
          ees'( d'2) \breathe d'4\ppp |
-         des'!1\>~ |
-         des'!2\! r |
+         des'!1\>( |
+         des'!2\!) r |
 %80
          \key ees \major r1 |
          r |
@@ -438,8 +445,8 @@ VoiceTenorII = {
          des'2 r4\fermata des'\mf |
          ees'2.^"dim"\> ees'4 |
          ees'( d' c') \breathe bes4\ppp |
-         des'!1~\> |
-         des'!2\! r |
+         des'!1\>( |
+         des'!2\!) r |
 %80
          \key ees \major r1 |
          r |
