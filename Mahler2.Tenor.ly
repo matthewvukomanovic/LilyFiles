@@ -534,48 +534,48 @@ MahlerScore = \score {
   \removeWithTag #'onlyMidiRests {
   \unfoldRepeats <<
 %     \new ChoirStaff <<
-    \new Staff = "Oboe" \with { instrumentName = "Oboe" \consists "Ambitus_engraver" \RemoveEmptyStaves}
+    \new Staff = "Oboe" \with { instrumentName = "Oboe" shortInstrumentName = "Ob" \consists "Ambitus_engraver" \RemoveEmptyStaves}
     <<
       \new Voice = "VoiceOboe"  { \VoiceOboe }
     >>
-    \new Staff = "Violin" \with { instrumentName = "Violin" \consists "Ambitus_engraver" \RemoveEmptyStaves}
+    \new Staff = "Violin" \with { instrumentName = "Violin" shortInstrumentName = "Vi" \consists "Ambitus_engraver" \RemoveEmptyStaves}
     <<
       \new Voice = "VoiceViolin"  { \VoiceViolin }
     >>
-    \new Staff = "Flutes" \with { instrumentName = "Flutes" \consists "Ambitus_engraver" \RemoveEmptyStaves}
+    \new Staff = "Flutes" \with { instrumentName = "Flutes" shortInstrumentName = "Fl" \consists "Ambitus_engraver" \RemoveEmptyStaves}
     <<
       \new Voice = "VoiceFlutes"  {  \VoiceFlutes }
     >>
-    \new Staff = "Trombone 1" \with { instrumentName = "Trombone 1" \consists "Ambitus_engraver" \RemoveEmptyStaves}
+    \new Staff = "Trombone 1" \with { instrumentName = "Trombone 1" shortInstrumentName = "Tb1" \consists "Ambitus_engraver" \RemoveEmptyStaves}
     <<
       \new Voice = "VoiceTromboneI"  { \VoiceTromboneI }
     >>
-    \new Staff = "Trombone 2" \with { instrumentName = "Trombone 2" \consists "Ambitus_engraver" \RemoveEmptyStaves}
+    \new Staff = "Trombone 2" \with { instrumentName = "Trombone 2" shortInstrumentName = "Tb2" \consists "Ambitus_engraver" \RemoveEmptyStaves}
     <<
       \new Voice = "VoiceTromboneII"  {  \VoiceTromboneII }
     >>
-    \new Staff = "Tuba" \with { instrumentName = "Tuba" \consists "Ambitus_engraver" \RemoveEmptyStaves}
+    \new Staff = "Tuba" \with { instrumentName = "Tuba" shortInstrumentName = "Tub" \consists "Ambitus_engraver" \RemoveEmptyStaves}
     <<
       \new Voice = "VoiceTubaI"  {  \VoiceTubaI }
     >> 
-    \new Staff = "Timpani" \with { instrumentName = "Timpani" \consists "Ambitus_engraver" \RemoveEmptyStaves}
+    \new Staff = "Timpani" \with { instrumentName = "Timpani" shortInstrumentName = "Tmp" \consists "Ambitus_engraver" \RemoveEmptyStaves}
     <<
       \new Voice = "VoiceTimpani"  { \VoiceTimpani }
     >>     
     \new ChoirStaff <<
-      \new Staff = "Alto" \with { instrumentName = "Alto" \consists "Ambitus_engraver" \RemoveEmptyStaves}
+      \new Staff = "Alto" \with { instrumentName = "Alto" shortInstrumentName = "A" \consists "Ambitus_engraver" \RemoveEmptyStaves}
       <<
       \new Voice = "Mahler2_Alto" { \VoiceAlto }
       >>      
-      \new Staff = "Tenor 1" \with { instrumentName = "Tenor 1" \consists "Ambitus_engraver" }
+      \new Staff = "Tenor 1" \with { instrumentName = "Tenor 1" shortInstrumentName = "T1" \consists "Ambitus_engraver" }
       <<
       \new Voice = "Mahler2_Tenor1" { \VoiceTenorI }
       >>
-      \new Staff = "Tenor 2" \with { instrumentName = "Tenor 2" \consists "Ambitus_engraver" }
+      \new Staff = "Tenor 2" \with { instrumentName = "Tenor 2" shortInstrumentName = "T2" \consists "Ambitus_engraver" }
       <<
       \new Voice = "Mahler2_Tenor2" { \VoiceTenorII }
       >> 
-      \new Staff = "Bass" \with { instrumentName = "Bass" \consists "Ambitus_engraver" \RemoveEmptyStaves}
+      \new Staff = "Bass" \with { instrumentName = "Bass" shortInstrumentName = "B" \consists "Ambitus_engraver" \RemoveEmptyStaves}
       <<
       \new Voice = "Mahler2_Bass" { \VoiceBass }
       >>      
