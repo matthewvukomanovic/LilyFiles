@@ -591,7 +591,7 @@ MahlerII_RehersalMidi = #
 (define-music-function
  (parser location name midiInstrument lyrics) (string? string? ly:music? )
  #{
-   {
+   \removeWithTag #'onlyMidiRests {{
      \unfoldRepeats <<
       \new Staff = "Tenor 1" \with { midiInstrument = "choir aahs" instrumentName = "Tenor 1" } \new Voice { \VoiceTenorI }
       \new Staff = "Tenor 2" \with { midiInstrument = "choir aahs" instrumentName = "Tenor 2" } \new Voice { \VoiceTenorII }
@@ -619,7 +619,7 @@ MahlerII_RehersalMidi = #
        alignBelowContext = $name
      } \lyricsto $name $lyrics
    >>
-   }
+   }}
  #})
 
 
