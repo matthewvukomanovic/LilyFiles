@@ -1,17 +1,14 @@
-# Villa Lobos
+# Mahler Symphony 2
 
 #### Men
 
-[Tenor 1 - Fast](OutputFiles/Villa.Lobos-Tenor1Fast.mid?raw=true)
+[Tenor 1](OutputFiles/Mahler2-tenor1.mid?raw=true)
 
-[Tenor 1 - Medium](OutputFiles/Villa.Lobos-Tenor1Medium.mid?raw=true)
-
-[Tenor 1 - Slow](OutputFiles/Villa.Lobos-Tenor1Slow.mid?raw=true)
+[Tenor 2](OutputFiles/Mahler2-tenor2.mid?raw=true)
 
 ### PDF
 
-[Wagner Tannhauser - PDF](OutputFiles/Wagner.Entrance.of.the.guests.pdf?raw=true)
-
+[PDF](OutputFiles/Mahler2.Tenor.pdf?raw=true)
 
 # Programs to use
 
